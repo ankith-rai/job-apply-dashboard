@@ -1,0 +1,35 @@
+import { NextResponse } from "next/server";
+import { getJobs, getRuns } from "@/src/lib/store";
+import { STAGES } from "@/src/lib/types";
+
+export const dynamic = "force-dynamic";
+
+export async function GET() {
+  const jobs = await getJobs();
+  const runs = await getRuns();
+
+  const byStage = Object.fromEntries(
+    STAGES.map((s) => [s.key, jobs.filter((j) => j.stage === s.key).length]),
+  );
+
+  const scored = jobs.filter((j) => j.score);
+  const avg = scored.length
+    ? Math.round(scored.reduce((n, j) => n + (j.score?.total ?? 0), 0) / scored.length)
+    : 0;
+
+  const submitted = jobs.filter((j) =>
+    ["applied", "interview", "offer", "rejected"].includes(j.stage),
+  ).length;
+  const replied = jobs.filter((j) => ["interview", "offer"].includes(j.stage)).length;
+
+  return NextResponse.json({
+    total: jobs.length,
+    byStage,
+    averageScore: avg,
+    strongMatches: jobs.filter((j) => (j.score?.total ?? 0) >= 70).length,
+    awaitingReview: byStage.matched ?? 0,
+    submitted,
+    replyRate: submitted ? Math.round((replied / submitted) * 100) : 0,
+    lastRun: runs[0] ?? null,
+  });
+}

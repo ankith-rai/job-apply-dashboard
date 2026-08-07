@@ -1,0 +1,40 @@
+name: Daily job search
+
+# 07:30 IST = 02:00 UTC. GitHub cron is always UTC.
+on:
+  schedule:
+    - cron: "0 2 * * 1-5"
+  workflow_dispatch:
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      # Runs the pipeline in-process and commits the updated store back to the
+      # repo, so the dashboard shows fresh data without a hosted database.
+      - name: Run pipeline
+        env:
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+        run: npx tsx scripts/run-inline.mts
+
+      # -f is required: .gitignore excludes /data/*.json so local runs don't
+      # dirty the working tree. This is the one place the store is meant to be
+      # committed, so it opts out deliberately. Without -f, git add exits
+      # non-zero on an ignored path and the whole job fails.
+      - name: Commit results
+        run: |
+          git config user.name "apply-pilot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f data/jobs.json
+          git diff --staged --quiet || git commit -m "chore: daily run $(date -u +%F)"
+          git push

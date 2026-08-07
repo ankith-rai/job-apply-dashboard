@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  macOS scheduler for the daily run. launchd is preferred over cron here:
+  if the Mac is asleep at 07:30, RunAtLoad + StartCalendarInterval means the
+  job fires when the machine wakes instead of being skipped silently.
+
+  Install:
+    cp scripts/com.ankith.applypilot.plist ~/Library/LaunchAgents/
+    launchctl load ~/Library/LaunchAgents/com.ankith.applypilot.plist
+
+  Check it:
+    launchctl list | grep applypilot
+    tail -f /tmp/applypilot.log
+
+  Remove:
+    launchctl unload ~/Library/LaunchAgents/com.ankith.applypilot.plist
+-->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.ankith.applypilot</string>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/ankithrai/Desktop/Workspaces/job-apply-dashboard</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>npm run run:inline</string>
+  </array>
+
+  <!-- 07:30 local time, Monday to Friday. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Weekday</key><integer>1</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Weekday</key><integer>2</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Weekday</key><integer>3</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Weekday</key><integer>4</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>30</integer></dict>
+    <dict><key>Weekday</key><integer>5</integer><key>Hour</key><integer>7</integer><key>Minute</key><integer>30</integer></dict>
+  </array>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/applypilot.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/applypilot.error.log</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
+  </dict>
+</dict>
+</plist>
