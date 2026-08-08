@@ -16,8 +16,11 @@ hour, with every application still one you chose. The reasoning behind that spli
 
 ## Running it
 
+Requires Node 24 (see `.nvmrc`). The project relies on Node's built-in TypeScript
+type stripping, so there is no `tsx` or `ts-node` in the toolchain.
+
 ```bash
-npm install
+npm install                  # not `npm ci` — see Status
 cp .env.example .env.local   # optional — works offline without it
 npm run dev                  # http://localhost:3000
 ```
@@ -125,28 +128,41 @@ amount of infrastructure, and it makes the whole thing greppable and diffable.
 
 ## Status
 
-The logic is tested; the Next.js build is not yet.
+Types and logic are verified. The production build is not.
 
 ```bash
-npm test   # 35 checks, no dependencies needed
+npm install        # regenerates the lockfile — required, see below
+npm run typecheck  # passes clean
+npm test           # 35 checks, nothing to install
 ```
 
-The suite runs the real TypeScript sources through Node 22's native type
-stripping, so it needs nothing installed. It covers scoring (totals stay in
-range, factors sum to the total, no factor exceeds its cap, a relevant senior
-role outranks an unrelated junior one), market inference, dedupe across sources,
-the store round-trip including first-read seeding and the 30-run history cap, a
-full pipeline run with every source offline, and the `/api/run` bearer check
-against missing, empty, wrong, prefix-matching and case-variant tokens. It runs
-in a temp directory, so it never touches your real `data/jobs.json`.
+**Run `npm install`, not `npm ci`, the first time.** `package-lock.json` is stale:
+it still pins `tsx` and the older `next` and `@types/node`. `npm ci` fails hard on
+that mismatch, and it could not be regenerated where this was edited because the
+npm registry was unreachable. One `npm install` fixes it — commit the result, or
+the GitHub Actions workflow will fail on its `npm ci` step.
+
+`tsc --noEmit` passes. It did not at first: `tsconfig.json` had no `target`, so
+TypeScript defaulted to ES5 and rejected iterating a `Set` in
+`src/app/api/jobs/[id]/status/route.ts`. Setting `"target": "ES2022"` fixed it.
+
+The test suite runs the real TypeScript sources through Node's native type
+stripping, so it needs nothing installed. It covers scoring (totals stay in range,
+factors sum to the total, no factor exceeds its cap, a relevant senior role
+outranks an unrelated junior one), market inference, dedupe across sources, the
+store round-trip including first-read seeding and the 30-run history cap, a full
+pipeline run with every source offline, and the `/api/run` bearer check against
+missing, empty, wrong, prefix-matching and case-variant tokens. It runs in a temp
+directory, so it never touches your real `data/jobs.json`.
 
 The check worth having is `tailor: invents nothing` — it extracts every bullet
 from a generated resume and asserts each one traces back to the verified bank in
 `src/lib/bullets.ts`. That is the property that would matter if a company asked
 you to substantiate a claim.
 
-What is still unverified: `npm install` could not run in the environment this was
-built in, so `next build` and `tsc --noEmit` have never executed against it, and
-no UI component has been rendered. Run `npm install && npm run typecheck && npm
-run build` before trusting the dashboard itself; expect a small number of type or
-JSX errors rather than none. The library layer underneath is exercised.
+`next build` remains unverified, for an environmental reason rather than a code
+one: the installed `node_modules` contains only `@next/swc-darwin-arm64`, and a
+Linux sandbox needs `@next/swc-linux-arm64-gnu`, which Next tries to download from
+the blocked registry. On your Mac the right binary is already present. Run
+`npm run build` once and expect JSX or type errors in the UI layer rather than
+none — that layer has never been rendered. Everything beneath it is exercised.
