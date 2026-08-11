@@ -36,15 +36,38 @@ one against a running instance, `npm run run:daily`.
 
 Adzuna is the best single source for your two markets and takes a free developer
 key. Remotive and Arbeitnow need no credentials at all. The highest-signal source
-is neither of those: `GREENHOUSE_BOARDS` and `LEVER_BOARDS` poll company-owned ATS
-boards directly, which means you see a posting the day the company publishes it
-rather than the day an aggregator scrapes it. Name forty companies you would
-actually work for and this becomes the most useful part of the setup.
+is neither of those: `GREENHOUSE_BOARDS`, `LEVER_BOARDS` and `ASHBY_BOARDS` poll
+company-owned ATS boards directly, which means you see a posting the day the
+company publishes it rather than the day an aggregator scrapes it. Name forty
+companies you would actually work for and this becomes the most useful part of
+the setup.
+
+Astronomer sits under Ashby, not Greenhouse — worth knowing because they are the
+Airflow company and therefore the closest match in the file to what you do daily.
+
+Check your boards before trusting them:
+
+```bash
+npm run check:boards              # are the configured tokens alive?
+npm run check:boards -- --discover  # which ATS do the unconfirmed ones use?
+```
+
+This exists because a wrong ATS token is the quietest bug in the project. It does
+not error; the source just returns nothing, every run, and reads exactly like a
+company that isn't hiring. `netflix` sat in `LEVER_BOARDS` doing this — Netflix
+moved to Eightfold, so the Lever endpoint was never going to answer. Anything in
+`WATCHLIST` is a company worth watching whose ATS has not been confirmed yet, so
+it stays inert until `--discover` proves where it lives.
 
 There is deliberately no LinkedIn, Indeed or Naukri scraping. All three prohibit
 automated access, enforcement lands on the personal account recruiters contact you
 through, and headless-browser scraping breaks constantly. The risk is
 disproportionate to the gain.
+
+The supported way to reach those boards is their own job alerts: create alerts on
+each platform, point them at a dedicated mailbox, and let the pipeline read that
+mailbox over IMAP. Same postings, sent to you deliberately, with nothing staked on
+the account recruiters use to reach you.
 
 ## Scheduling
 
@@ -73,10 +96,44 @@ secrets, never in the workflow file.
 On Vercel, its cron feature can call `POST /api/run` directly, which is the fewest
 moving parts of the three.
 
-Set `CRON_SECRET` before the app is reachable from the internet. `/api/run` is a
-write endpoint that makes outbound network calls, which is exactly the shape of
-thing that gets abused when left open. With the secret set, callers must send
-`Authorization: Bearer $CRON_SECRET`; the bundled scripts do this for you.
+## Access
+
+The dashboard is password-gated. Set `APP_PASSWORD` and you get a login screen;
+leave it empty and the gate is off, so `npm run dev` on your laptop doesn't ask
+for anything. That default is convenient and would be dangerous if it could reach
+production, so `npm run build` refuses to build when `NODE_ENV=production` or
+`VERCEL` is set and no password is configured. Override with `SKIP_ENV_CHECK=1`
+for a local production build you aren't deploying.
+
+What's behind the gate is worth gating: which companies you're applying to, what
+stage each application is at, your private notes, and a resume carrying your phone
+number and email.
+
+Enforcement is deliberately duplicated. `src/middleware.ts` redirects
+unauthenticated page requests to `/login`, and `requireAuth()` runs inside every
+API route handler. The redundancy is the point — CVE-2025-29927 was a Next.js
+middleware bypass, and every app that treated middleware as its only gate was
+readable by anyone who sent one extra header. This project is on a patched version,
+but middleware is a routing concern that happens to make a convenient chokepoint;
+it is not an authorization boundary. A test walks `src/app/api` and fails if any
+exported handler is missing its check, so a route added later can't quietly skip it.
+
+Two ways to authenticate:
+
+- **A session cookie**, from logging in. `HttpOnly`, `SameSite=Lax`, `Secure` and
+  `__Host-`-prefixed in production, 30-day expiry. The value is a SHA-256 of
+  `SESSION_SALT::APP_PASSWORD`, never the password itself — so changing either one
+  invalidates every existing session, and a leaked cookie doesn't reveal what to
+  type into the login form. Set `SESSION_SALT` if you want to sign yourself out
+  everywhere without changing the password.
+- **`Authorization: Bearer $CRON_SECRET`**, for callers that can't hold a cookie.
+  `scripts/daily-run.mjs` uses this. The GitHub Actions workflow does not need it —
+  it runs the pipeline in-process rather than over HTTP.
+
+`/api/run` accepts either, which matters: it's a write endpoint that makes outbound
+network calls, and before the gate existed it only accepted the bearer token. That
+meant setting `CRON_SECRET` silently broke the dashboard's own Run button, since a
+browser has no way to attach that header.
 
 ## How scoring works
 
@@ -115,9 +172,11 @@ Before your first real application, fill in the placeholder contact details in
 
 ```
 src/lib/          profile, bullets, scoring, sources, tailoring, store, pipeline
-src/app/          dashboard, job detail, pipeline history, settings
-src/app/api/      jobs, run, approve endpoints
-scripts/          inline runner, HTTP trigger, launchd plist
+src/lib/auth.ts   the gate: password check, session token, requireAuth()
+src/middleware.ts redirects unauthenticated page requests to /login
+src/app/          dashboard, job detail, pipeline history, settings, login
+src/app/api/      jobs, run, approve, auth endpoints — all behind requireAuth
+scripts/          inline runner, HTTP trigger, launchd plist, env check
 tests/            dependency-free suite — npm test
 data/jobs.json    the store — plain JSON, no database, created on first run
 docs/             the automation write-up
@@ -128,12 +187,13 @@ amount of infrastructure, and it makes the whole thing greppable and diffable.
 
 ## Status
 
-Types and logic are verified. The production build is not.
+Types, logic and the gate are verified. The production build is not.
 
 ```bash
 npm install        # regenerates the lockfile — required, see below
 npm run typecheck  # passes clean
-npm test           # 35 checks, nothing to install
+npm test           # 61 checks, nothing to install
+npm run check:env  # would this be safe to deploy?
 ```
 
 **Run `npm install`, not `npm ci`, the first time.** `package-lock.json` is stale:
@@ -151,18 +211,56 @@ stripping, so it needs nothing installed. It covers scoring (totals stay in rang
 factors sum to the total, no factor exceeds its cap, a relevant senior role
 outranks an unrelated junior one), market inference, dedupe across sources, the
 store round-trip including first-read seeding and the 30-run history cap, a full
-pipeline run with every source offline, and the `/api/run` bearer check against
-missing, empty, wrong, prefix-matching and case-variant tokens. It runs in a temp
-directory, so it never touches your real `data/jobs.json`.
+pipeline run with every source offline, and the gate — bearer tokens that are
+missing, empty, wrong, prefix-matching or case-variant, session cookies derived
+from a rotated salt, and the gate-off path. It runs in a temp directory, so it
+never touches your real `data/jobs.json`.
 
 The check worth having is `tailor: invents nothing` — it extracts every bullet
 from a generated resume and asserts each one traces back to the verified bank in
 `src/lib/bullets.ts`. That is the property that would matter if a company asked
 you to substantiate a claim.
 
+The auth tests import `src/lib/auth.ts` rather than restating its logic, which
+matters more than it sounds: the previous version reimplemented the comparison and
+then tested the copy, so it would have passed while the real route was broken. Two
+of them earn their keep by scanning source rather than calling functions — one
+walks every file in `src/app/api` and fails if any exported handler is missing its
+`requireAuth` call, and one compares the Node `createHash` token derivation in
+`auth.ts` against the Web Crypto derivation in `middleware.ts`, because Edge can't
+use `node:crypto` and the two implementations have to agree or logging in would
+succeed and then bounce you straight back to the login screen. Both were checked
+by deliberately breaking the code first — removing the guard from `/api/stats`, and
+guarding `GET` but not `PATCH` in `jobs/[id]` — and confirming each failure named
+the exact file and method.
+
+Two source bugs were found and fixed after the first pass. `QUERIES` was exported
+and rendered on the Settings page while `fetchAllSources` ignored it entirely and
+sent hardcoded strings instead, so `platform engineer python` and
+`data engineer airflow` were advertised but never searched. Each keyword source
+now fans out across all four terms, running them sequentially per host to stay
+inside Adzuna's free-tier rate limit and merging the results so the run history
+shows one row per source rather than one per search. Separately, `netflix` was
+removed from `LEVER_BOARDS`: Netflix runs on Eightfold, so that source had been
+failing silently since it was written. Both are covered by tests now, including
+one that fails if an unconfirmed `WATCHLIST` token ever reaches a live board list.
+`.env.example` had to be fixed too — it kept teaching the dead token to anyone
+copying it, which is how a fixed bug comes back.
+
+Each of the six API routes was verified against the running handler, not just
+through unit tests: anonymous requests get 401, a valid session cookie gets
+through, a bearer token gets through on `/api/run`, and everything returns 200
+with the gate off. `scripts/check-env.mjs` was checked across six environments —
+no password locally (a note, exit 0), an 8-character password (fails), a simulated
+Vercel production build with no password (fails), the same with one (passes), and
+`SKIP_ENV_CHECK=1` (skips).
+
 `next build` remains unverified, for an environmental reason rather than a code
-one: the installed `node_modules` contains only `@next/swc-darwin-arm64`, and a
-Linux sandbox needs `@next/swc-linux-arm64-gnu`, which Next tries to download from
-the blocked registry. On your Mac the right binary is already present. Run
-`npm run build` once and expect JSX or type errors in the UI layer rather than
-none — that layer has never been rendered. Everything beneath it is exercised.
+one. Two separate blockers, both network: the installed `node_modules` contains
+only `@next/swc-darwin-arm64` where a Linux sandbox needs
+`@next/swc-linux-arm64-gnu`, and `src/app/globals.css` opens with an `@import` of a
+Google Fonts URL, which `next build` and `next dev` both block on until they time
+out. On your Mac both resolve. Run `npm run build` once and expect JSX or type
+errors in the UI layer rather than none — that layer has never been rendered, which
+includes the login page and the middleware redirect, since middleware only runs
+under a real Edge runtime. Everything beneath it is exercised.

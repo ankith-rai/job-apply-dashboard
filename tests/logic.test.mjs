@@ -166,6 +166,47 @@ check("seed: every job has the fields the UI reads", () => {
       assert.ok(j[k] !== undefined, `${j.id ?? "?"} missing ${k}`);
 });
 
+// ── sources: query fan-out and result merging ─────────────────────────────
+const sources = await import(`${R}/src/lib/sources.ts`);
+
+const fakeJob = (id) => ({ id, title: "Staff Engineer", company: "Acme" });
+const okPart = (label, ids) => ({ source: label, jobs: ids.map(fakeJob), ok: true, detail: "" });
+const badPart = (label, why) => ({ source: label, jobs: [], ok: false, detail: why });
+
+check("merge: dedupes the same posting returned by two queries", () => {
+  const m = sources.mergeResults("Adzuna:IN", [okPart("a", ["j1", "j2"]), okPart("a", ["j2", "j3"])]);
+  assert.equal(m.jobs.length, 3, `expected 3 unique, got ${m.jobs.length}`);
+});
+
+check("merge: every query failing marks the source dead, not quiet", () => {
+  const m = sources.mergeResults("Adzuna:IN", [badPart("a", "HTTP 429"), badPart("a", "HTTP 429")]);
+  assert.equal(m.ok, false);
+  assert.match(m.detail, /429/, "the reason must survive into the run history");
+});
+
+check("merge: one query failing still yields the postings from the others", () => {
+  const m = sources.mergeResults("Remotive", [okPart("a", ["j1"]), badPart("a", "timed out")]);
+  assert.equal(m.ok, true);
+  assert.equal(m.jobs.length, 1);
+  assert.match(m.detail, /failed/, "a partial failure must be visible, not swallowed");
+});
+
+check("merge: label is carried through so the UI can name the source", () => {
+  assert.equal(sources.mergeResults("Adzuna:US", [okPart("a", ["j1"])]).source, "Adzuna:US");
+});
+
+// The bug this guards: QUERIES was exported and displayed while fetchAllSources
+// ignored it, so two of the four terms were never actually searched.
+check("sources: the watchlist stays out of the live board lists", () => {
+  const live = [...sources.GREENHOUSE_BOARDS, ...sources.LEVER_BOARDS, ...sources.ASHBY_BOARDS];
+  const leaked = sources.WATCHLIST.filter((w) => live.includes(w));
+  assert.equal(leaked.length, 0, `unverified tokens went live: ${leaked.join(", ")}`);
+});
+
+check("sources: netflix is not fetched from Lever — it runs on Eightfold", () => {
+  assert.ok(!sources.LEVER_BOARDS.includes("netflix"), "dead token is back in LEVER_BOARDS");
+});
+
 console.log(`\n${pass.length} passed`);
 for (const p of pass) console.log("  ok   " + p);
 if (warn.length) {

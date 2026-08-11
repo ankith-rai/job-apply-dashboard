@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
+import { apiFetch } from "@/src/lib/apiFetch";
 import type { Stage } from "@/src/lib/types";
 
 const BTN: React.CSSProperties = {
@@ -24,7 +25,7 @@ const PRIMARY: React.CSSProperties = {
 };
 
 async function setStage(id: string, stage: Stage) {
-  const res = await fetch(`/api/jobs/${id}/status`, {
+  const res = await apiFetch(`/api/jobs/${id}/status`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ stage }),

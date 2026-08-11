@@ -1,5 +1,5 @@
 import { fetchAllSources } from "./sources";
-import { recordRun, upsertJobs, readStore, writeStore } from "./store";
+import { prune, recordRun, upsertJobs, readStore, writeStore } from "./store";
 import { tailorFor } from "./tailor";
 import type { RunRecord, RunStageResult, Job } from "./types";
 
@@ -81,8 +81,25 @@ export async function runDailyPipeline(): Promise<RunRecord> {
     ms: lap(),
   });
 
-  // 5. Queue for review — deliberately does not submit
-  const awaiting = store.jobs.filter(
+  // 5. Prune before reporting, so the store this run commits is the trimmed one
+  const { report: pr, store: pruned } = await prune();
+  const mb = (n: number) => (n / 1_048_576).toFixed(1);
+  stages.push({
+    key: "prune",
+    label: "Prune the store",
+    status: "ok",
+    count: pr.dropped + pr.slimmed,
+    detail:
+      `${pr.dropped} stale postings dropped, ${pr.slimmed} closed ones slimmed · ` +
+      `${mb(pr.bytesBefore)}MB → ${mb(pr.bytesAfter)}MB · ` +
+      `${pr.after} tracked`,
+    ms: lap(),
+  });
+
+  // 6. Queue for review — deliberately does not submit.
+  // Counted from the pruned store, not the snapshot above, or a stale posting
+  // that prune just dropped would still show up as waiting on you.
+  const awaiting = pruned.jobs.filter(
     (j) => j.stage === "matched" && (j.score?.total ?? 0) >= TAILOR_THRESHOLD,
   ).length;
 

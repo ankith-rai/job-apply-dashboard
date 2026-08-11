@@ -112,6 +112,98 @@ await check("pipeline: store still valid JSON after a run", async () => {
   assert.ok(Array.isArray(raw.jobs) && Array.isArray(raw.runs));
 });
 
+// ── pruning ─────────────────────────────────────────────────────────────────
+// The rule that must never bend: a job you acted on is application history and
+// is exempt from every prune operation, at any age. Everything else is a
+// tradeoff; this one is a correctness property.
+
+const mkScore = (total) => ({
+  total, factors: [], matchedKeywords: [], missingKeywords: [], flags: [], scoredAt: "",
+});
+
+const mk = (over = {}) => ({
+  id: "j-" + Math.random().toString(36).slice(2),
+  title: "Staff Engineer",
+  company: "Acme",
+  location: "Remote",
+  market: ["remote"],
+  remote: true,
+  url: "https://example.com/job",
+  source: "test",
+  postedAt: new Date().toISOString(),
+  fetchedAt: new Date().toISOString(),
+  stageUpdatedAt: new Date().toISOString(),
+  description: "x".repeat(1000),
+  tags: [],
+  score: mkScore(90),
+  stage: "matched",
+  ...over,
+});
+
+const daysAgo = (d) => new Date(Date.now() - d * 86_400_000).toISOString();
+const trimmed = (j) => String(j.description ?? "").includes("[pruned]");
+
+await check("prune: an applied job survives at any age with its description", () => {
+  const job = mk({ stage: "applied", fetchedAt: daysAgo(300), stageUpdatedAt: daysAgo(90) });
+  const { store: out } = store.pruneStore({ jobs: [job], runs: [] });
+  assert.equal(out.jobs.length, 1, "application history was dropped");
+  assert.ok(!trimmed(out.jobs[0]), "application history lost its description");
+});
+
+await check("prune: every acted-on stage is exempt, not just applied", () => {
+  const jobs = ["queued", "applied", "interview", "offer", "rejected"].map((stage) =>
+    mk({ stage, fetchedAt: daysAgo(200), stageUpdatedAt: daysAgo(200), score: mkScore(5) }),
+  );
+  const { store: out } = store.pruneStore({ jobs, runs: [] });
+  assert.equal(out.jobs.length, 5, "an acted-on stage was dropped");
+  assert.equal(out.jobs.filter(trimmed).length, 0, "an acted-on job was slimmed");
+});
+
+await check("prune: a stale never-touched posting is dropped", () => {
+  const job = mk({ fetchedAt: daysAgo(60), stageUpdatedAt: daysAgo(60) });
+  const { store: out, report } = store.pruneStore({ jobs: [job], runs: [] });
+  assert.equal(out.jobs.length, 0);
+  assert.equal(report.dropped, 1);
+});
+
+await check("prune: a low scorer keeps its record so dedupe still sees it", () => {
+  const job = mk({ score: mkScore(20) });
+  const { store: out } = store.pruneStore({ jobs: [job], runs: [] });
+  assert.equal(out.jobs.length, 1, "tombstoned posting was removed entirely");
+  assert.ok(trimmed(out.jobs[0]), "low scorer kept its full description");
+});
+
+await check("prune: a strong match keeps its description and resume", () => {
+  const job = mk({ score: mkScore(85), tailoredResume: "\\resumeItem{x}" });
+  const { store: out } = store.pruneStore({ jobs: [job], runs: [] });
+  assert.ok(!trimmed(out.jobs[0]), "a 60+ match lost its description");
+  assert.ok(out.jobs[0].tailoredResume, "a 60+ match lost its tailored resume");
+});
+
+await check("prune: a job passed on 20 days ago loses its resume", () => {
+  const job = mk({ stage: "skipped", stageUpdatedAt: daysAgo(20), tailoredResume: "\\resumeItem{x}" });
+  const { store: out } = store.pruneStore({ jobs: [job], runs: [] });
+  assert.equal(out.jobs.length, 1, "record must survive so it stays deduped");
+  assert.equal(out.jobs[0].tailoredResume, undefined, "resume survived on a closed job");
+});
+
+await check("prune: never grows the store, and reports honestly", () => {
+  const jobs = [mk({ stage: "applied" }), mk({ score: mkScore(10) })];
+  const { store: out, report } = store.pruneStore({ jobs, runs: [] });
+  assert.equal(out.jobs.length, 2);
+  assert.equal(report.slimmed, 1, "expected exactly the low scorer to be slimmed");
+  assert.ok(report.bytesAfter < report.bytesBefore, "prune made the store larger");
+  assert.equal(report.before - report.after, report.dropped, "report is internally inconsistent");
+});
+
+await check("prune: is idempotent — running twice changes nothing further", () => {
+  const jobs = [mk({ score: mkScore(10) }), mk({ stage: "applied" })];
+  const once = store.pruneStore({ jobs, runs: [] }).store;
+  const twice = store.pruneStore(once);
+  assert.equal(twice.report.slimmed, 0, "second prune re-slimmed already-pruned jobs");
+  assert.equal(JSON.stringify(once), JSON.stringify(twice.store), "prune is not stable");
+});
+
 console.log(`temp store: ${tmp}\n`);
 console.log(`${pass.length} passed`);
 for (const p of pass) console.log("  ok   " + p);

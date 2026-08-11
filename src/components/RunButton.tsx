@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
+import { apiFetch } from "@/src/lib/apiFetch";
 
 /** Kicks off the daily pipeline by hand. The same work a cron job would do. */
 export default function RunButton() {
@@ -14,7 +15,7 @@ export default function RunButton() {
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch("/api/run", { method: "POST" });
+      const res = await apiFetch("/api/run", { method: "POST" });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Run failed");
       start(() => router.refresh());
