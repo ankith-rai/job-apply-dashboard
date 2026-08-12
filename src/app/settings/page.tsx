@@ -5,7 +5,13 @@ import {
   TARGET_TITLES,
 } from "@/src/lib/profile";
 import { TAILOR_THRESHOLD } from "@/src/lib/run";
-import { GREENHOUSE_BOARDS, LEVER_BOARDS, QUERIES } from "@/src/lib/sources";
+import {
+  ASHBY_BOARDS,
+  GREENHOUSE_BOARDS,
+  LEVER_BOARDS,
+  QUERIES,
+  WATCHLIST,
+} from "@/src/lib/sources";
 
 export const dynamic = "force-dynamic";
 
@@ -74,8 +80,24 @@ export default function SettingsPage() {
         <Row label="Always on">Remotive, Arbeitnow</Row>
         <Row label="Greenhouse boards">{GREENHOUSE_BOARDS.join(", ")}</Row>
         <Row label="Lever boards">{LEVER_BOARDS.join(", ")}</Row>
+        <Row label="Ashby boards">{ASHBY_BOARDS.join(", ")}</Row>
         <Row label="Needs a key">Adzuna (India + US)</Row>
-        <Row label="Search terms">{QUERIES.join(" · ")}</Row>
+        <Row label="Search terms">
+          {QUERIES.join(" · ")}
+          <div style={{ marginTop: 4, fontSize: 12.5, color: "var(--muted)" }}>
+            Every term is sent to each keyword source. ATS boards ignore them —
+            those return the whole board and the scorer does the filtering.
+          </div>
+        </Row>
+        <Row label="Unconfirmed">
+          {WATCHLIST.join(", ")}
+          <div style={{ marginTop: 4, fontSize: 12.5, color: "var(--muted)" }}>
+            Not fetched. Their ATS is unverified, and a wrong token returns zero
+            postings without erroring — indistinguishable from a company that is
+            not hiring. Run <code>npm run check:boards -- --discover</code> to
+            find out which platform each one answers on, then promote it.
+          </div>
+        </Row>
       </section>
 
       <section className="card" style={{ padding: 18, marginBottom: 16 }}>

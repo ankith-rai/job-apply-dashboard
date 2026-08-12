@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { cookies } from "next/headers";
+import LogoutButton from "@/src/components/LogoutButton";
+import { SESSION_COOKIE, gateEnabled, sessionValid } from "@/src/lib/auth";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,6 +22,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // Nav and sign-out are hidden when there's no session, so the login page
+  // isn't framed by links that would just bounce back to it. This is presentation
+  // only — access itself is enforced by middleware and by requireAuth in each
+  // API route, never by whether a link is on screen.
+  const signedIn = sessionValid(cookies().get(SESSION_COOKIE)?.value);
+
   return (
     <html lang="en">
       <body>
@@ -56,22 +65,29 @@ export default function RootLayout({
                 you approve every send
               </span>
             </Link>
-            <nav style={{ display: "flex", gap: 4 }}>
-              {NAV.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  style={{
-                    fontSize: 14,
-                    fontWeight: 600,
-                    padding: "7px 12px",
-                    borderRadius: 7,
-                    color: "var(--ink)",
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
+            <nav style={{ display: "flex", gap: 4, alignItems: "center" }}>
+              {signedIn
+                ? NAV.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      style={{
+                        fontSize: 14,
+                        fontWeight: 600,
+                        padding: "7px 12px",
+                        borderRadius: 7,
+                        color: "var(--ink)",
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  ))
+                : null}
+              {signedIn && gateEnabled() ? (
+                <span style={{ marginLeft: 8 }}>
+                  <LogoutButton />
+                </span>
+              ) : null}
             </nav>
           </div>
         </header>

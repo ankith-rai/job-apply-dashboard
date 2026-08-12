@@ -73,6 +73,50 @@ export const QUERIES = [
   "data engineer airflow",
 ];
 
+/**
+ * Runs one fetcher per query against the same host, one after another.
+ *
+ * Sequential on purpose. Firing four concurrent searches at Adzuna is the
+ * quickest way to trip its free-tier rate limit, and these results get merged
+ * anyway so there is nothing to gain from the parallelism.
+ */
+async function perQuery(
+  queries: string[],
+  fetcher: (q: string) => Promise<SourceResult>,
+): Promise<SourceResult[]> {
+  const out: SourceResult[] = [];
+  for (const q of queries) out.push(await fetcher(q));
+  return out;
+}
+
+/**
+ * Collapses several searches of one source into a single result.
+ *
+ * Without this, wiring up four queries would turn two Adzuna rows in the run
+ * history into eight, and the useful signal — did Adzuna answer at all — would
+ * be buried. Duplicates across queries are dropped here so the reported count
+ * is postings, not hits.
+ *
+ * Exported for the test suite: the all-failed vs partly-failed distinction is
+ * what decides whether a source reads as dead or merely quiet.
+ */
+export function mergeResults(label: string, parts: SourceResult[]): SourceResult {
+  const byId = new Map<string, Job>();
+  for (const p of parts) for (const j of p.jobs) byId.set(j.id, j);
+  const jobs = Array.from(byId.values());
+
+  const failed = parts.filter((p) => !p.ok);
+  if (failed.length === parts.length) {
+    return { source: label, jobs: [], ok: false, detail: failed[0]?.detail ?? "no searches ran" };
+  }
+
+  const searches = `${parts.length} search${parts.length === 1 ? "" : "es"}`;
+  const detail =
+    `${jobs.length} postings across ${searches}` +
+    (failed.length ? ` · ${failed.length} failed: ${failed[0].detail}` : "");
+  return { source: label, jobs, ok: true, detail };
+}
+
 // ── Remotive ────────────────────────────────────────────────────────────────
 interface RemotiveJob {
   id: number;
@@ -207,8 +251,15 @@ interface LeverJob {
   categories?: { location?: string; team?: string; commitment?: string };
 }
 
-/** Companies whose Lever board you want watched. Set LEVER_BOARDS to override. */
-export const LEVER_BOARDS = envList("LEVER_BOARDS", ["netflix", "plaid"]);
+/**
+ * Companies whose Lever board you want watched. Set LEVER_BOARDS to override.
+ *
+ * `netflix` used to be in this list and was dead: Netflix runs on Eightfold
+ * (explore.jobs.netflix.net), so the Lever endpoint had nothing to return and
+ * failed quietly every run. Run `npm run check:boards` before adding a token —
+ * a wrong one costs you a source without ever raising an error.
+ */
+export const LEVER_BOARDS = envList("LEVER_BOARDS", ["plaid"]);
 
 export async function fetchLever(board: string): Promise<SourceResult> {
   const label = `Lever:${board}`;
@@ -233,6 +284,95 @@ export async function fetchLever(board: string): Promise<SourceResult> {
         tags: [j.categories?.team, j.categories?.commitment].filter(Boolean) as string[],
       });
     });
+    return { source: label, jobs, ok: true, detail: `${jobs.length} postings` };
+  } catch (err) {
+    return { source: label, jobs: [], ok: false, detail: msg(err) };
+  }
+}
+
+// ── Ashby public boards ─────────────────────────────────────────────────────
+interface AshbyJob {
+  id: string;
+  title: string;
+  location?: string;
+  isRemote?: boolean;
+  isListed?: boolean;
+  team?: string;
+  department?: string;
+  employmentType?: string;
+  jobUrl?: string;
+  applyUrl?: string;
+  publishedAt?: string;
+  updatedAt?: string;
+  descriptionPlain?: string;
+  descriptionHtml?: string;
+}
+
+/**
+ * Companies whose Ashby board you want watched. Set ASHBY_BOARDS to override.
+ *
+ * Astronomer is here rather than under Greenhouse: their careers page routes to
+ * Ashby, which is also why their recruiter mail arrives from @ashbyhq.com. They
+ * are the Airflow company, so this is the single most relevant board in the file
+ * for your background.
+ */
+export const ASHBY_BOARDS = envList("ASHBY_BOARDS", ["astronomer"]);
+
+/**
+ * Companies worth watching whose ATS is not yet confirmed.
+ *
+ * Deliberately not fetched. Guessing a token and putting it in a live list is
+ * how `netflix` ended up sitting in LEVER_BOARDS returning nothing: a wrong
+ * token fails silently and looks identical to a company that isn't hiring. So
+ * these stay inert until proven:
+ *
+ *     npm run check:boards -- --discover
+ *
+ * probes each against Greenhouse, Lever and Ashby and tells you which answers.
+ * Move the ones that resolve into the list above, delete the ones that don't.
+ *
+ * The selection is Airflow-adjacent on purpose — orchestration, ingestion,
+ * warehousing and streaming — because that is where your platform and
+ * integration work reads strongest, not just where the headcount is.
+ */
+export const WATCHLIST = [
+  "snowflake",
+  "confluent",
+  "fivetran",
+  "airbyte",
+  "dbtlabs",
+  "prefect",
+  "dagster",
+  "starburst",
+  "clickhouse",
+  "temporal",
+];
+
+export async function fetchAshby(board: string): Promise<SourceResult> {
+  const label = `Ashby:${board}`;
+  try {
+    const data = await getJson<{ jobs: AshbyJob[] }>(
+      `https://api.ashbyhq.com/posting-api/job-board/${board}`,
+    );
+    const jobs = (data.jobs ?? [])
+      .filter((j) => j.isListed !== false)
+      .map((j) => {
+        const loc = j.location ?? "Unspecified";
+        const remote = Boolean(j.isRemote) || /remote/i.test(loc);
+        return baseJob({
+          id: mkId(`ashby${board}`, j.id),
+          title: j.title,
+          company: board.charAt(0).toUpperCase() + board.slice(1),
+          location: loc,
+          market: inferMarkets(loc, remote),
+          remote,
+          url: j.jobUrl ?? j.applyUrl ?? "",
+          source: label,
+          postedAt: j.publishedAt ?? j.updatedAt ?? new Date().toISOString(),
+          description: (j.descriptionPlain ?? stripHtml(j.descriptionHtml ?? "")).slice(0, 6000),
+          tags: [j.team, j.department, j.employmentType].filter(Boolean) as string[],
+        });
+      });
     return { source: label, jobs, ok: true, detail: `${jobs.length} postings` };
   } catch (err) {
     return { source: label, jobs: [], ok: false, detail: msg(err) };
@@ -298,15 +438,24 @@ function msg(err: unknown): string {
   return "unknown error";
 }
 
-/** Runs every configured source concurrently. Failures are reported, never thrown. */
+/**
+ * Runs every configured source concurrently. Failures are reported, never thrown.
+ *
+ * Keyword-capable sources fan out across every term in QUERIES. They used to be
+ * called with one hardcoded string each, which meant the Settings page advertised
+ * four search terms while only "engineer" and two of the four were ever sent —
+ * "platform engineer python" and "data engineer airflow" were never searched at
+ * all. ATS boards take no query: you get the whole board and the scorer filters.
+ */
 export async function fetchAllSources(): Promise<SourceResult[]> {
   const tasks: Promise<SourceResult>[] = [
-    fetchRemotive("engineer"),
+    perQuery(QUERIES, fetchRemotive).then((r) => mergeResults("Remotive", r)),
     fetchArbeitnow(),
     ...GREENHOUSE_BOARDS.map(fetchGreenhouse),
     ...LEVER_BOARDS.map(fetchLever),
-    fetchAdzuna("in", "principal software engineer"),
-    fetchAdzuna("us", "staff software engineer"),
+    ...ASHBY_BOARDS.map(fetchAshby),
+    perQuery(QUERIES, (q) => fetchAdzuna("in", q)).then((r) => mergeResults("Adzuna:IN", r)),
+    perQuery(QUERIES, (q) => fetchAdzuna("us", q)).then((r) => mergeResults("Adzuna:US", r)),
   ];
   return Promise.all(tasks);
 }

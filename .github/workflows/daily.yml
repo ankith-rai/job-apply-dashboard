@@ -9,6 +9,13 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+
+    # GITHUB_TOKEN is read-only by default on schedule-triggered runs, which is
+    # why `git push` returned 403. This grants the one scope the job needs.
+    # Anything more is unnecessary — it only ever writes data/jobs.json.
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v4
 
@@ -32,10 +39,21 @@ jobs:
       # dirty the working tree. This is the one place the store is meant to be
       # committed, so it opts out deliberately. Without -f, git add exits
       # non-zero on an ignored path and the whole job fails.
+      #
+      # The rebase before pushing matters because you also change stages from the
+      # dashboard. Without it, any commit landing between checkout and push makes
+      # this one non-fast-forward and the run fails on a conflict it could have
+      # absorbed — the store is the only file in play, and this run's copy is the
+      # newer one.
       - name: Commit results
         run: |
           git config user.name "apply-pilot"
           git config user.email "actions@users.noreply.github.com"
           git add -f data/jobs.json
-          git diff --staged --quiet || git commit -m "chore: daily run $(date -u +%F)"
-          git push
+          if git diff --staged --quiet; then
+            echo "store unchanged — nothing to commit"
+            exit 0
+          fi
+          git commit -m "chore: daily run $(date -u +%F)"
+          git pull --rebase --strategy-option=ours origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"

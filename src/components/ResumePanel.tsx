@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { apiFetch } from "@/src/lib/apiFetch";
 import type { TailorPlan } from "@/src/lib/tailor";
 import type { Job } from "@/src/lib/types";
 
@@ -24,7 +25,7 @@ export default function ResumePanel({
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch("/api/tailor", {
+      const res = await apiFetch("/api/tailor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: job.id }),
