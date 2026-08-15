@@ -10,11 +10,11 @@ jobs:
   run:
     runs-on: ubuntu-latest
 
-    # GITHUB_TOKEN is read-only by default on schedule-triggered runs, which is
-    # why `git push` returned 403. This grants the one scope the job needs.
-    # Anything more is unnecessary — it only ever writes data/jobs.json.
+    # GITHUB_TOKEN is read-only by default on schedule-triggered runs. These
+    # scopes let the job push a bot branch and open/merge a PR into main.
     permissions:
       contents: write
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v4
@@ -40,12 +40,12 @@ jobs:
       # committed, so it opts out deliberately. Without -f, git add exits
       # non-zero on an ignored path and the whole job fails.
       #
-      # The rebase before pushing matters because you also change stages from the
-      # dashboard. Without it, any commit landing between checkout and push makes
-      # this one non-fast-forward and the run fails on a conflict it could have
-      # absorbed — the store is the only file in play, and this run's copy is the
-      # newer one.
+      # main is protected (PRs required), so we push to a bot branch and open/merge
+      # a PR instead of pushing directly. Rebase onto main first because stage
+      # changes from the dashboard may land between checkout and push.
       - name: Commit results
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "apply-pilot"
           git config user.email "actions@users.noreply.github.com"
@@ -54,6 +54,16 @@ jobs:
             echo "store unchanged — nothing to commit"
             exit 0
           fi
-          git commit -m "chore: daily run $(date -u +%F)"
-          git pull --rebase --strategy-option=ours origin "${GITHUB_REF_NAME}" || true
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          RUN_DATE="$(date -u +%F)"
+          BRANCH="bot/daily-jobs-${RUN_DATE}"
+          git commit -m "chore: daily run ${RUN_DATE}"
+          git pull --rebase -X theirs origin main
+          git push origin "HEAD:${BRANCH}"
+          gh pr create \
+            --base main \
+            --head "${BRANCH}" \
+            --title "chore: daily run ${RUN_DATE}" \
+            --body "Automated update to \`data/jobs.json\` from the daily workflow."
+          gh pr merge "${BRANCH}" --merge --delete-branch || {
+            echo "::warning::PR created but could not auto-merge (review or checks may be required)."
+          }

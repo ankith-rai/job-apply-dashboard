@@ -152,7 +152,7 @@ expands to show which factors contributed what. Adjust the weights in
 
 ## Tailoring
 
-Tailoring here means selection and ordering, not invention. `src/lib/profile.ts`
+Tailoring here means selection and ordering, not invention. `src/lib/bullets.ts`
 holds a bank of accomplishment bullets, each tagged by skill group and each true.
 For a given posting the engine picks the bullets whose tags overlap what that
 posting emphasises, orders them by relevance, rewrites the summary to lead with
@@ -165,8 +165,21 @@ or compiles locally with `pdflatex`. Keeping resumes as source rather than binar
 also means the diff between two tailored versions is readable, which is useful when
 a company calls back and you want to know exactly what you claimed.
 
-Before your first real application, fill in the placeholder contact details in
-`PROFILE.contact` — they currently read `YOUR_EMAIL@example.com`.
+Before your first real application, run `npm run check:resume`. It exits nonzero
+while anything unfilled would print, and right now it finds ten things: the four
+`PROFILE.contact` fields in `src/lib/profile.ts`, which still read
+`YOUR_EMAIL@example.com` and appear in the header of every resume, and six `[N]`
+markers across five bullets in `src/lib/bullets.ts` — as shipped, a generated
+resume says "Mentored [N] engineers".
+
+Fill the numbers in rather than deleting them. They're the part an interviewer
+asks you to substantiate, and a bullet with a real figure in it is the reason to
+have a bullet bank at all.
+
+There is no `.tex` file to edit, which is worth saying plainly: the LaTeX is
+output, not source. Edit `profile.ts` and `bullets.ts`, then hit Regenerate on the
+job — the pipeline caches each resume in `tailoredResume` and only generates when
+that field is empty, so edits don't retroactively update resumes already produced.
 
 ## Layout
 
@@ -176,7 +189,7 @@ src/lib/auth.ts   the gate: password check, session token, requireAuth()
 src/middleware.ts redirects unauthenticated page requests to /login
 src/app/          dashboard, job detail, pipeline history, settings, login
 src/app/api/      jobs, run, approve, auth endpoints — all behind requireAuth
-scripts/          inline runner, HTTP trigger, launchd plist, env check
+scripts/          inline runner, HTTP trigger, launchd plist, env + resume checks
 tests/            dependency-free suite — npm test
 data/jobs.json    the store — plain JSON, no database, created on first run
 docs/             the automation write-up
@@ -190,10 +203,11 @@ amount of infrastructure, and it makes the whole thing greppable and diffable.
 Types, logic and the gate are verified. The production build is not.
 
 ```bash
-npm install        # regenerates the lockfile — required, see below
-npm run typecheck  # passes clean
-npm test           # 61 checks, nothing to install
-npm run check:env  # would this be safe to deploy?
+npm install          # regenerates the lockfile — required, see below
+npm run typecheck    # passes clean
+npm test             # 63 checks, nothing to install
+npm run check:env    # would this be safe to deploy?
+npm run check:resume # is a generated resume safe to send?
 ```
 
 **Run `npm install`, not `npm ci`, the first time.** `package-lock.json` is stale:
@@ -220,6 +234,22 @@ The check worth having is `tailor: invents nothing` — it extracts every bullet
 from a generated resume and asserts each one traces back to the verified bank in
 `src/lib/bullets.ts`. That is the property that would matter if a company asked
 you to substantiate a claim.
+
+It has a blind spot, which `npm run check:resume` covers. `invents nothing` proves
+each rendered bullet traces back to the bank, and the bank itself contains `[N]` —
+so a placeholder is perfectly traceable and passes. Fabrication and unfinished
+drafts are different failures and need different checks. The placeholder scan
+reports per bullet rather than per placeholder, because deduping on the matched
+text collapsed all six `[N]`s into one line: you'd fix the bullet it named, re-run,
+and be told about the next one. It also un-escapes the LaTeX before matching,
+since `YOUR_EMAIL` is emitted as `YOUR\_EMAIL` inside `\underline{}` and a raw
+search finds it only via the `mailto:` href — that is, by luck. And it scans the
+whole bank, not one rendered resume, because a resume only contains the bullets
+selected for that posting; a placeholder in an unselected bullet would otherwise
+lie in wait for the first real posting matching its tags. Verified in both
+directions: ten findings against the repo as it stands, clean once the values are
+filled in on a throwaway copy, and a placeholder injected into `tailor.ts` gets
+attributed to the template rather than blamed on a bullet.
 
 The auth tests import `src/lib/auth.ts` rather than restating its logic, which
 matters more than it sounds: the previous version reimplemented the comparison and

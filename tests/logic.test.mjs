@@ -151,9 +151,68 @@ check("tailor: invents nothing — every bullet traces to the verified bank", ()
   }
 });
 
-// Placeholder contact is the documented pre-first-use state, not a defect.
-if (latex.includes("YOUR_EMAIL@example.com"))
-  warn.push("PROFILE.contact still holds placeholders — fill before the first real application");
+// ── placeholders ──────────────────────────────────────────────────────────
+// `invents nothing` above cannot catch these. It proves each rendered bullet
+// traces back to the bank, and the bank itself contains "[N]" — so a
+// placeholder is traceable and passes. This is what stops "Mentored [N]
+// engineers" reaching a hiring manager.
+//
+// A note rather than a failure: the repo ships with placeholders deliberately,
+// and a suite that is red on a fresh clone trains you to ignore it. The hard
+// gate is `npm run check:resume`, which exits nonzero — run it before the first
+// real application. Both import the same scanner so they can't disagree about
+// what counts as unfilled.
+const { auditResume, scanPlaceholders } = await import(`${R}/scripts/check-resume.mjs`);
+const audit = await auditResume();
+
+check("resume: the placeholder scanner fires on placeholders", () => {
+  // A scanner that never matches is indistinguishable from no scanner, so prove
+  // it fires before trusting it to stay quiet. The escaped forms matter: the
+  // header emits YOUR_EMAIL as YOUR\_EMAIL inside \underline{}, so a scanner
+  // that only searched raw text would find it by luck, via the mailto: href.
+  const bad = [
+    "Mentored [N] engineers",
+    String.raw`Cut runtime by [N]\% overall`,
+    String.raw`\underline{YOUR\_EMAIL@example.com}`,
+    "reach me at someone@example.com",
+    "TODO: quantify this",
+  ];
+  for (const s of bad)
+    assert.ok(scanPlaceholders(s).length > 0, `scanner missed: ${s}`);
+});
+
+check("resume: the placeholder scanner stays quiet on real content", () => {
+  // False positives are the worse failure here — a warning that cries wolf is a
+  // warning you stop reading. Real bullet text and a real LaTeX preamble must
+  // come back clean, including optional args like [letterpaper,11pt] and [1].
+  const good = [
+    "Mentored 6 engineers through design reviews",
+    String.raw`Cut sync job runtime by 40\% by profiling hot paths`,
+    "Led Airflow upgrades across US-East-1, US-East-2 and EU-Central-1",
+    String.raw`\documentclass[letterpaper,11pt]{article}`,
+    String.raw`\newcommand{\resumeItem}[1]{\item\small{#1}}`,
+    String.raw`\usepackage[english]{babel}`,
+  ];
+  for (const s of good)
+    assert.deepEqual(scanPlaceholders(s), [], `false positive on: ${s}`);
+});
+
+if (audit.total) {
+  const lines = [
+    ...audit.contact.map((c) => `PROFILE.contact.${c.field} = "${c.value}"`),
+    ...audit.bullets.map(
+      (b) =>
+        `${b.found.join(", ")} in bullet "${b.id}"` +
+        (b.reachesResume ? "" : " (no seed posting selects it yet)"),
+    ),
+    ...audit.template.map((h) => `${h.found} from the template — ${h.where}`),
+  ];
+  warn.push(
+    `${audit.total} unfilled placeholder(s) would print into a real resume.\n` +
+      lines.map((l) => `         ${l}`).join("\n") +
+      `\n         Fix src/lib/profile.ts and src/lib/bullets.ts, then: npm run check:resume`,
+  );
+}
 
 // ── seeds ─────────────────────────────────────────────────────────────────
 check("seed: ids unique", () => {
