@@ -1,4 +1,5 @@
 import { fetchAllSources } from "./sources";
+import { gateByResume, rejectionsBySource } from "./relevance";
 import { prune, recordRun, upsertJobs, readStore, writeStore } from "./store";
 import { tailorFor } from "./tailor";
 import type { RunRecord, RunStageResult, Job } from "./types";
@@ -39,9 +40,32 @@ export async function runDailyPipeline(): Promise<RunRecord> {
     ms: lap(),
   });
 
-  // 2. Dedupe + 3. Score (scoring happens inside upsertJobs)
-  const incoming: Job[] = ok.flatMap((r) => r.jobs);
-  const { added, duplicates } = await upsertJobs(incoming);
+  // 2. Gate against the resume, before anything reaches the store.
+  // Most sources cannot be asked a question — the ATS feeds hand back a whole
+  // company board — so this is the only place a posting unrelated to the profile
+  // can be turned away.
+  const collected: Job[] = ok.flatMap((r) => r.jobs);
+  const { keep, rejected } = gateByResume(collected);
+  const bySource = rejectionsBySource(rejected)
+    .slice(0, 4)
+    .map(([s, n]) => `${s} ${n}`)
+    .join(", ");
+
+  stages.push({
+    key: "filter",
+    label: "Gate against your resume",
+    status: "ok",
+    count: rejected.length,
+    detail: rejected.length
+      ? `${rejected.length} of ${collected.length} dropped — off-band titles and postings ` +
+        `matching none of your skills · ${bySource || "no single source dominant"} · ` +
+        `not stored, so they are re-checked every run`
+      : `All ${collected.length} postings relate to your profile`,
+    ms: lap(),
+  });
+
+  // 3. Dedupe + 4. Score (scoring happens inside upsertJobs)
+  const { added, duplicates } = await upsertJobs(keep);
 
   stages.push({
     key: "dedupe",
@@ -60,7 +84,7 @@ export async function runDailyPipeline(): Promise<RunRecord> {
     ms: lap(),
   });
 
-  // 4. Tailor resumes for strong matches awaiting review
+  // 5. Tailor resumes for strong matches awaiting review
   const store = await readStore();
   let tailored = 0;
   for (const job of store.jobs) {
@@ -81,7 +105,7 @@ export async function runDailyPipeline(): Promise<RunRecord> {
     ms: lap(),
   });
 
-  // 5. Prune before reporting, so the store this run commits is the trimmed one
+  // 6. Prune before reporting, so the store this run commits is the trimmed one
   const { report: pr, store: pruned } = await prune();
   const mb = (n: number) => (n / 1_048_576).toFixed(1);
   stages.push({
@@ -91,12 +115,13 @@ export async function runDailyPipeline(): Promise<RunRecord> {
     count: pr.dropped + pr.slimmed,
     detail:
       `${pr.dropped} stale postings dropped, ${pr.slimmed} closed ones slimmed · ` +
+      (pr.seedsDropped ? `${pr.seedsDropped} demo seeds retired · ` : "") +
       `${mb(pr.bytesBefore)}MB → ${mb(pr.bytesAfter)}MB · ` +
       `${pr.after} tracked`,
     ms: lap(),
   });
 
-  // 6. Queue for review — deliberately does not submit.
+  // 7. Queue for review — deliberately does not submit.
   // Counted from the pruned store, not the snapshot above, or a stale posting
   // that prune just dropped would still show up as waiting on you.
   const awaiting = pruned.jobs.filter(
@@ -123,6 +148,7 @@ export async function runDailyPipeline(): Promise<RunRecord> {
     scored: added,
     tailored,
     offline,
+    filtered: rejected.length,
   };
 
   await recordRun(run);

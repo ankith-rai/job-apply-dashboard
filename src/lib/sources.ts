@@ -1,5 +1,6 @@
 import type { Job, Market } from "./types";
 import { inferMarkets } from "./match";
+import { buildQueries } from "./resumeSearch";
 
 /**
  * Every source here is a documented public API or a company's own ATS feed.
@@ -65,13 +66,15 @@ function baseJob(partial: Omit<Job, "stage" | "stageUpdatedAt" | "fetchedAt">): 
   return { ...partial, stage: "matched", stageUpdatedAt: now, fetchedAt: now };
 }
 
-/** The search terms used against keyword-capable sources. */
-export const QUERIES = [
-  "principal software engineer",
-  "staff software engineer",
-  "platform engineer python",
-  "data engineer airflow",
-];
+/**
+ * The search terms used against keyword-capable sources.
+ *
+ * Derived from the resume (see resumeSearch.ts), not hardcoded: these used to be
+ * four fixed strings that resembled the profile by coincidence, so editing the
+ * resume changed nothing about what was searched. Set SEARCH_QUERIES to override
+ * with an explicit comma-separated list.
+ */
+export const QUERIES = envList("SEARCH_QUERIES", buildQueries());
 
 /**
  * Runs one fetcher per query against the same host, one after another.
@@ -445,7 +448,9 @@ function msg(err: unknown): string {
  * called with one hardcoded string each, which meant the Settings page advertised
  * four search terms while only "engineer" and two of the four were ever sent —
  * "platform engineer python" and "data engineer airflow" were never searched at
- * all. ATS boards take no query: you get the whole board and the scorer filters.
+ * all. ATS boards take no query: you get the whole board, and the resume gate in
+ * relevance.ts drops the postings unrelated to the profile before they reach the
+ * store.
  */
 export async function fetchAllSources(): Promise<SourceResult[]> {
   const tasks: Promise<SourceResult>[] = [
