@@ -17,7 +17,9 @@
     "run:inline": "node --no-warnings --import ./scripts/register.mjs scripts/run-inline.mts",
     "check:boards": "node --no-warnings --import ./scripts/register.mjs scripts/check-boards.mts",
     "test": "node --no-warnings --import ./scripts/register.mjs tests/logic.test.mjs && node --no-warnings --import ./scripts/register.mjs tests/store.test.mjs && node --no-warnings --import ./scripts/register.mjs tests/auth.test.mjs",
-    "check:resume": "node --no-warnings --import ./scripts/register.mjs scripts/check-resume.mjs"
+    "check:resume": "node --no-warnings --import ./scripts/register.mjs scripts/check-resume.mjs",
+    "rescore": "node --no-warnings --import ./scripts/register.mjs scripts/rescore.mjs",
+    "prune": "node --no-warnings --import ./scripts/register.mjs scripts/prune.mjs"
   },
   "dependencies": {
     "next": "^14.2.32",

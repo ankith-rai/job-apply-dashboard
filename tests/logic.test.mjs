@@ -266,6 +266,124 @@ check("sources: netflix is not fetched from Lever — it runs on Eightfold", () 
   assert.ok(!sources.LEVER_BOARDS.includes("netflix"), "dead token is back in LEVER_BOARDS");
 });
 
+// ── resume-derived search terms ────────────────────────────────────────────
+const resumeSearch = await import(`${R}/src/lib/resumeSearch.ts`);
+const relevance = await import(`${R}/src/lib/relevance.ts`);
+
+check("queries: derivation produces something to search", () => {
+  const qs = resumeSearch.buildQueries();
+  assert.ok(qs.length > 0, "no search terms derived from the resume");
+  for (const q of qs) assert.ok(q.trim().length > 2, `degenerate query: "${q}"`);
+});
+
+check("queries: the budget is respected", () => {
+  assert.ok(
+    resumeSearch.buildQueries(3).length <= 3,
+    "budget ignored — each extra term costs a request per keyword source",
+  );
+  assert.equal(resumeSearch.buildQueries(0).length, 0);
+});
+
+// The point of deriving queries is that they cannot drift from the resume. This
+// is the fetch-side twin of `tailor: invents nothing`: searching for a skill the
+// resume cannot back up surfaces jobs that interview badly.
+check("queries: every signature skill traces to the resume", () => {
+  const resume = resumeSearch.resumeHaystack();
+  for (const s of resumeSearch.signatureSkills()) {
+    assert.ok(
+      match.hasTerm(resume, s.term),
+      `signature skill "${s.term}" is not backed by PROFILE.skills or the bullet bank`,
+    );
+  }
+});
+
+check("queries: every term is a target title, optionally plus a backed skill", () => {
+  const titles = resumeSearch.targetTitles();
+  const skills = resumeSearch.signatureSkills().map((s) => s.term);
+  for (const q of resumeSearch.buildQueries()) {
+    const ok =
+      titles.includes(q) ||
+      titles.some((t) => q.startsWith(`${t} `) && skills.includes(q.slice(t.length + 1)));
+    assert.ok(ok, `query "${q}" is not derived from a title and a backed skill`);
+  }
+});
+
+// ── the ingest gate ────────────────────────────────────────────────────────
+const mkJob = (over) => ({
+  ...seed.SEED_JOBS[0],
+  id: "test-1",
+  tags: [],
+  ...over,
+});
+
+check("gate: a reject-band title is turned away", () => {
+  for (const title of ["Junior Python Developer", "Engineering Manager, Platform", "Data Science Intern"]) {
+    const v = relevance.gateJob(mkJob({ title, description: "airflow python aws" }));
+    assert.equal(v.keep, false, `"${title}" was admitted`);
+  }
+});
+
+check("gate: a posting matching none of your skills is turned away", () => {
+  const v = relevance.gateJob(
+    mkJob({
+      title: "Brand Designer",
+      description: "Own visual identity, typography and illustration for the brand.",
+    }),
+  );
+  assert.equal(v.keep, false, "a design role with no skill overlap was admitted");
+});
+
+check("gate: a principal Airflow posting survives", () => {
+  const v = relevance.gateJob(
+    mkJob({
+      title: "Principal Software Engineer, Data Platform",
+      description: "Own our Apache Airflow platform on AWS EKS. Python, Kubernetes, ETL at scale.",
+    }),
+  );
+  assert.equal(v.keep, true, `a core-fit posting was rejected: ${v.why}`);
+});
+
+// The gate leaves no tombstone, so a false rejection is invisible. Anything the
+// scorer would call a strong match must never be dropped at ingest.
+check("gate: never rejects a posting the scorer rates strong", () => {
+  for (const job of seed.SEED_JOBS) {
+    const s = match.scoreJob(job);
+    if (match.verdict(s.total).tone !== "strong") continue;
+    assert.equal(
+      relevance.gateJob(job).keep,
+      true,
+      `gate dropped a ${s.total}/100 posting: "${job.title}"`,
+    );
+  }
+});
+
+// ── taxonomy hygiene ──────────────────────────────────────────────────────
+// Silent failure mode: a term that is also an ordinary English word hands out
+// skill credit to postings with no relation to the skill.
+check("taxonomy: no blocklisted term leaks into SKILL_GROUPS", () => {
+  const terms = new Set(
+    profile.SKILL_GROUPS.flatMap((g) => g.terms.map((t) => t.toLowerCase())),
+  );
+  const leaked = profile.TERM_BLOCKLIST.filter((b) => terms.has(b));
+  assert.equal(leaked.length, 0, `ordinary-English terms in the taxonomy: ${leaked.join(", ")}`);
+});
+
+check("titleBand: reject terms match on word boundaries, not substrings", () => {
+  // "intern" sits inside "International" and "Internal". Substring matching put
+  // these in the reject band, scoring them 0 for seniority.
+  for (const title of [
+    "Staff Engineer, Internal Platform",
+    "Principal Engineer, International Payments",
+  ]) {
+    assert.notEqual(
+      match.titleBand(title).band,
+      "reject",
+      `"${title}" was rejected on a substring`,
+    );
+  }
+  assert.equal(match.titleBand("Software Engineering Intern").band, "reject");
+});
+
 console.log(`\n${pass.length} passed`);
 for (const p of pass) console.log("  ok   " + p);
 if (warn.length) {

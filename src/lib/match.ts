@@ -9,17 +9,36 @@ const MAX = {
   freshness: 5,
 };
 
-function haystack(job: Job): string {
+/**
+ * The text the scorer reads. Exported so the ingest gate judges a posting on the
+ * same haystack, rather than a near-copy that happens to omit a field.
+ */
+export function jobHaystack(job: Job): string {
   return [job.title, job.company, job.description, job.tags.join(" ")]
     .join(" \n ")
     .toLowerCase();
 }
 
-function hasTerm(text: string, term: string): boolean {
+/**
+ * The one definition of "this text mentions this term".
+ *
+ * Exported so the fetch layer (resumeSearch.ts, relevance.ts) asks the question
+ * exactly the way the scorer does — two notions of a term hit would let the
+ * pipeline search for terms it then refuses to credit.
+ *
+ * The boundaries are what make short acronyms usable as terms: a substring test
+ * would find "rds" inside "words" and "ecr" inside "decrease". They are
+ * lookarounds rather than consuming character classes so the same pattern can be
+ * reused with the `g` flag to count occurrences — a consuming boundary eats the
+ * separator and misses the second half of "python python".
+ */
+export function termPattern(term: string, flags = "i"): RegExp {
   const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`(^|[^a-z0-9+#.])${escaped}([^a-z0-9+#.]|$)`, "i").test(
-    text,
-  );
+  return new RegExp(`(?<![a-z0-9+#.])${escaped}(?![a-z0-9+#.])`, flags);
+}
+
+export function hasTerm(text: string, term: string): boolean {
+  return termPattern(term).test(text);
 }
 
 function daysSince(iso: string): number {
@@ -28,41 +47,71 @@ function daysSince(iso: string): number {
   return Math.max(0, (Date.now() - then) / 86_400_000);
 }
 
-function scoreSkills(text: string) {
-  const matched: string[] = [];
-  let earned = 0;
-  let possible = 0;
+/**
+ * Which skill groups the text touches, and on which terms.
+ *
+ * Exported because the ingest gate's "mentions nothing you do" rule has to mean
+ * the same thing as scoring zero on skills. Also collapses what used to be a
+ * duplicated pass: scoreSkills computed the per-group hits, then recomputed the
+ * same filter again just to count groups for its detail string.
+ */
+export function skillGroupHits(text: string): { key: string; weight: number; terms: string[] }[] {
+  return SKILL_GROUPS.map((group) => ({
+    key: group.key,
+    weight: group.weight,
+    terms: group.terms.filter((t) => hasTerm(text, t)),
+  })).filter((g) => g.terms.length > 0);
+}
 
-  for (const group of SKILL_GROUPS) {
-    possible += group.weight;
-    const hits = group.terms.filter((t) => hasTerm(text, t));
-    if (hits.length > 0) {
-      earned += group.weight;
-      matched.push(...hits.slice(0, 4));
-    }
-  }
+function scoreSkills(text: string) {
+  const hits = skillGroupHits(text);
+  const possible = SKILL_GROUPS.reduce((n, g) => n + g.weight, 0);
+  const earned = hits.reduce((n, g) => n + g.weight, 0);
+  const matched = hits.flatMap((g) => g.terms.slice(0, 4));
 
   const ratio = possible === 0 ? 0 : earned / possible;
   return {
     points: Math.round(ratio * MAX.skills),
     matched: Array.from(new Set(matched)),
-    detail: `${matched.length} skill terms across ${SKILL_GROUPS.filter((g) => g.terms.some((t) => hasTerm(text, t))).length}/${SKILL_GROUPS.length} groups`,
+    detail: `${matched.length} skill terms across ${hits.length}/${SKILL_GROUPS.length} groups`,
   };
 }
 
-function scoreSeniority(title: string) {
+/**
+ * Which band a title sits in. Exported so the ingest gate rejects on exactly the
+ * same rule the scorer penalises on.
+ *
+ * Uses hasTerm, not `includes`. Substring matching rejected any title containing
+ * a reject term as a fragment — "intern" sits inside "International" and
+ * "Internal", so "Staff Engineer, Internal Platform" scored zero for seniority
+ * and was flagged out of band.
+ */
+export function titleBand(title: string): {
+  band: "reject" | "ideal" | "acceptable" | "unclear";
+  matched?: string;
+} {
   const t = title.toLowerCase();
-  const flags: string[] = [];
+  const rejected = TARGET_TITLES.reject.find((r) => hasTerm(t, r));
+  if (rejected) return { band: "reject", matched: rejected };
+  const ideal = TARGET_TITLES.ideal.find((r) => hasTerm(t, r));
+  if (ideal) return { band: "ideal", matched: ideal };
+  const acceptable = TARGET_TITLES.acceptable.find((r) => hasTerm(t, r));
+  if (acceptable) return { band: "acceptable", matched: acceptable };
+  return { band: "unclear" };
+}
 
-  const rejected = TARGET_TITLES.reject.find((r) => t.includes(r));
-  if (rejected) {
-    flags.push(`Title says "${rejected}" — outside your target band`);
-    return { points: 0, detail: `Rejected on "${rejected}"`, flags };
+function scoreSeniority(title: string) {
+  const flags: string[] = [];
+  const { band, matched } = titleBand(title);
+
+  if (band === "reject") {
+    flags.push(`Title says "${matched}" — outside your target band`);
+    return { points: 0, detail: `Rejected on "${matched}"`, flags };
   }
-  if (TARGET_TITLES.ideal.some((r) => t.includes(r))) {
+  if (band === "ideal") {
     return { points: MAX.seniority, detail: "Principal/Staff band", flags };
   }
-  if (TARGET_TITLES.acceptable.some((r) => t.includes(r))) {
+  if (band === "acceptable") {
     return {
       points: Math.round(MAX.seniority * 0.6),
       detail: "Senior band — a step below target",
@@ -145,7 +194,7 @@ function findGaps(text: string): string[] {
 }
 
 export function scoreJob(job: Job): MatchScore {
-  const text = haystack(job);
+  const text = jobHaystack(job);
 
   const skills = scoreSkills(text);
   const seniority = scoreSeniority(job.title);

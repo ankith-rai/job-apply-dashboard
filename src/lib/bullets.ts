@@ -4,86 +4,70 @@ import type { Bullet } from "./profile";
  * Bullet bank drawn from verified work history. The tailoring engine selects and
  * orders from this bank per job — it never invents new claims.
  *
- * Replace the bracketed metrics with your real numbers before sending anything out.
+ * Every metric here traces to the maintained .tex resume. Do not add a figure
+ * that isn't on it: `npm run check:resume` catches bracketed placeholders, but
+ * nothing can catch a number that is merely wrong.
  */
 export const BULLETS: Bullet[] = [
   {
-    id: "airflow-multiregion",
+    id: "airflow-platform-owner",
     role: "Deltek",
-    text: "Led multi-region Apache Airflow upgrades across US-East-1, US-East-2 and EU-Central-1, coordinating rollout across [N] environments with zero customer-facing downtime.",
-    tags: ["orchestration", "cloud", "platform", "leadership"],
+    text: "Own the architecture and reliability of a multi-tenant Apache Airflow integration platform serving 14+ enterprise customers (PwC, DXC, Capgemini, Dominos, Technicolor, Frontdoor) across US and EU regions.",
+    tags: ["orchestration", "platform", "cloud", "leadership"],
   },
   {
-    id: "eks-upgrade",
+    id: "integration-platform-api",
     role: "Deltek",
-    text: "Drove EKS cluster upgrades from 1.31 to 1.32 across production regions, sequencing node-group migrations and validating workload compatibility ahead of cutover.",
-    tags: ["cloud", "platform", "practices"],
-  },
-  {
-    id: "middleware-platform",
-    role: "Deltek",
-    text: "Architected and led the Self-Service Middleware / Integration Platform API, letting customers configure their own integrations instead of filing engineering requests.",
-    tags: ["platform", "integrations", "leadership", "web"],
-  },
-  {
-    id: "successfactors",
-    role: "Deltek",
-    text: "Owned the SAP SuccessFactors integration suite for ~2 years, covering employee, org and payroll data flows for enterprise HR customers.",
-    tags: ["integrations", "orchestration"],
-  },
-  {
-    id: "client-onboarding",
-    role: "Deltek",
-    text: "Onboarded 14+ named enterprise clients — including PwC, DXC, Technicolor, Capgemini, Domino's and Adtalem — from integration design through production cutover.",
-    tags: ["integrations", "leadership", "platform"],
+    text: "Architected integration-platform-api, a WAF-secured Next.js and PostgreSQL service (40+ endpoints) enabling Deltek product teams to autonomously deploy and manage ERP integrations via Apache Airflow.",
+    tags: ["platform", "web", "integrations", "leadership"],
   },
   {
     id: "fips",
     role: "Deltek",
-    text: "Drove a FIPS 140-2 compliance initiative across the integration stack, auditing cryptographic dependencies and remediating non-compliant libraries.",
+    text: "Drove a platform-wide FIPS 140-2 compliance initiative, delivering a hardened FIPS Docker image, TLS-encrypted webhook transport, FIPS-compliant ALB/ELB endpoints, and vulnerability remediation across the Airflow fleet.",
     tags: ["practices", "cloud", "leadership"],
   },
   {
-    id: "custom-operators",
+    id: "aidlc",
     role: "Deltek",
-    text: "Built reusable Airflow custom operators and hooks that cut new-connector delivery from [N] weeks to [N] days for the integrations team.",
-    tags: ["orchestration", "languages", "platform"],
+    text: "Authored AIDLC (AI-Driven Development Lifecycle), a Claude Code skill enforcing a structured workflow from requirements and design through code generation, build, and test; adopted across multiple engineering teams, and complemented by an automated Claude Code review bot posting inline pull-request comments.",
+    tags: ["practices", "leadership", "languages"],
   },
   {
-    id: "oauth",
+    id: "airflow-multiregion",
     role: "Deltek",
-    text: "Implemented OAuth2 and token-refresh flows for third-party ERP and CRM connectors, replacing brittle credential handling with a shared auth layer.",
-    tags: ["integrations", "practices"],
+    text: "Led multi-region Airflow platform upgrades and a zero-downtime EKS cluster migration (1.31 to 1.32) with Helm-based CI/CD changes across three AWS regions, and established Prometheus/Grafana observability for AWS Aurora Serverless and Kubernetes workloads.",
+    tags: ["orchestration", "cloud", "platform", "practices", "leadership"],
   },
   {
-    id: "aurora-boto3",
+    id: "oauth-webapp",
     role: "Deltek",
-    text: "Automated AWS infrastructure operations with Python and Boto3 against Aurora and S3, replacing manual runbooks with idempotent scripts.",
-    tags: ["cloud", "languages", "practices"],
+    text: "Spearheaded an OAuth2 React, Node.js, and TypeScript web application on the core platform, integrating Apache Airflow for event-driven ETL with ERP systems including Salesforce and QuickBooks.",
+    tags: ["integrations", "web", "languages", "platform"],
   },
   {
-    id: "mentoring",
+    id: "airflow-pipelines",
     role: "Deltek",
-    text: "Mentored [N] engineers through design reviews and integration onboarding, and set the review standards the team now uses for new connectors.",
-    tags: ["leadership", "practices"],
+    text: "Built and scaled Python data pipelines on Apache Airflow processing 53K+ records/day, reducing processing time by 37% via custom batch operators, and authored a company-wide library of reusable hooks and operators (SQLAlchemy, AWS S3/Boto3, SFTP/Paramiko, REST APIs).",
+    tags: ["orchestration", "languages", "cloud", "platform"],
   },
   {
-    id: "replicon-etl",
+    id: "replicon-ipaas",
     role: "Replicon",
-    text: "Built and maintained ETL pipelines and REST integrations for time-and-attendance data, serving [N] enterprise tenants.",
-    tags: ["orchestration", "integrations", "languages"],
+    text: "Piloted a company-wide Integration Platform using Apache Airflow and Kafka hosted on AWS, achieving a 60% cost reduction (averaging USD 2,500 per client) by eliminating third-party iPaaS dependencies.",
+    tags: ["orchestration", "cloud", "integrations", "platform", "leadership"],
+  },
+  {
+    id: "successfactors",
+    role: "Replicon",
+    text: "Owned the SAP SuccessFactors integration suite over ~2 years, delivering payroll data transfer, time-off synchronization, and schedule import, and earning SAP Endorsed App premium certification.",
+    tags: ["integrations", "orchestration"],
   },
   {
     id: "replicon-salesforce",
     role: "Replicon",
-    text: "Delivered Salesforce and QuickBooks connectors, handling schema mapping, rate limits and partial-failure retries.",
-    tags: ["integrations", "languages"],
-  },
-  {
-    id: "replicon-perf",
-    role: "Replicon",
-    text: "Cut sync job runtime by [N]% by profiling hot paths and moving bulk operations to batched, paginated API calls.",
-    tags: ["languages", "practices", "platform"],
+    text: "Pioneered the Integration Platform team, developing a Salesforce Connected App with Salesforce DX and Node.js for OAuth2 user interaction, leveraging platform events for webhooks published on the Salesforce Marketplace.",
+    tags: ["integrations", "languages", "leadership", "web"],
   },
 ];
 

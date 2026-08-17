@@ -77,6 +77,12 @@ export interface RunRecord {
   scored: number;
   tailored: number;
   offline: boolean;
+  /**
+   * Postings dropped by the resume gate before reaching the store. Optional
+   * because RunRecords are persisted in data/jobs.json — runs recorded before
+   * the gate existed have to stay readable.
+   */
+  filtered?: number;
 }
 
 export interface Store {

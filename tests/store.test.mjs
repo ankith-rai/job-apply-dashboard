@@ -204,6 +204,52 @@ await check("prune: is idempotent — running twice changes nothing further", ()
   assert.equal(JSON.stringify(once), JSON.stringify(twice.store), "prune is not stable");
 });
 
+// ── demo seeds ────────────────────────────────────────────────────────────
+// readStore() writes SEED_JOBS on first read so a fresh clone renders. Nothing
+// used to take them back out, so all eight lived permanently in a real store —
+// and the two shipping as "queued"/"applied" were protected by ACTED_ON, making
+// invented postings immortal and skewing every funnel count.
+const seedJob = (over = {}) => mk({ source: "Seed", ...over });
+
+await check("prune: seeds are the whole store on a fresh clone, so they stay", () => {
+  const jobs = [seedJob(), seedJob({ stage: "queued" })];
+  const { store: out, report } = store.pruneStore({ jobs, runs: [] });
+  assert.equal(out.jobs.length, 2, "seeds were dropped with nothing to replace them");
+  assert.equal(report.seedsDropped, 0);
+});
+
+await check("prune: one live posting retires every seed", () => {
+  const jobs = [seedJob(), seedJob(), mk({ source: "Greenhouse:stripe" })];
+  const { store: out, report } = store.pruneStore({ jobs, runs: [] });
+  assert.equal(out.jobs.length, 1, "seeds survived the arrival of real data");
+  assert.equal(out.jobs[0].source, "Greenhouse:stripe");
+  assert.equal(report.seedsDropped, 2, "seed evictions are not reported");
+});
+
+// The bug this guards: ACTED_ON exempts "applied" from every prune rule at any
+// age, which is correct for real history and wrong for a demo posting.
+await check("prune: an acted-on seed is still retired, unlike a real applied job", () => {
+  const jobs = [
+    seedJob({ stage: "applied" }),
+    seedJob({ stage: "queued" }),
+    mk({ stage: "applied", fetchedAt: daysAgo(300) }),
+  ];
+  const { store: out } = store.pruneStore({ jobs, runs: [] });
+  assert.equal(out.jobs.length, 1, "a fake applied posting outlived the purge");
+  assert.notEqual(out.jobs[0].source, "Seed");
+  assert.ok(!trimmed(out.jobs[0]), "the real applied job lost its description");
+});
+
+await check("prune: a surviving seed keeps its description", () => {
+  // Two seeds score below REVIEW_FLOOR by design (the EM and junior postings).
+  // Tombstoning those would gut the dashboard a fresh clone is meant to show.
+  const jobs = [seedJob({ score: mkScore(12) })];
+  const { store: out, report } = store.pruneStore({ jobs, runs: [] });
+  assert.equal(out.jobs.length, 1);
+  assert.ok(!trimmed(out.jobs[0]), "a demo seed was tombstoned on a fresh clone");
+  assert.equal(report.slimmed, 0);
+});
+
 console.log(`temp store: ${tmp}\n`);
 console.log(`${pass.length} passed`);
 for (const p of pass) console.log("  ok   " + p);

@@ -127,6 +127,24 @@ const HEAVY_FIELD_DAYS = 14;
 const TOMBSTONE_CHARS = 240;
 
 /**
+ * Demo postings from src/lib/seed.ts, identified by their source.
+ *
+ * These exist so a fresh clone renders something before any API key is wired up,
+ * and readStore() writes them into the store on first read. They were never
+ * removed once real postings arrived, so all eight sat permanently in a live
+ * store with example.com URLs, four of them ranking in the top six by score.
+ *
+ * Worse, two ship with stage "queued" and "applied" so the demo funnel looks
+ * populated — and ACTED_ON exempts those stages from every prune rule at any
+ * age. That exemption exists to protect real application history; applied to
+ * invented postings it made them immortal and skewed every funnel count.
+ *
+ * So seeds are handled before ACTED_ON, not after it: a fake "applied" is not
+ * history worth keeping.
+ */
+const isSeed = (job: Job): boolean => job.source === "Seed";
+
+/**
  * Marks a description as already pruned.
  *
  * Needed because the tombstone is TOMBSTONE_CHARS *plus* this suffix, so it is
@@ -141,6 +159,8 @@ export interface PruneReport {
   after: number;
   dropped: number;
   slimmed: number;
+  /** How many of `dropped` were demo seeds evicted by the arrival of real data. */
+  seedsDropped: number;
   bytesBefore: number;
   bytesAfter: number;
 }
@@ -189,19 +209,36 @@ function slim(job: Job, dropResume: boolean): boolean {
  *
  * Anything in ACTED_ON is exempt from all three, at any age. Losing the text of
  * a job you actually applied to would be the one genuinely costly mistake here.
+ * Seeds are the sole exception, and are evicted ahead of that check — see isSeed.
  */
 export function pruneStore(store: Store): { store: Store; report: PruneReport } {
   const bytesBefore = JSON.stringify(store).length;
   const before = store.jobs.length;
   let slimmed = 0;
+  let seedsDropped = 0;
+
+  // Seeds are demo data, so they last exactly as long as there is nothing real
+  // to show. One live posting from any source retires all of them.
+  const hasLiveData = store.jobs.some((job) => !isSeed(job));
 
   const kept = store.jobs.filter((job) => {
+    if (isSeed(job)) {
+      if (hasLiveData) {
+        seedsDropped++;
+        return false;
+      }
+      return true;
+    }
     if (ACTED_ON.includes(job.stage)) return true;
     const age = Math.min(daysSince(job.stageUpdatedAt), daysSince(job.fetchedAt));
     return age <= STALE_AFTER_DAYS;
   });
 
   for (const job of kept) {
+    // A surviving seed is the only thing in the store, i.e. it *is* the demo.
+    // Tombstoning the two seeds that score below REVIEW_FLOOR would strip the
+    // descriptions out of a fresh clone's dashboard.
+    if (isSeed(job)) continue;
     if (ACTED_ON.includes(job.stage)) continue;
 
     const closed = job.stage === "skipped" && daysSince(job.stageUpdatedAt) > HEAVY_FIELD_DAYS;
@@ -220,6 +257,7 @@ export function pruneStore(store: Store): { store: Store; report: PruneReport } 
       after: kept.length,
       dropped: before - kept.length,
       slimmed,
+      seedsDropped,
       bytesBefore,
       bytesAfter: JSON.stringify(pruned).length,
     },

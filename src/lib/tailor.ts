@@ -34,22 +34,38 @@ function titleFor(job: Job): string {
   return PROFILE.headline;
 }
 
+/**
+ * Years of experience, derived from PROFILE.careerStart rather than a literal.
+ * This used to hardcode 2019, which meant careerStart was declared and never
+ * read — two sources of truth for the same fact, free to drift apart.
+ */
+function yearsOfExperience(now = new Date()): number {
+  const [y, m] = PROFILE.careerStart.split("-").map(Number);
+  const months = (now.getFullYear() - y) * 12 + (now.getMonth() + 1 - m);
+  return Math.floor(months / 12);
+}
+
 function summaryFor(job: Job, groups: string[]): string {
   const focus = groups
     .slice(0, 3)
     .map((k) => SKILL_GROUPS.find((g) => g.key === k)?.label.toLowerCase())
     .filter(Boolean)
     .join(", ");
-  const years = new Date().getFullYear() - 2019;
+  const years = yearsOfExperience();
   return (
-    `${titleFor(job)} with ${years}+ years shipping enterprise integration and data ` +
-    `platforms. Strongest in ${focus || "platform engineering"}. ` +
+    `${titleFor(job)} with ${years}+ years architecting and scaling enterprise cloud ` +
+    `integration platforms across US and EU regions. Owns a multi-tenant Apache Airflow ` +
+    `platform serving 14+ enterprise customers; strongest in ${focus || "platform engineering"}. ` +
     `Looking to bring multi-region Airflow and AWS platform depth to ${job.company}.`
   );
 }
 
-/** Rank bullets by overlap with what the posting emphasises. */
-function selectBullets(job: Job, groups: string[], limit = 9): Bullet[] {
+/**
+ * Rank bullets by overlap with what the posting emphasises. The limit is the
+ * size of the verified bank (7 Deltek + 3 Replicon), so nothing real is cut;
+ * lower it only if a posting needs a shorter resume.
+ */
+function selectBullets(job: Job, groups: string[], limit = 10): Bullet[] {
   const weightOf = new Map(groups.map((g, i) => [g, groups.length - i]));
   const text = jobText(job);
 
@@ -91,10 +107,12 @@ export function escapeLatex(s: string): string {
 
 const PREAMBLE = String.raw`%-------------------------
 % Resume in Latex
-% Based off of: Jake Gutierrez's template (Jake's Resume)
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
 % License : MIT
 %------------------------
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10.5pt]{extarticle}
+\setlength{\footskip}{4.08003pt}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -118,18 +136,17 @@ const PREAMBLE = String.raw`%-------------------------
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\topmargin}{-0.78in}
+\addtolength{\textheight}{1.7in}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
 
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-6pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
 
 \pdfgentounicode=1
 
@@ -137,6 +154,14 @@ const PREAMBLE = String.raw`%-------------------------
   \item\small{
     {#1 \vspace{-2pt}}
   }
+}
+
+\newcommand{\resumeWorkExpHeading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.98\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textnormal{\small#2} \\
+      \textit{\small#3} & \textnormal{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
 }
 
 \newcommand{\resumeSubheading}[4]{
@@ -154,12 +179,14 @@ const PREAMBLE = String.raw`%-------------------------
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=2pt, parsep=0pt, topsep=2pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
 `;
 
 export function renderLatex(job: Job, plan: TailorPlan): string {
@@ -168,28 +195,45 @@ export function renderLatex(job: Job, plan: TailorPlan): string {
 
   const header = String.raw`
 \begin{center}
-    \textbf{\Huge \scshape ${e(PROFILE.name)}} \\ \vspace{1pt}
+    \textbf{\Huge \scshape ${e(PROFILE.name)}} \\ \vspace{6pt}
     \small ${e(c.phone)} $|$ \href{mailto:${c.email}}{\underline{${e(c.email)}}} $|$
-    \href{https://${c.linkedin}}{\underline{${e(c.linkedin)}}} $|$
-    \href{https://${c.github}}{\underline{${e(c.github)}}} $|$ ${e(c.location)}
+    \href{https://www.${c.linkedin}}{\underline{${e(c.linkedin)}}} $|$
+    \href{https://${c.leetcode}}{\underline{${e(c.leetcode)}}} $|$
+    \href{https://${c.github}}{\underline{${e(c.github)}}}
 \end{center}
 
-\section{Summary}
- \small{${e(plan.summary)}}
- \vspace{-8pt}
+\section{Professional Summary}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     {${e(plan.summary)}}
+    \vspace{-6pt}
+    }}
+ \end{itemize}
 `;
 
-  const byRole = (company: string) =>
+  const byCompany = (company: string) =>
     plan.selected.filter((b) => b.role === company);
 
+  // One heading per COMPANY, with every title held there stacked inside it.
+  // Iterating PROFILE.roles when it held one entry per *title* emitted the
+  // company's whole bullet list once per title — all seven Deltek bullets
+  // printed twice on every resume this generated.
   const experience = [
-    String.raw`\section{Experience}`,
+    String.raw`\section{Work Experience}`,
     String.raw`  \resumeSubHeadingListStart`,
     ...PROFILE.roles.map((r) => {
-      const items = byRole(r.company);
+      const items = byCompany(r.company);
       if (items.length === 0) return "";
+      const [current, ...earlier] = r.titles;
+      const stint = (t: { title: string; start: string; end: string }) =>
+        `${t.title} (${t.start} - ${t.end})`;
       return [
-        String.raw`    \resumeSubheading{${e(r.title)}}{${e(r.start)} -- ${e(r.end)}}{${e(r.company)}}{${e(r.location)}}`,
+        String.raw`    \resumeWorkExpHeading`,
+        String.raw`      {${e(r.company)}}`,
+        String.raw`      {${e(stint(current))}}`,
+        String.raw`      {${e(r.location)}}`,
+        String.raw`      {${e(earlier.map(stint).join(" $|$ "))}}`,
+        String.raw`      \\`,
         String.raw`      \resumeItemListStart`,
         ...items.map((b) => String.raw`        \resumeItem{${e(b.text)}}`),
         String.raw`      \resumeItemListEnd`,
@@ -200,33 +244,30 @@ export function renderLatex(job: Job, plan: TailorPlan): string {
     .filter(Boolean)
     .join("\n");
 
+  // Rows whose emphasis keys the posting stresses float up; the rest keep the
+  // order they are declared in. Every row still prints — tailoring reorders
+  // skills, it does not hide them.
   const ordered = plan.emphasisGroups;
-  const skillLine = (label: string, items: string[]) =>
-    String.raw`     \textbf{${e(label)}}{: ${e(items.join(", "))}} \\`;
-
-  const skillRows: string[] = [];
-  const s = PROFILE.skills;
-  const pushIf = (key: string, label: string, items: string[]) => {
-    if (ordered.includes(key)) skillRows.push(skillLine(label, items));
+  const rank = (row: { emphasis?: string[] }) => {
+    const hits = (row.emphasis ?? []).map((k) => ordered.indexOf(k)).filter((i) => i >= 0);
+    return hits.length ? Math.min(...hits) : Number.MAX_SAFE_INTEGER;
   };
-  skillRows.push(skillLine("Languages", s.languages));
-  pushIf("orchestration", "Data & Orchestration", s.data);
-  pushIf("cloud", "Cloud & Infrastructure", s.cloud);
-  pushIf("integrations", "Integrations", s.integrations);
-  pushIf("web", "Web", s.web);
-  // Anything not emphasised still appears, just later.
-  if (!ordered.includes("orchestration")) skillRows.push(skillLine("Data & Orchestration", s.data));
-  if (!ordered.includes("cloud")) skillRows.push(skillLine("Cloud & Infrastructure", s.cloud));
-  if (!ordered.includes("integrations")) skillRows.push(skillLine("Integrations", s.integrations));
+  const skillRows = PROFILE.skills
+    .map((row, i) => ({ row, i }))
+    .sort((a, b) => rank(a.row) - rank(b.row) || a.i - b.i)
+    .map(
+      ({ row }) =>
+        String.raw`     \textbf{${e(row.label)}}{: ${e(row.items.join(", "))}} \\`,
+    );
 
   const skills = [
-    String.raw`\section{Technical Skills}`,
+    String.raw`\section{Skills Summary}`,
     String.raw` \begin{itemize}[leftmargin=0.15in, label={}]`,
     String.raw`    \small{\item{`,
     ...skillRows,
     String.raw`    }}`,
     String.raw` \end{itemize}`,
-    String.raw` \vspace{-16pt}`,
+    String.raw` \vspace{-6pt}`,
   ].join("\n");
 
   const projects = [
@@ -243,6 +284,36 @@ export function renderLatex(job: Job, plan: TailorPlan): string {
     String.raw`    \resumeSubHeadingListEnd`,
   ].join("\n");
 
+  const education = [
+    String.raw`\section{Education}`,
+    String.raw`  \resumeSubHeadingListStart`,
+    ...PROFILE.education.map((ed) =>
+      String.raw`    \resumeSubheading{${e(ed.school)}}{${e(ed.start)} -- ${e(ed.end)}}{${ed.credential}}{${e(ed.location)}}`,
+    ),
+    String.raw`  \resumeSubHeadingListEnd`,
+  ].join("\n");
+
+  const certifications = [
+    String.raw`\section{Certifications}`,
+    String.raw`    \resumeSubHeadingListStart`,
+    ...PROFILE.certifications.map((cert) => {
+      const name = cert.url
+        ? String.raw`\href{${cert.url}}{${e(cert.name)}}`
+        : e(cert.name);
+      return String.raw`        \resumeProjectHeading{\textbf{${name}} $|$ \emph{${e(cert.issuer)}}}{${e(cert.date)}}`;
+    }),
+    String.raw`    \resumeSubHeadingListEnd`,
+  ].join("\n");
+
+  const awards = [
+    String.raw`\section{Awards}`,
+    String.raw`    \resumeSubHeadingListStart`,
+    ...PROFILE.awards.map((a) =>
+      String.raw`        \resumeProjectHeading{\textbf{${e(a.name)}} $|$ \emph{${e(a.detail)}}}{${e(a.years)}}`,
+    ),
+    String.raw`    \resumeSubHeadingListEnd`,
+  ].join("\n");
+
   const note = String.raw`
 % Tailored for: ${e(job.title)} at ${e(job.company)}
 % Match score: ${job.score?.total ?? "n/a"}/100
@@ -254,9 +325,13 @@ export function renderLatex(job: Job, plan: TailorPlan): string {
     PREAMBLE,
     note,
     String.raw`\begin{document}`,
+    String.raw`\fontsize{11pt}{14.5pt}\selectfont`,
     header,
-    experience,
     skills,
+    experience,
+    education,
+    certifications,
+    awards,
     projects,
     String.raw`\end{document}`,
   ].join("\n");

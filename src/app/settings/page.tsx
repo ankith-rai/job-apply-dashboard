@@ -85,8 +85,19 @@ export default function SettingsPage() {
         <Row label="Search terms">
           {QUERIES.join(" · ")}
           <div style={{ marginTop: 4, fontSize: 12.5, color: "var(--muted)" }}>
-            Every term is sent to each keyword source. ATS boards ignore them —
-            those return the whole board and the scorer does the filtering.
+            Derived from your resume — target titles crossed with the skills your
+            bullets and skill list actually back up. Edit the resume and these
+            change. Override with SEARCH_QUERIES. Every term is sent to each
+            keyword source; ATS boards take no query, so their whole board is
+            fetched and gated instead.
+          </div>
+        </Row>
+        <Row label="Resume gate">
+          Off-band titles and postings matching none of your skills
+          <div style={{ marginTop: 4, fontSize: 12.5, color: "var(--muted)" }}>
+            Applied before anything reaches the store, which is the only filter an
+            ATS board gets. Rejected postings are not stored, so they are
+            re-checked every run — ranking of what survives stays with the scorer.
           </div>
         </Row>
         <Row label="Unconfirmed">
