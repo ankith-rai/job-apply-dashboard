@@ -8,8 +8,14 @@ const R = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
 const pass = [];
 const fail = [];
 const warn = [];
-const check = (name, fn) => {
-  try { fn(); pass.push(name); }
+/**
+ * Awaited on purpose. This used to be synchronous, which meant an async test body
+ * returned a promise nobody looked at: the assertion ran after the summary printed
+ * and a failure surfaced as an unhandled rejection with a green result above it.
+ * pool() cannot be tested any other way.
+ */
+const check = async (name, fn) => {
+  try { await fn(); pass.push(name); }
   catch (e) { fail.push(`${name}: ${e.message}`); }
 };
 
@@ -23,31 +29,31 @@ const bullets = await import(`${R}/src/lib/bullets.ts`);
 console.log("modules loaded:", ["match", "seed", "store", "tailor", "profile", "bullets"].join(", "));
 
 // ── inferMarkets ──────────────────────────────────────────────────────────
-check("inferMarkets: Bengaluru → india", () =>
+await check("inferMarkets: Bengaluru → india", () =>
   assert.ok(match.inferMarkets("Bengaluru, India", false).includes("india")));
-check("inferMarkets: San Francisco → us", () =>
+await check("inferMarkets: San Francisco → us", () =>
   assert.ok(match.inferMarkets("San Francisco, CA", false).includes("us")));
-check("inferMarkets: remote flag → remote", () =>
+await check("inferMarkets: remote flag → remote", () =>
   assert.ok(match.inferMarkets("Anywhere", true).includes("remote")));
 
 // ── scoring ───────────────────────────────────────────────────────────────
 const scored = seed.SEED_JOBS.map((j) => ({ job: j, s: match.scoreJob(j) }));
 
-check("scoreJob: total within 0..100", () => {
+await check("scoreJob: total within 0..100", () => {
   for (const { job, s } of scored) {
     assert.ok(Number.isFinite(s.total), `${job.title} produced ${s.total}`);
     assert.ok(s.total >= 0 && s.total <= 100, `${job.title} scored ${s.total}`);
   }
 });
 
-check("scoreJob: factors sum to total", () => {
+await check("scoreJob: factors sum to total", () => {
   for (const { job, s } of scored) {
     const sum = s.factors.reduce((a, f) => a + f.earned, 0);
     assert.ok(Math.abs(sum - s.total) <= 1, `${job.title}: factors ${sum} vs total ${s.total}`);
   }
 });
 
-check("scoreJob: every factor has a label and stays within its cap", () => {
+await check("scoreJob: every factor has a label and stays within its cap", () => {
   for (const { s } of scored) {
     for (const f of s.factors) {
       assert.ok(f.label, "factor missing label");
@@ -57,7 +63,7 @@ check("scoreJob: every factor has a label and stays within its cap", () => {
   }
 });
 
-check("scoreJob: relevant senior role outranks an unrelated junior one", () => {
+await check("scoreJob: relevant senior role outranks an unrelated junior one", () => {
   const base = seed.SEED_JOBS[0];
   const strong = { ...base, title: "Principal Software Engineer",
     location: "Bengaluru, India", market: ["india"],
@@ -71,12 +77,12 @@ check("scoreJob: relevant senior role outranks an unrelated junior one", () => {
 });
 
 // ── dedupe ────────────────────────────────────────────────────────────────
-check("dedupeKey: same role/company across sources collides", () =>
+await check("dedupeKey: same role/company across sources collides", () =>
   assert.equal(
     store.dedupeKey({ title: "Staff Engineer", company: "Stripe" }),
     store.dedupeKey({ title: "staff  engineer", company: "STRIPE!" }),
   ));
-check("dedupeKey: different roles do not collide", () =>
+await check("dedupeKey: different roles do not collide", () =>
   assert.notEqual(
     store.dedupeKey({ title: "Staff Engineer", company: "Stripe" }),
     store.dedupeKey({ title: "Principal Engineer", company: "Stripe" }),
@@ -86,12 +92,12 @@ check("dedupeKey: different roles do not collide", () =>
 const target = seed.SEED_JOBS[0];
 const { plan, latex } = tailor.tailorFor(target);
 
-check("tailor: plan selects at least one bullet and a summary", () => {
+await check("tailor: plan selects at least one bullet and a summary", () => {
   assert.ok(plan, "no plan returned");
   const bulletish = Object.values(plan).find((v) => Array.isArray(v) && v.length);
   assert.ok(bulletish, "plan contains no non-empty array of selected content");
 });
-check("escapeLatex: escapes the characters that break a build", () => {
+await check("escapeLatex: escapes the characters that break a build", () => {
   const out = tailor.escapeLatex("Cost & scale: 50% #1 (a_b) $x{y}");
   for (const raw of ["&", "%", "#", "_", "$"]) {
     const idx = out.indexOf(raw);
@@ -99,21 +105,21 @@ check("escapeLatex: escapes the characters that break a build", () => {
   }
 });
 
-check("tailor: emits LaTeX with a document body", () => {
+await check("tailor: emits LaTeX with a document body", () => {
   assert.ok(latex.includes("\\begin{document}"), "no \\begin{document}");
   assert.ok(latex.includes("\\end{document}"), "no \\end{document}");
 });
-check("tailor: \\begin and \\end counts match", () => {
+await check("tailor: \\begin and \\end counts match", () => {
   const b = (latex.match(/\\begin\{/g) ?? []).length;
   const e = (latex.match(/\\end\{/g) ?? []).length;
   assert.equal(b, e, `${b} \\begin vs ${e} \\end`);
 });
-check("tailor: braces balanced", () => {
+await check("tailor: braces balanced", () => {
   const o = (latex.match(/(?<!\\)\{/g) ?? []).length;
   const c = (latex.match(/(?<!\\)\}/g) ?? []).length;
   assert.equal(o, c, `${o} { vs ${c} }`);
 });
-check("tailor: invents nothing — every bullet traces to the verified bank", () => {
+await check("tailor: invents nothing — every bullet traces to the verified bank", () => {
   // Bullets contain nested \textbf{...}, so match braces by depth rather than regex.
   const extractArgs = (src, macro) => {
     const out = [];
@@ -165,7 +171,7 @@ check("tailor: invents nothing — every bullet traces to the verified bank", ()
 const { auditResume, scanPlaceholders } = await import(`${R}/scripts/check-resume.mjs`);
 const audit = await auditResume();
 
-check("resume: the placeholder scanner fires on placeholders", () => {
+await check("resume: the placeholder scanner fires on placeholders", () => {
   // A scanner that never matches is indistinguishable from no scanner, so prove
   // it fires before trusting it to stay quiet. The escaped forms matter: the
   // header emits YOUR_EMAIL as YOUR\_EMAIL inside \underline{}, so a scanner
@@ -181,7 +187,7 @@ check("resume: the placeholder scanner fires on placeholders", () => {
     assert.ok(scanPlaceholders(s).length > 0, `scanner missed: ${s}`);
 });
 
-check("resume: the placeholder scanner stays quiet on real content", () => {
+await check("resume: the placeholder scanner stays quiet on real content", () => {
   // False positives are the worse failure here — a warning that cries wolf is a
   // warning you stop reading. Real bullet text and a real LaTeX preamble must
   // come back clean, including optional args like [letterpaper,11pt] and [1].
@@ -215,11 +221,11 @@ if (audit.total) {
 }
 
 // ── seeds ─────────────────────────────────────────────────────────────────
-check("seed: ids unique", () => {
+await check("seed: ids unique", () => {
   const ids = seed.SEED_JOBS.map((j) => j.id);
   assert.equal(new Set(ids).size, ids.length, "duplicate seed ids");
 });
-check("seed: every job has the fields the UI reads", () => {
+await check("seed: every job has the fields the UI reads", () => {
   for (const j of seed.SEED_JOBS)
     for (const k of ["id", "title", "company", "location", "url", "source", "postedAt", "stage"])
       assert.ok(j[k] !== undefined, `${j.id ?? "?"} missing ${k}`);
@@ -232,51 +238,171 @@ const fakeJob = (id) => ({ id, title: "Staff Engineer", company: "Acme" });
 const okPart = (label, ids) => ({ source: label, jobs: ids.map(fakeJob), ok: true, detail: "" });
 const badPart = (label, why) => ({ source: label, jobs: [], ok: false, detail: why });
 
-check("merge: dedupes the same posting returned by two queries", () => {
+await check("merge: dedupes the same posting returned by two queries", () => {
   const m = sources.mergeResults("Adzuna:IN", [okPart("a", ["j1", "j2"]), okPart("a", ["j2", "j3"])]);
   assert.equal(m.jobs.length, 3, `expected 3 unique, got ${m.jobs.length}`);
 });
 
-check("merge: every query failing marks the source dead, not quiet", () => {
+await check("merge: every query failing marks the source dead, not quiet", () => {
   const m = sources.mergeResults("Adzuna:IN", [badPart("a", "HTTP 429"), badPart("a", "HTTP 429")]);
   assert.equal(m.ok, false);
   assert.match(m.detail, /429/, "the reason must survive into the run history");
 });
 
-check("merge: one query failing still yields the postings from the others", () => {
+await check("merge: one query failing still yields the postings from the others", () => {
   const m = sources.mergeResults("Remotive", [okPart("a", ["j1"]), badPart("a", "timed out")]);
   assert.equal(m.ok, true);
   assert.equal(m.jobs.length, 1);
   assert.match(m.detail, /failed/, "a partial failure must be visible, not swallowed");
 });
 
-check("merge: label is carried through so the UI can name the source", () => {
+await check("merge: label is carried through so the UI can name the source", () => {
   assert.equal(sources.mergeResults("Adzuna:US", [okPart("a", ["j1"])]).source, "Adzuna:US");
 });
 
 // The bug this guards: QUERIES was exported and displayed while fetchAllSources
 // ignored it, so two of the four terms were never actually searched.
-check("sources: the watchlist stays out of the live board lists", () => {
+await check("sources: the watchlist stays out of the live board lists", () => {
   const live = [...sources.GREENHOUSE_BOARDS, ...sources.LEVER_BOARDS, ...sources.ASHBY_BOARDS];
   const leaked = sources.WATCHLIST.filter((w) => live.includes(w));
   assert.equal(leaked.length, 0, `unverified tokens went live: ${leaked.join(", ")}`);
 });
 
-check("sources: netflix is not fetched from Lever — it runs on Eightfold", () => {
+await check("sources: netflix is not fetched from Lever — it runs on Eightfold", () => {
   assert.ok(!sources.LEVER_BOARDS.includes("netflix"), "dead token is back in LEVER_BOARDS");
+});
+
+await check("sources: no company is fetched from two ATS platforms at once", () => {
+  const seen = new Map();
+  const dupes = [];
+  for (const [ats, list] of [
+    ["greenhouse", sources.GREENHOUSE_BOARDS],
+    ["lever", sources.LEVER_BOARDS],
+    ["ashby", sources.ASHBY_BOARDS],
+  ]) {
+    for (const b of list) {
+      if (seen.has(b)) dupes.push(`${b} (${seen.get(b)} + ${ats})`);
+      else seen.set(b, ats);
+    }
+  }
+  assert.equal(dupes.length, 0, `same board on two platforms: ${dupes.join(", ")}`);
+});
+
+// Every entry costs a request per run and a wrong one is invisible, so a token
+// that slipped in with whitespace or a stray uppercase would fetch nothing and
+// say nothing about it.
+await check("sources: every board token is a clean lowercase slug", () => {
+  const all = [...sources.GREENHOUSE_BOARDS, ...sources.LEVER_BOARDS, ...sources.ASHBY_BOARDS];
+  const bad = all.filter((b) => b !== b.trim().toLowerCase() || !/^[a-z0-9.-]+$/.test(b));
+  assert.equal(bad.length, 0, `malformed board tokens: ${bad.map((b) => JSON.stringify(b)).join(", ")}`);
+});
+
+// ── bounded fan-out ───────────────────────────────────────────────────────
+// The whole point of pool() is that it is a drop-in for Promise.all at 113
+// boards. If it reorders, the run history labels each board with another
+// board's result, because those are matched positionally.
+await check("pool: preserves input order regardless of completion order", async () => {
+  const delays = [40, 5, 25, 0, 15, 30, 10];
+  const out = await sources.pool(
+    delays.map((ms, i) => () => new Promise((r) => setTimeout(() => r(i), ms))),
+    3,
+  );
+  assert.deepEqual(out, [0, 1, 2, 3, 4, 5, 6], "pool returned completion order");
+});
+
+await check("pool: never exceeds the concurrency limit", async () => {
+  let inFlight = 0;
+  let peak = 0;
+  await sources.pool(
+    Array.from({ length: 40 }, () => async () => {
+      peak = Math.max(peak, ++inFlight);
+      await new Promise((r) => setTimeout(r, 5));
+      inFlight--;
+    }),
+    4,
+  );
+  assert.ok(peak <= 4, `ran ${peak} at once with a limit of 4`);
+  assert.equal(peak, 4, `never reached the limit (peak ${peak}) — pool is serialising`);
+});
+
+await check("pool: an empty task list resolves rather than hanging", async () => {
+  assert.deepEqual(await sources.pool([], 10), []);
+});
+
+// Probing all 113 boards, ~2 per run time out — a different two each time, and
+// each answers fine on a second look. Retrying those closes a 2%-per-night
+// silent-zero rate. Retrying a 404 instead would double the request count for a
+// token that genuinely moved ATS, and hide the one failure worth acting on.
+const abort = () => Object.assign(new Error("This operation was aborted"), { name: "AbortError" });
+
+await check("retry: a timeout is transient, a 404 is not", () => {
+  assert.equal(sources.isTransient(abort()), true, "timeouts must be retried");
+  assert.equal(sources.isTransient(new Error("HTTP 404")), false, "a moved board must not be retried");
+});
+
+await check("retry: covers the failures actually seen, not just AbortError", () => {
+  for (const m of ["fetch failed", "ECONNRESET", "socket hang up", "HTTP 429", "HTTP 503"])
+    assert.equal(sources.isTransient(new Error(m)), true, `${m} should be retried`);
+});
+
+await check("retry: a client error other than rate limiting is final", () => {
+  for (const m of ["HTTP 400", "HTTP 401", "HTTP 403", "HTTP 410"])
+    assert.equal(sources.isTransient(new Error(m)), false, `${m} should not be retried`);
+});
+
+await check("retry: a non-Error rejection is not mistaken for transient", () => {
+  assert.equal(sources.isTransient("timed out"), false);
+  assert.equal(sources.isTransient(undefined), false);
+});
+
+await check("sources: the board fan-out is actually bounded", () => {
+  assert.ok(
+    Number.isFinite(sources.FETCH_CONCURRENCY) && sources.FETCH_CONCURRENCY >= 1,
+    "FETCH_CONCURRENCY is not a usable number",
+  );
+  const boards =
+    sources.GREENHOUSE_BOARDS.length + sources.LEVER_BOARDS.length + sources.ASHBY_BOARDS.length;
+  assert.ok(
+    sources.FETCH_CONCURRENCY < boards,
+    `a limit of ${sources.FETCH_CONCURRENCY} over ${boards} boards is not a limit`,
+  );
+});
+
+// ── new keyword sources ───────────────────────────────────────────────────
+// The failure this guards is silent and total: the Muse answers HTTP 200 with
+// `total: 0` for `software engineering` and 40,519 for `Software Engineering`.
+// envList lowercases; envListRaw exists only so these survive intact.
+await check("muse: categories keep their capitalisation", () => {
+  const flattened = sources.MUSE_CATEGORIES.filter((c) => c === c.toLowerCase());
+  assert.equal(
+    flattened.length,
+    0,
+    `lowercased Muse categories match zero postings: ${flattened.join(", ")}`,
+  );
+  assert.ok(
+    sources.MUSE_CATEGORIES.includes("Software Engineering"),
+    "the category holding 40k senior postings is not configured",
+  );
 });
 
 // ── resume-derived search terms ────────────────────────────────────────────
 const resumeSearch = await import(`${R}/src/lib/resumeSearch.ts`);
 const relevance = await import(`${R}/src/lib/relevance.ts`);
 
-check("queries: derivation produces something to search", () => {
+await check("jobicy: tags come from the resume, not a literal list", () => {
+  const backed = resumeSearch.signatureSkills().map((s) => s.term);
+  const stray = sources.JOBICY_TAGS.filter((t) => !backed.includes(t));
+  assert.equal(stray.length, 0, `tags with no resume backing: ${stray.join(", ")}`);
+  assert.ok(sources.JOBICY_TAGS.length > 0, "nothing to search Jobicy for");
+});
+
+await check("queries: derivation produces something to search", () => {
   const qs = resumeSearch.buildQueries();
   assert.ok(qs.length > 0, "no search terms derived from the resume");
   for (const q of qs) assert.ok(q.trim().length > 2, `degenerate query: "${q}"`);
 });
 
-check("queries: the budget is respected", () => {
+await check("queries: the budget is respected", () => {
   assert.ok(
     resumeSearch.buildQueries(3).length <= 3,
     "budget ignored — each extra term costs a request per keyword source",
@@ -287,7 +413,7 @@ check("queries: the budget is respected", () => {
 // The point of deriving queries is that they cannot drift from the resume. This
 // is the fetch-side twin of `tailor: invents nothing`: searching for a skill the
 // resume cannot back up surfaces jobs that interview badly.
-check("queries: every signature skill traces to the resume", () => {
+await check("queries: every signature skill traces to the resume", () => {
   const resume = resumeSearch.resumeHaystack();
   for (const s of resumeSearch.signatureSkills()) {
     assert.ok(
@@ -297,7 +423,7 @@ check("queries: every signature skill traces to the resume", () => {
   }
 });
 
-check("queries: every term is a target title, optionally plus a backed skill", () => {
+await check("queries: every term is a target title, optionally plus a backed skill", () => {
   const titles = resumeSearch.targetTitles();
   const skills = resumeSearch.signatureSkills().map((s) => s.term);
   for (const q of resumeSearch.buildQueries()) {
@@ -316,14 +442,14 @@ const mkJob = (over) => ({
   ...over,
 });
 
-check("gate: a reject-band title is turned away", () => {
+await check("gate: a reject-band title is turned away", () => {
   for (const title of ["Junior Python Developer", "Engineering Manager, Platform", "Data Science Intern"]) {
     const v = relevance.gateJob(mkJob({ title, description: "airflow python aws" }));
     assert.equal(v.keep, false, `"${title}" was admitted`);
   }
 });
 
-check("gate: a posting matching none of your skills is turned away", () => {
+await check("gate: a posting matching none of your skills is turned away", () => {
   const v = relevance.gateJob(
     mkJob({
       title: "Brand Designer",
@@ -333,7 +459,7 @@ check("gate: a posting matching none of your skills is turned away", () => {
   assert.equal(v.keep, false, "a design role with no skill overlap was admitted");
 });
 
-check("gate: a principal Airflow posting survives", () => {
+await check("gate: a principal Airflow posting survives", () => {
   const v = relevance.gateJob(
     mkJob({
       title: "Principal Software Engineer, Data Platform",
@@ -345,7 +471,7 @@ check("gate: a principal Airflow posting survives", () => {
 
 // The gate leaves no tombstone, so a false rejection is invisible. Anything the
 // scorer would call a strong match must never be dropped at ingest.
-check("gate: never rejects a posting the scorer rates strong", () => {
+await check("gate: never rejects a posting the scorer rates strong", () => {
   for (const job of seed.SEED_JOBS) {
     const s = match.scoreJob(job);
     if (match.verdict(s.total).tone !== "strong") continue;
@@ -360,7 +486,7 @@ check("gate: never rejects a posting the scorer rates strong", () => {
 // ── taxonomy hygiene ──────────────────────────────────────────────────────
 // Silent failure mode: a term that is also an ordinary English word hands out
 // skill credit to postings with no relation to the skill.
-check("taxonomy: no blocklisted term leaks into SKILL_GROUPS", () => {
+await check("taxonomy: no blocklisted term leaks into SKILL_GROUPS", () => {
   const terms = new Set(
     profile.SKILL_GROUPS.flatMap((g) => g.terms.map((t) => t.toLowerCase())),
   );
@@ -368,7 +494,7 @@ check("taxonomy: no blocklisted term leaks into SKILL_GROUPS", () => {
   assert.equal(leaked.length, 0, `ordinary-English terms in the taxonomy: ${leaked.join(", ")}`);
 });
 
-check("titleBand: reject terms match on word boundaries, not substrings", () => {
+await check("titleBand: reject terms match on word boundaries, not substrings", () => {
   // "intern" sits inside "International" and "Internal". Substring matching put
   // these in the reject band, scoring them 0 for seniority.
   for (const title of [

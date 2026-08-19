@@ -62,16 +62,29 @@ export function FactorBar({ score }: { score?: MatchScore }) {
           background: "#E6EAF0",
         }}
       >
-        {score.factors.map((f) => (
+        {/*
+          An archived posting has no factors left — the breakdown is dropped with
+          the description once it scores below the review floor. Falling through to
+          the map would paint an empty bar, which reads as a score of zero rather
+          than as a missing breakdown, so fill it to the total in neutral grey.
+        */}
+        {score.factors.length === 0 ? (
           <div
-            key={f.key}
-            title={`${f.label}: ${f.earned}/${f.max} — ${f.detail ?? ""}`}
-            style={{
-              width: `${f.earned}%`,
-              background: COLORS[f.key] ?? "#9AA2B4",
-            }}
+            title={`${score.total}/100 — breakdown not retained`}
+            style={{ width: `${score.total}%`, background: "#9AA2B4" }}
           />
-        ))}
+        ) : (
+          score.factors.map((f) => (
+            <div
+              key={f.key}
+              title={`${f.label}: ${f.earned}/${f.max} — ${f.detail ?? ""}`}
+              style={{
+                width: `${f.earned}%`,
+                background: COLORS[f.key] ?? "#9AA2B4",
+              }}
+            />
+          ))
+        )}
       </div>
     </div>
   );
@@ -79,6 +92,30 @@ export function FactorBar({ score }: { score?: MatchScore }) {
 
 export function FactorTable({ score }: { score?: MatchScore }) {
   if (!score) return null;
+
+  // A pruned posting keeps its total and loses the breakdown — the score object is
+  // ~640 bytes a record and 31% of the store, so it goes the same way the
+  // description does once a posting scores below the review floor. Saying so beats
+  // rendering an empty table that reads like a bug.
+  //
+  // Deliberately does not offer `npm run rescore` as a fix. Rescoring recomputes
+  // from job.description, which for one of these is the 240-char tombstone the same
+  // prune wrote — so it would quietly produce a thinner breakdown and a lower total
+  // derived from a truncated posting, not recover the real one. upsertJobs treats a
+  // re-sighting as a duplicate and never refreshes the description, so the original
+  // text does not come back either. The breakdown is gone; the total is the record.
+  if (score.factors.length === 0) {
+    return (
+      <p style={{ margin: 0, fontSize: 13, color: "#6B7385", lineHeight: 1.55 }}>
+        Scored {score.total}/100. The factor breakdown was dropped when this
+        posting was archived — it scored below the review threshold, so the detail
+        was not worth the space. The total above is what was kept; the breakdown
+        cannot be rebuilt, because the description it was derived from was
+        truncated in the same pass.
+      </p>
+    );
+  }
+
   return (
     <table
       style={{

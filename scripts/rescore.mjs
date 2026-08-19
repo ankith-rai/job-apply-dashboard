@@ -12,15 +12,22 @@
  * Run after editing SKILL_GROUPS, TARGET_TITLES or DOMAIN_TERMS:
  *   npm run rescore
  *
- * Scores are derived data, so this is safe to re-run. It reports the band
- * movement rather than just claiming success, because a taxonomy edit that moves
- * nothing is worth knowing about.
+ * Re-running is safe for postings that still have their description, and only
+ * those are touched. A posting the prune has already tombstoned is skipped: its
+ * description is 240 characters of a fragment, so rescoring it would derive a
+ * lower total from text that no longer exists and write that back as the record
+ * (see isPruned in src/lib/store.ts). Skipping keeps the reported band movement
+ * about the taxonomy edit, which is the entire point of running this — otherwise
+ * thousands of tombstones swamp the output with downward moves that say nothing.
+ *
+ * It reports the movement rather than just claiming success, because a taxonomy
+ * edit that moves nothing is worth knowing about.
  */
 
 const R = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
 
 const { scoreJob, verdict } = await import(`${R}/src/lib/match.ts`);
-const { readStore, writeStore } = await import(`${R}/src/lib/store.ts`);
+const { readStore, writeStore, isPruned } = await import(`${R}/src/lib/store.ts`);
 
 const store = await readStore();
 const jobs = store.jobs ?? [];
@@ -34,8 +41,16 @@ const band = (t) => verdict(t).tone;
 const before = { strong: 0, fair: 0, weak: 0 };
 const after = { strong: 0, fair: 0, weak: 0 };
 const moved = [];
+let skipped = 0;
 
 for (const job of jobs) {
+  // Tombstoned postings are excluded from the rescore and from both tallies, so
+  // `before` and `after` stay comparable — they describe the same population.
+  if (isPruned(job)) {
+    skipped++;
+    continue;
+  }
+
   const old = job.score?.total ?? null;
   const next = scoreJob(job);
 
@@ -54,7 +69,13 @@ const line = (label, b) =>
   `  ${label.padEnd(8)} strong ${String(b.strong).padStart(4)}   ` +
   `fair ${String(b.fair).padStart(4)}   weak ${String(b.weak).padStart(5)}`;
 
-console.log(`\n  rescored ${jobs.length} postings\n`);
+console.log(`\n  rescored ${jobs.length - skipped} postings\n`);
+if (skipped) {
+  console.log(
+    `  skipped ${skipped} already pruned — their descriptions were truncated, so\n` +
+      `  rescoring would score them against text that no longer exists\n`,
+  );
+}
 console.log(line("before", before));
 console.log(line("after", after));
 

@@ -18,12 +18,14 @@
  */
 import {
   ASHBY_BOARDS,
+  FETCH_CONCURRENCY,
   GREENHOUSE_BOARDS,
   LEVER_BOARDS,
   WATCHLIST,
   fetchAshby,
   fetchGreenhouse,
   fetchLever,
+  pool,
   type SourceResult,
 } from "../src/lib/sources";
 
@@ -64,6 +66,21 @@ function looksOffline(details: string[]): boolean {
   return details.length > 1 && details.every((d) => networkish.test(d));
 }
 
+/**
+ * Says where each board list came from.
+ *
+ * Setting GREENHOUSE_BOARDS in .env.local *replaces* the 113 verified defaults in
+ * sources.ts rather than adding to them, and the nightly GitHub Actions run
+ * passes no board variables at all — so a stale .env.local means local runs and
+ * CI runs quietly disagree about which companies get fetched. Printing the origin
+ * turns that into something you can see.
+ */
+function origin(name: string, list: string[]): string {
+  const overridden = Boolean(process.env[name]?.trim());
+  const where = overridden ? `${DIM}from ${name}${OFF}` : `${DIM}sources.ts default${OFF}`;
+  return `  ${name.padEnd(20)} ${String(list.length).padStart(3)} boards  ${where}`;
+}
+
 async function checkConfigured() {
   const planned: Array<[Ats, string]> = [
     ...GREENHOUSE_BOARDS.map((b) => ["greenhouse", b] as [Ats, string]),
@@ -72,7 +89,18 @@ async function checkConfigured() {
   ];
 
   console.log(`\nChecking ${planned.length} configured boards\n`);
-  const results = await Promise.all(planned.map(([ats, b]) => probe(ats, b)));
+  console.log(origin("GREENHOUSE_BOARDS", GREENHOUSE_BOARDS));
+  console.log(origin("LEVER_BOARDS", LEVER_BOARDS));
+  console.log(origin("ASHBY_BOARDS", ASHBY_BOARDS));
+  console.log("");
+
+  // Bounded, for the same reason fetchAllSources is: 113 concurrent probes is a
+  // fast route to a rate limit, and a rate-limited probe reports a healthy board
+  // as dead — the exact false alarm this script exists to prevent.
+  const results = await pool(
+    planned.map(([ats, b]) => () => probe(ats, b)),
+    FETCH_CONCURRENCY,
+  );
 
   for (const r of results) line(`${r.ats}:${r.board}`, r.ok, r.count, r.detail);
 

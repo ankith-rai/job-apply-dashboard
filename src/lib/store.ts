@@ -9,6 +9,26 @@ const DB_PATH = path.join(DATA_DIR, "jobs.json");
 
 const EMPTY: Store = { jobs: [], runs: [] };
 
+/**
+ * How the store is serialised. Indented because this file is committed to git,
+ * and a single-line 19MB JSON blob has no reviewable diff at all.
+ *
+ * Shared with pruneStore so its byte counts describe the file you actually get.
+ * Measured separately, the indentation is 18% of the store on top of the data —
+ * so reporting compact bytes understated a 28MB file as 20MB.
+ */
+const serialise = (store: Store): string => JSON.stringify(store, null, 2);
+
+/**
+ * Bytes the serialised store occupies on disk.
+ *
+ * Buffer.byteLength, not String.length: the file is UTF-8 and the store is full of
+ * non-ASCII — em dashes, accented company names, and the `…` in PRUNED_MARK, each
+ * of which is one UTF-16 unit but three bytes. String.length under-reports every
+ * one of them.
+ */
+const sizeOnDisk = (store: Store): number => Buffer.byteLength(serialise(store), "utf8");
+
 async function ensureDir() {
   await fs.mkdir(DATA_DIR, { recursive: true });
 }
@@ -32,7 +52,7 @@ export async function readStore(): Promise<Store> {
 
 export async function writeStore(store: Store): Promise<void> {
   await ensureDir();
-  await fs.writeFile(DB_PATH, JSON.stringify(store, null, 2), "utf8");
+  await fs.writeFile(DB_PATH, serialise(store), "utf8");
 }
 
 export async function getJobs(): Promise<Job[]> {
@@ -69,6 +89,12 @@ export function dedupeKey(job: Pick<Job, "title" | "company">): string {
   return `${norm(job.company)}::${norm(job.title)}`;
 }
 
+/**
+ * How close to the stale cutoff a posting must be before a re-sighting restamps
+ * its `fetchedAt`. See upsertJobs for why this is not simply "every time".
+ */
+const RESIGHT_MARGIN_DAYS = 7;
+
 export async function upsertJobs(
   incoming: Job[],
 ): Promise<{ added: number; duplicates: number; jobs: Job[] }> {
@@ -80,8 +106,24 @@ export async function upsertJobs(
 
   for (const job of incoming) {
     const key = dedupeKey(job);
-    if (seen.has(key)) {
+    const existing = seen.get(key);
+    if (existing) {
       duplicates++;
+      // A duplicate means the posting is still listed, so `fetchedAt` is a
+      // last-seen stamp, not a first-seen one. Without this the date froze at
+      // first sighting and pruneStore dropped roles that were still open — then
+      // the next run re-added them as brand new, so they reported as fresh finds,
+      // returned to "needs review" after being passed over, and restarted their
+      // 21-day clock. Nothing displays this field; store.ts's age check is its
+      // only reader, so widening its meaning costs nothing there.
+      //
+      // Only restamped near the cutoff, though. Touching all ~10k records nightly
+      // would turn a 20-line commit into a whole-file rewrite of a store that is
+      // committed to git every night, and the date only has to be right where the
+      // prune rule actually reads it.
+      if (daysSince(existing.fetchedAt) > STALE_AFTER_DAYS - RESIGHT_MARGIN_DAYS) {
+        existing.fetchedAt = job.fetchedAt;
+      }
       continue;
     }
     const scored: Job = { ...job, score: scoreJob(job) };
@@ -114,11 +156,28 @@ const ACTED_ON: Stage[] = ["queued", "applied", "interview", "offer", "rejected"
  * Below this score a posting is never getting a tailored resume (the threshold
  * is 60) and realistically never getting read. Its description is dead weight
  * the moment it is scored.
+ *
+ * Was 40, raised to 50 when the board count went from 7 to 113. 50 is the bottom
+ * of verdict()'s "fair" band, so the floor now means something you can say out
+ * loud: a description survives only if the posting is at least a fair match. At
+ * 40 it was a number between bands, and with ~13k postings arriving per run it
+ * would have kept tens of MB of descriptions nobody will read.
  */
-const REVIEW_FLOOR = 40;
+const REVIEW_FLOOR = 50;
 
-/** Postings you neither acted on nor passed on are dropped after this long. */
-const STALE_AFTER_DAYS = 45;
+/**
+ * Postings you neither acted on nor passed on are dropped this long after a board
+ * last listed them — `fetchedAt` is a last-seen stamp, so the clock starts when a
+ * posting disappears, not when it was found.
+ *
+ * Was 45 days. At 7 boards the store took months to reach 6MB and a long window
+ * cost nothing; at 113 boards it grows about seven times faster, and this file is
+ * committed to git every night, so every retained MB is paid for again on every
+ * future clone. 21 days of being delisted is also closer to honest — the role is
+ * filled by then — and the record survives as a tombstone either way, so dedupe
+ * does not regress.
+ */
+const STALE_AFTER_DAYS = 21;
 
 /** How long a heavy field survives on a job you already closed out. */
 const HEAVY_FIELD_DAYS = 14;
@@ -154,6 +213,23 @@ const isSeed = (job: Job): boolean => job.source === "Seed";
  */
 const PRUNED_MARK = "… [pruned]";
 
+/**
+ * Whether this posting's description was already truncated by a prune.
+ *
+ * Exported for scripts/rescore.mjs, where rescoring one of these is actively
+ * destructive rather than merely pointless: `scoreJob` reads `job.description`,
+ * which here is TOMBSTONE_CHARS of a fragment plus PRUNED_MARK, so it derives a
+ * new and necessarily lower total from text the prune already threw away — then
+ * writes it back as the record. Run twice and the same posting ratchets down
+ * twice, until its "score" reflects nothing but the length of the tombstone.
+ *
+ * A predicate rather than an exported PRUNED_MARK because the marker is an
+ * implementation detail of the tombstone format; callers only ever need the
+ * question, and duplicating the literal across files is how the two drift.
+ */
+export const isPruned = (job: Job): boolean =>
+  (job.description ?? "").endsWith(PRUNED_MARK);
+
 export interface PruneReport {
   before: number;
   after: number;
@@ -161,6 +237,11 @@ export interface PruneReport {
   slimmed: number;
   /** How many of `dropped` were demo seeds evicted by the arrival of real data. */
   seedsDropped: number;
+  /**
+   * Size of data/jobs.json as written, indentation included — the number to
+   * compare against `ls`, not a compact re-serialisation that reads 28% smaller
+   * than the file on disk.
+   */
   bytesBefore: number;
   bytesAfter: number;
 }
@@ -172,12 +253,35 @@ function daysSince(iso: string | undefined): number {
   return (Date.now() - t) / 86_400_000;
 }
 
-/** Trims a job's bulky fields in place. Returns whether anything actually changed. */
+/**
+ * Trims a job's bulky fields in place. Returns whether anything actually changed.
+ *
+ * The score breakdown goes too, not just the description. Measured on a real
+ * 10,360-posting store: `score` is 31% of the file at ~640 bytes a record —
+ * `factors`, `matchedKeywords` and `missingKeywords` are carried by every posting
+ * including the 9,447 already tombstoned, which nothing will ever read. `total`
+ * stays, because getJobs sorts on it and the whole dashboard ranks by it.
+ *
+ * The arrays are emptied rather than deleted so MatchScore keeps its shape: every
+ * reader either guards with `?? []` or maps over the array, so an empty one
+ * renders as no rows instead of a crash. FactorTable says so explicitly rather
+ * than showing a blank breakdown.
+ */
 function slim(job: Job, dropResume: boolean): boolean {
   let touched = false;
   const d = job.description;
   if (d && !d.endsWith(PRUNED_MARK) && d.length > TOMBSTONE_CHARS) {
     job.description = d.slice(0, TOMBSTONE_CHARS) + PRUNED_MARK;
+    touched = true;
+  }
+  const s = job.score;
+  if (s && (s.factors.length || s.matchedKeywords.length || s.missingKeywords.length)) {
+    job.score = {
+      ...s,
+      factors: [],
+      matchedKeywords: [],
+      missingKeywords: [],
+    };
     touched = true;
   }
   if (dropResume && job.tailoredResume) {
@@ -191,28 +295,48 @@ function slim(job: Job, dropResume: boolean): boolean {
  * Keeps the store from growing without bound.
  *
  * `upsertJobs` only ever adds, so before this existed the store grew by a run's
- * worth of postings every day, forever. Descriptions are capped at 6 KB each and
- * are ~80% of the file by weight; tailored resumes are a distant second at 2%.
+ * worth of postings every day, forever.
+ *
+ * Measured composition of a real 10,360-posting store, before the score breakdown
+ * was added to what slim() throws away. Worth writing down because it is not what
+ * you would guess — this comment previously claimed descriptions were ~80% of the
+ * weight, which was wrong by more than a factor of two:
+ *
+ *   description      35%   (4.8MB of it in just 913 un-tombstoned postings)
+ *   score            31%   (~640 B every posting carries, tombstoned or not)
+ *   tailoredResume   12%
+ *   everything else  22%   (~1.4 kB per record, irreducible without dropping it)
+ *
+ * Emptying the breakdown on the 9,480 postings below the floor took the file from
+ * 28.0MB to 18.9MB on disk in one pass, so slimming was worth as much on the score
+ * as on the text.
+ *
+ * What remains is mostly floor: 9,447 tombstones at ~865 B each are half the file,
+ * and `dedupeKey` only reads two of their fields. Shrinking that further means
+ * deciding whether a below-floor posting stays browsable at all, which is a product
+ * question rather than a tuning one, so it is deliberately left alone here.
  *
  * Three rules, in increasing order of how much they throw away:
  *
- *   tombstone — keep the record, drop the description. Applied immediately to
- *               anything scoring below REVIEW_FLOOR. On a real store that is
- *               ~84% of postings and ~two thirds of the bytes. The record itself
- *               has to stay: `dedupeKey` needs it, or every one of these comes
- *               back through the queue tomorrow.
+ *   tombstone — keep the record, drop the description and the score breakdown.
+ *               Applied immediately to anything scoring below REVIEW_FLOOR. The
+ *               record itself has to stay: `dedupeKey` needs it, or every one of
+ *               these comes back through the queue tomorrow.
  *   slim      — same, plus the tailored resume, for work you closed out a
  *               fortnight ago.
  *   drop      — remove entirely. Only postings you never touched that have gone
- *               stale; still sitting in "needs review" after 45 days means it
- *               was filled.
+ *               stale — and staleness counts from the last time a board still
+ *               listed the posting (see upsertJobs), so this means "delisted for
+ *               STALE_AFTER_DAYS and never acted on", not "first seen that long
+ *               ago". A role that stays open for two months is not dropped
+ *               underneath you.
  *
  * Anything in ACTED_ON is exempt from all three, at any age. Losing the text of
  * a job you actually applied to would be the one genuinely costly mistake here.
  * Seeds are the sole exception, and are evicted ahead of that check — see isSeed.
  */
 export function pruneStore(store: Store): { store: Store; report: PruneReport } {
-  const bytesBefore = JSON.stringify(store).length;
+  const bytesBefore = sizeOnDisk(store);
   const before = store.jobs.length;
   let slimmed = 0;
   let seedsDropped = 0;
@@ -259,7 +383,7 @@ export function pruneStore(store: Store): { store: Store; report: PruneReport } 
       slimmed,
       seedsDropped,
       bytesBefore,
-      bytesAfter: JSON.stringify(pruned).length,
+      bytesAfter: sizeOnDisk(pruned),
     },
   };
 }
