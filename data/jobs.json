@@ -137338,8 +137338,8 @@
       "postedAt": "2026-07-09T15:05:42-04:00",
       "description": "<div class=&quot;content-intro&quot;><p>Ready to do the most impactful work of your career? At&nbsp;<a href=&quot;https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_source=coinbase&quot;>Coinbase</a>, we are uncompromising on our mission to increase economic freedom. The bar is high, the environment is intense, and we like it that way. This isn t a place for complacency, it’s a place to be pushed past your perceived limits. If you re ready to build the future of finance alongside people who refuse to settle for &quot;good enough,&quot; you belong here. Coinbase is a remote-first, but not remote-only company. Expect to get together quarterly for intense in-person working sessions called “surges.”&nbsp;<a href=&quot;https://www.coinbase.com/careers&quot;>learn more about working at Coinbase</a>.</p></div><p class=&quot;mb-2 whitespace-pre-wrap&quot;>&nbsp;</p> <p class=&quot;mb-2 whitespace-pre-wrap&quot;><strong>Staff Software Engineer, Customer Administration</strong></p> <p class=&quot;mb-2 whitespace-pre-wrap&quot;>The Customer Administration Engineering (CAE) team is a core pillar of Coinbase s Enterprise Applications and Architecture (EAA) org, responsible for building and operating the secure, foundational platforms that power customer data operations across Coinbase. Our flagship product, Control Center, is Coinbase s secure system of action for internal specialists across CX, Compliance, Legal, Global Investigations, Trust and Risk, and dozens of other teams. It serves approximately 7,000 internal users via its UI and powers a growing ecosystem of internal tools and AI automation via its backend APIs and MCP. We are at an exciting inflection point: evolving Control Center from a human-specialist UI into a modular, AI-agent-ready operations platform. As a Staff Software Engineer, you will be a technical anchor for the CAE team, driving architectural decisions, mentoring engineers, and leading the delivery of high-impact, cross-cutting platform capabilities.</p> <p class=&quot;mb-2 whitespace-pre-wrap&quot;><strong>What You ll Do</strong></p> <ul> <li>Architect and deliver foundational platform capabilities including MCP tool registries, AI orchestration layers, risk-based access automation, and the away-team contribution model that enables product groups across Coinbase to build on the platform safely and at speed</li> <li>Drive the evolution of Control Center into an AI-agent-ready, headless operations platform, designing and implementing MCP procedure constructs, agentic guardrails, HITL orchestration, and evaluation frameworks that enable both human and autonomous AI agents to execute sensitive customer operations securely</li> <li>Partner with the Engineering Manager and Product counterparts to define architectural roadmaps, author TDDs, lead design reviews, decompose complex initiatives into deliverable milestones, and raise the engineering quality bar through code review and mentorship</li> <li>Build and maintain highly reliable, secure, distributed backend services, owning SLO definitions, observability instrumentation, incident response, and operational readiness for Tier-1 platform systems</li> <li>Collaborate across EAA engineering teams, Product Engineering, and Security Engineering to deliver cross-functional outcomes and drive shared platform primitives that eliminate duplicated infrastructure across the portfolio</li> </ul> <h4 class=&quot;_9k2iva0 p8i6j0c _1ibi0s314 heading4 _9k2iva1&quot;>Required Skills and Experience</h4> <ul> <li>8+ years of hands-on software engineering experience, with a demonstrated track record of architecting and delivering large-scale, high-traffic distributed systems in production, including deep proficiency in backend service design, API development (gRPC, MCP, GraphQL), and scalable microservices architectures</li> <li>Proven ability to independently lead ambiguous, high-impact technical initiatives from whiteboard to production, writing high-quality, well-tested code and setting the standard for others across complex, multi-team problem spaces</li> <li>Strong experience with cloud-native infrastructure and the modern backend stack: AWS, Kubernetes, Terraform, BuildKite/CircleCI, event-driven architectures (Kafka, MQ), distributed caching (Redis/Memcached), and proficiency in SQL and/or NoSQL databases</li> <li>Track record of building secure, compliant internal tools or platforms, with deep appreciation for security controls, access management, audit logging, data governance, and engineering rigor in a regulated financial services environment</li> <li>Experience building or integrating with agentic AI systems, including MCP servers, LLM orchestration layers, RAG pipelines, HITL workflows, or evaluation and guardrail frameworks for production agentic workloads</li> <li>Proficiency in Go (Golang) as a primary backend language, with willingness to work across Python where applicable in the evolving AI stack</li> <li>Utilizes generative AI responsibly, maintaining human oversight to deliver business-ready outputs and drive measurable improvements in workflow efficiency, cost, and quality. <div class=&quot;tk0j8o1 _1ibi0s31a _1ibi0s3en&quot;>&nbsp;</div> </li> </ul><div class=&quot;content-pay-transparency&quot;><div class=&quot;pay-input&quot;><div class=&quot;description&quot;><p><strong>Pay Transparency Notice:</strong> The target annual <strong>base</strong> salary for this position can range as detailed below. Total compensation may<strong> </strong>also include equity and bonus eligibility and benefits (including medical, dental, and vision).</p> <div id=&quot;fortidlp-input-element-parent&quot;></div></div><div class=&quot;title&quot;>Annual base salary range (excluding equity and bonus):</div><div class=&quot;pay-range&quot;><span>₹9,424,500</span><span class=&quot;divider&quot;>&mdash;</span><span>₹9,424,500 INR</span></div></div></div><div class=&quot;content-conclusion&quot;><ul> <li style=&quot;font-sty",
       "tags": [],
-      "stage": "matched",
-      "stageUpdatedAt": "2026-08-20T08:07:56.833Z",
+      "stage": "applied",
+      "stageUpdatedAt": "2026-08-22T19:22:58.100Z",
       "fetchedAt": "2026-08-20T08:07:56.833Z",
       "score": {
         "total": 83,
@@ -137494,8 +137494,8 @@
       "postedAt": "2026-08-19T13:00:03-04:00",
       "description": "<div class=&quot;content-intro&quot;><p>Ready to do the most impactful work of your career? At&nbsp;<a href=&quot;https://www.coinbase.com/?utm_campaign=mt_o_m_w_m_m__coi_0_jd-onchain&amp;utm_source=coinbase&quot;>Coinbase</a>, we are uncompromising on our mission to increase economic freedom. The bar is high, the environment is intense, and we like it that way. This isn t a place for complacency, it’s a place to be pushed past your perceived limits. If you re ready to build the future of finance alongside people who refuse to settle for &quot;good enough,&quot; you belong here. Coinbase is a remote-first, but not remote-only company. Expect to get together quarterly for intense in-person working sessions called “surges.”&nbsp;<a href=&quot;https://www.coinbase.com/careers&quot;>learn more about working at Coinbase</a>.</p></div><h1>Staff Software Engineer (EAA)</h1> <p class=&quot;mb-2 whitespace-pre-wrap&quot;>The Customer Experience (EAA-CX) sub-organization within Coinbase s Enterprise Applications and Architecture (EAA) group builds and operates the secure, Tier-1 platforms that power internal investigative and support workflows for approximately 7,000 specialists across CX, Compliance, Legal, Global Investigations, and Trust and Risk. As a Staff Software Engineer, you ll operate as a technical anchor across 8 globally distributed EAA-CX engineering squads, identifying high-leverage AI and developer-experience opportunities, architecting solutions on Coinbase s production AI infrastructure, and driving platform excellence that raises Tier-1 engineering quality across the portfolio.</p> <p class=&quot;mb-2 whitespace-pre-wrap&quot;><strong>What you ll do:</strong></p> <ul> <li>Own the EAA-CX AI maturity and developer-experience roadmap in partnership with engineering leadership, embedding with squads to surface opportunities, prototyping on Coinbase s existing AI platform, and driving adoption through working demos and feedback loops.</li> <li>Lead platform excellence workstreams that improve reliability, observability, change-failure rate, and operational readiness for Tier-1 systems, partnering with engineering managers to ensure practices persist on the teams.</li> <li>Define build-versus-buy strategy for developer-experience and AI tooling across EAA-CX, evaluating what to build internally, adopt from partner teams, procure from vendors, or retire.</li> <li>Provide Staff-level architectural coverage across squads facing complex challenges, ramping in to land architecture or delivery and ramping off while maintaining portfolio-wide coherence.</li> <li>Build highly reliable, secure distributed backend services with full SLO ownership, observability, and incident response, ensuring automated outputs and production changes are traceable, reviewable, and safe in a regulated environment.</li> </ul> <p class=&quot;mb-2 whitespace-pre-wrap&quot;><strong>Required Skills and Experience:</strong></p> <ul> <li>8+ years of software engineering experience with a demonstrated track record architecting and delivering large-scale distributed systems, including deep proficiency in backend service design, API development (gRPC, MCP, GraphQL), and scalable microservices architectures.</li> <li>Proven ability to independently lead ambiguous, high-impact technical initiatives from whiteboard to production across multi-team problem spaces, writing high-quality, well-tested code that sets the standard for others.</li> <li>Strong experience with cloud-native infrastructure including AWS, Kubernetes, Terraform, CI/CD pipelines, event-driven architectures (Kafka, MQ), distributed caching, and SQL or NoSQL databases.</li> <li>Track record building secure, compliant internal tools or platforms with deep appreciation for security controls, access management, audit logging, and data governance in a regulated environment.</li> <li>Experience building or integrating with agentic AI systems including MCP servers, LLM orchestration layers, RAG pipelines, HITL workflows, or evaluation and guardrail frameworks, with proficiency in Go and willingness to work across Python.</li> <li>Utilizes generative AI responsibly, maintaining human oversight to deliver business-ready outputs and drive measurable improvements in workflow efficiency, cost, and quality.</li> </ul> <p>Job #: P67493</p><div class=&quot;content-pay-transparency&quot;><div class=&quot;pay-input&quot;><div class=&quot;description&quot;><p><strong>Pay Transparency Notice:</strong><strong><em> </em></strong>Base salary varies by location (see range below). Total compensation may also include equity and bonus eligibility, and benefits (medical, dental, vision, 401(k)).&nbsp;</p> <p>&nbsp;</p></div><div class=&quot;title&quot;>Annual base salary range (excluding equity and bonus):</div><div class=&quot;pay-range&quot;><span>$218,025</span><span class=&quot;divider&quot;>&mdash;</span><span>$256,500 USD</span></div></div></div><div class=&quot;content-conclusion&quot;><ul> <li style=&quot;font-style: italic; font-size: 8pt;&quot;><strong><em>Application Limit: </em></strong>Candidates may submit a maximum of 3 applications within a 6-month period.</li> <li style=&quot;font-style: italic; font-size: 8pt;&quot;><span style=&quot;font-size: 8pt;&quot;><em><strong>Equal Opportunity Employer: </strong>Coinbase is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, protected veteran status, or genetic information. Applicants with criminal histories will be considered consistent with applicable federal, state, and local laws.</em></span></li> <li style=&quot;font-style: italic; font-size: 8pt;&quot;><span style=&quot;font-size: 8pt;&quot;><em><strong>US Applicants: </strong>View<a href=&quot;https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/eppac.pdf&quot;> Employee Rights</a>,<a href=&quot;https://www.eeo",
       "tags": [],
-      "stage": "matched",
-      "stageUpdatedAt": "2026-08-20T08:07:56.833Z",
+      "stage": "applied",
+      "stageUpdatedAt": "2026-08-22T19:23:27.116Z",
       "fetchedAt": "2026-08-20T08:07:56.833Z",
       "score": {
         "total": 86,
@@ -326723,9 +326723,1463 @@
         "scoredAt": "2026-08-17T19:44:10.598Z"
       },
       "tailoredResume": "%-------------------------\n% Resume in Latex\n% Based off of: Jake Gutierrez's template (Jake's Resume)\n% License : MIT\n%------------------------\n\\documentclass[letterpaper,11pt]{article}\n\n\\usepackage{latexsym}\n\\usepackage[empty]{fullpage}\n\\usepackage{titlesec}\n\\usepackage{marvosym}\n\\usepackage[usenames,dvipsnames]{color}\n\\usepackage{verbatim}\n\\usepackage{enumitem}\n\\usepackage[hidelinks]{hyperref}\n\\usepackage{fancyhdr}\n\\usepackage[english]{babel}\n\\usepackage{tabularx}\n\\input{glyphtounicode}\n\n\\pagestyle{fancy}\n\\fancyhf{}\n\\fancyfoot{}\n\\renewcommand{\\headrulewidth}{0pt}\n\\renewcommand{\\footrulewidth}{0pt}\n\n\\addtolength{\\oddsidemargin}{-0.5in}\n\\addtolength{\\evensidemargin}{-0.5in}\n\\addtolength{\\textwidth}{1in}\n\\addtolength{\\topmargin}{-.5in}\n\\addtolength{\\textheight}{1.0in}\n\n\\urlstyle{same}\n\n\\raggedbottom\n\\raggedright\n\\setlength{\\tabcolsep}{0in}\n\n\\titleformat{\\section}{\n  \\vspace{-4pt}\\scshape\\raggedright\\large\n}{}{0em}{}[\\color{black}\\titlerule \\vspace{-5pt}]\n\n\\pdfgentounicode=1\n\n\\newcommand{\\resumeItem}[1]{\n  \\item\\small{\n    {#1 \\vspace{-2pt}}\n  }\n}\n\n\\newcommand{\\resumeSubheading}[4]{\n  \\vspace{-2pt}\\item\n    \\begin{tabular*}{0.97\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}\n      \\textbf{#1} & #2 \\\\\n      \\textit{\\small#3} & \\textit{\\small #4} \\\\\n    \\end{tabular*}\\vspace{-7pt}\n}\n\n\\newcommand{\\resumeProjectHeading}[2]{\n    \\item\n    \\begin{tabular*}{0.97\\textwidth}{l@{\\extracolsep{\\fill}}r}\n      \\small#1 & #2 \\\\\n    \\end{tabular*}\\vspace{-7pt}\n}\n\n\\renewcommand\\labelitemii{$\\vcenter{\\hbox{\\tiny$\\bullet$}}$}\n\n\\newcommand{\\resumeSubHeadingListStart}{\\begin{itemize}[leftmargin=0.15in, label={}]}\n\\newcommand{\\resumeSubHeadingListEnd}{\\end{itemize}}\n\\newcommand{\\resumeItemListStart}{\\begin{itemize}}\n\\newcommand{\\resumeItemListEnd}{\\end{itemize}\\vspace{-5pt}}\n\n\n% Tailored for: Principal Engineer (f/x/m) at spotixx GmbH\n% Match score: 74/100\n% Keywords surfaced: aws, python, typescript, oauth, distributed systems, multi-tenant, react, security\n% Gaps to prepare for: gcp, azure\n\n\\begin{document}\n\n\\begin{center}\n    \\textbf{\\Huge \\scshape Ankith D Rai} \\\\ \\vspace{1pt}\n    \\small YOUR\\_PHONE $|$ \\href{mailto:YOUR_EMAIL@example.com}{\\underline{YOUR\\_EMAIL@example.com}} $|$\n    \\href{https://linkedin.com/in/YOUR_HANDLE}{\\underline{linkedin.com/in/YOUR\\_HANDLE}} $|$\n    \\href{https://github.com/YOUR_HANDLE}{\\underline{github.com/YOUR\\_HANDLE}} $|$ Bengaluru, India\n\\end{center}\n\n\\section{Summary}\n \\small{Principal Software Engineer with 7+ years shipping enterprise integration and data platforms. Strongest in cloud \\& infrastructure, languages, integration \\& ipaas. Looking to bring multi-region Airflow and AWS platform depth to spotixx GmbH.}\n \\vspace{-8pt}\n\n\\section{Experience}\n  \\resumeSubHeadingListStart\n    \\resumeSubheading{Principal Software Engineer}{Jan 2025 -- Present}{Deltek}{Bengaluru, India}\n      \\resumeItemListStart\n        \\resumeItem{Automated AWS infrastructure operations with Python and Boto3 against Aurora and S3, replacing manual runbooks with idempotent scripts.}\n        \\resumeItem{Led multi-region Apache Airflow upgrades across US-East-1, US-East-2 and EU-Central-1, coordinating rollout across [N] environments with zero customer-facing downtime.}\n        \\resumeItem{Architected and led the Self-Service Middleware / Integration Platform API, letting customers configure their own integrations instead of filing engineering requests.}\n        \\resumeItem{Drove EKS cluster upgrades from 1.31 to 1.32 across production regions, sequencing node-group migrations and validating workload compatibility ahead of cutover.}\n        \\resumeItem{Onboarded 14+ named enterprise clients — including PwC, DXC, Technicolor, Capgemini, Domino's and Adtalem — from integration design through production cutover.}\n        \\resumeItem{Drove a FIPS 140-2 compliance initiative across the integration stack, auditing cryptographic dependencies and remediating non-compliant libraries.}\n        \\resumeItem{Built reusable Airflow custom operators and hooks that cut new-connector delivery from [N] weeks to [N] days for the integrations team.}\n      \\resumeItemListEnd\n    \\resumeSubheading{Senior Software Engineer}{Oct 2023 -- Jan 2025}{Deltek}{Bengaluru, India}\n      \\resumeItemListStart\n        \\resumeItem{Automated AWS infrastructure operations with Python and Boto3 against Aurora and S3, replacing manual runbooks with idempotent scripts.}\n        \\resumeItem{Led multi-region Apache Airflow upgrades across US-East-1, US-East-2 and EU-Central-1, coordinating rollout across [N] environments with zero customer-facing downtime.}\n        \\resumeItem{Architected and led the Self-Service Middleware / Integration Platform API, letting customers configure their own integrations instead of filing engineering requests.}\n        \\resumeItem{Drove EKS cluster upgrades from 1.31 to 1.32 across production regions, sequencing node-group migrations and validating workload compatibility ahead of cutover.}\n        \\resumeItem{Onboarded 14+ named enterprise clients — including PwC, DXC, Technicolor, Capgemini, Domino's and Adtalem — from integration design through production cutover.}\n        \\resumeItem{Drove a FIPS 140-2 compliance initiative across the integration stack, auditing cryptographic dependencies and remediating non-compliant libraries.}\n        \\resumeItem{Built reusable Airflow custom operators and hooks that cut new-connector delivery from [N] weeks to [N] days for the integrations team.}\n      \\resumeItemListEnd\n    \\resumeSubheading{Software Engineer}{Aug 2019 -- Oct 2023}{Replicon}{Bengaluru, India}\n      \\resumeItemListStart\n        \\resumeItem{Built and maintained ETL pipelines and REST integrations for time-and-attendance data, serving [N] enterprise tenants.}\n        \\resumeItem{Delivered Salesforce and QuickBooks connectors, handling schema mapping, rate limits and partial-failure retries.}\n      \\resumeItemListEnd\n  \\resumeSubHeadingListEnd\n\\section{Technical Skills}\n \\begin{itemize}[leftmargin=0.15in, label={}]\n    \\small{\\item{\n     \\textbf{Languages}{: Python, TypeScript, JavaScript, SQL} \\\\\n     \\textbf{Cloud \\& Infrastructure}{: AWS (EKS, Aurora, S3, Lambda), Docker, Kubernetes, Boto3} \\\\\n     \\textbf{Integrations}{: SAP Cloud Integration, SAP SuccessFactors, Salesforce, QuickBooks, OAuth2 / SAML} \\\\\n     \\textbf{Web}{: Next.js, React, Node.js} \\\\\n     \\textbf{Data \\& Orchestration}{: Apache Airflow, ETL/ELT, PostgreSQL} \\\\\n    }}\n \\end{itemize}\n \\vspace{-16pt}\n\\section{Projects}\n    \\resumeSubHeadingListStart\n      \\resumeProjectHeading{\\textbf{Apply Pilot} $|$ \\emph{TypeScript, Next.js}}{}\n          \\resumeItemListStart\n            \\resumeItem{Next.js + TypeScript dashboard that aggregates job postings, scores them against a skill profile, and auto-tailors an ATS-optimized LaTeX resume per role.}\n          \\resumeItemListEnd\n    \\resumeSubHeadingListEnd\n\\end{document}"
+    },
+    {
+      "id": "arbeitnow-seniorconsultantdatenkistrategieberlinbe",
+      "title": "Senior Consultant (m/w/d) Daten- & KI-Strategie",
+      "company": "Artefact",
+      "location": "Berlin, Berlin; München, Bavaria",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/artefact/senior-consultant-daten-ki-strategie-berlin-berlin-munchen-bavaria-145507",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:55:40.000Z",
+      "description": "<h2><strong>Über uns: Wer/Was ist Artefact?</strong></h2> <p>Artefact ist eine weltweit führende Beratung für Daten- und KI-Dienstleistungen mit Hauptsitz in Paris. Mit mehr als 2.000 Consultants, Data Scientists und Engineers in 26 Ländern… [pruned]",
+      "tags": [
+        "Consulting & Data"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.845Z",
+      "fetchedAt": "2026-08-22T19:21:46.845Z",
+      "score": {
+        "total": 26,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.709Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorconsultantdataaistrategyberlinberl",
+      "title": "Senior Consultant (m/f/d) Data & AI Strategy",
+      "company": "Artefact",
+      "location": "Berlin, Berlin; München, Bavaria",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/artefact/senior-consultant-data-ai-strategy-berlin-berlin-munchen-bavaria-7237",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:55:40.000Z",
+      "description": "<h3><strong>Who/What is Artefact?</strong></h3> <p>Artefact is a next-generation strategy and data consulting firm dedicated to transforming organizations through data and AI. We combine the rigor of top-tier strategy consulting with deep e… [pruned]",
+      "tags": [
+        "Consulting & Data"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.845Z",
+      "fetchedAt": "2026-08-22T19:21:46.845Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.709Z"
+      }
+    },
+    {
+      "id": "arbeitnow-senioraiengineerberlinberlinhamburghambu",
+      "title": "Senior AI Engineer (m/f/d)",
+      "company": "Artefact",
+      "location": "Berlin, Berlin; Hamburg, Hamburg; München, Bavaria",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/artefact/senior-ai-engineer-berlin-berlin-hamburg-hamburg-munchen-bavaria-74951",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:55:40.000Z",
+      "description": "<p><strong>Artefact</strong>, a global AI and data consulting company with rapid growth, is looking for a creative and tech-savvy <strong>Senior AI Engineer (m/f/d)</strong> to join the tech team full-time. Ideally, you are <strong>located … [pruned]",
+      "tags": [
+        "Data Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.845Z",
+      "fetchedAt": "2026-08-22T19:21:46.845Z",
+      "score": {
+        "total": 39,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.710Z"
+      }
+    },
+    {
+      "id": "arbeitnow-consultingmanagerdataaistrategyberlinber",
+      "title": "Consulting Manager (m/f/d) Data & AI Strategy",
+      "company": "Artefact",
+      "location": "Berlin, Berlin; München, Bavaria",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/artefact/consulting-manager-data-ai-strategy-berlin-berlin-munchen-bavaria-195243",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:55:40.000Z",
+      "description": "<h3><strong>Who/What is Artefact?</strong></h3> <p>Artefact is a next-generation strategy and data consulting firm dedicated to transforming organizations through data and AI. We combine the rigor of top-tier strategy consulting with deep e… [pruned]",
+      "tags": [
+        "Consulting & Data"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.845Z",
+      "fetchedAt": "2026-08-22T19:21:46.845Z",
+      "score": {
+        "total": 19,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.710Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniordataanalystreportinginsightshambur",
+      "title": "Senior Data Analyst - Reporting & Insights (m/f/d)",
+      "company": "Statista",
+      "location": "Hamburg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/statista/senior-data-analyst-reporting-insights-hamburg-29540",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:40:13.000Z",
+      "description": "At Statista , we’re all about facts and data, for we are the world's leading business data platform. By providing reliable and easy-to-use data as well as various data analytics products and services, we empower people worldwide to make fac… [pruned]",
+      "tags": [
+        "Data"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.845Z",
+      "fetchedAt": "2026-08-22T19:21:46.845Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.710Z"
+      }
+    },
+    {
+      "id": "arbeitnow-aiautomationwerkstudentinberlin135532",
+      "title": "AI & Automation Werkstudent:in (m/w/d)",
+      "company": "Startup Insider",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/startup-insider/ai-automation-werkstudentin-berlin-135532",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:10:31.000Z",
+      "description": "Einleitung Startup Insider ist das führende Informations- und Medienunternehmen der deutschen Startup-Szene. Zu uns gehören der meistgehörte Startup-Podcast im DACH-Raum, reichweitenstarke Newsletter und eine wachsende B2B-Plattform. Unser … [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.845Z",
+      "fetchedAt": "2026-08-22T19:21:46.845Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.710Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorcommercialsupportmanageressen22031",
+      "title": "Senior Commercial Support Manager (m/w/d)",
+      "company": "Edri",
+      "location": "Essen",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/edri/senior-commercial-support-manager-essen-220310",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:10:23.000Z",
+      "description": "Deine Aufgaben Qualifizierung und Priorisierung eingehender Standort-Leads anhand definierter Kriterien für En-Route- und Destination-Ladeinfrastruktur Analyse und Bewertung potenzieller Standorte sowie Erstellung fundierter Entscheidungsgr… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.846Z",
+      "fetchedAt": "2026-08-22T19:21:46.846Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.711Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorcommercialmanagerregionnordodersud",
+      "title": "Senior Commercial Manager - Region Nord oder Süd (m/w/d)",
+      "company": "Edri",
+      "location": "Essen",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/edri/senior-commercial-manager-region-nord-oder-sud-essen-334605",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:10:23.000Z",
+      "description": "Deine Aufgaben Identifikation und Sicherung geeigneter En-Route-Standorte in der Region Nord oder Süd gemäß des EDRI Site Qualification Prozesses Aktive Ansprache sowie Aufbau und Pflege von Beziehungen zu Grundstückseigentümer:innen, Kommu… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.846Z",
+      "fetchedAt": "2026-08-22T19:21:46.846Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.711Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorfullstackengineerberlin164024",
+      "title": "Senior Fullstack Engineer (m/f/d)",
+      "company": "Verivox",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/verivox/senior-fullstack-engineer-berlin-164024",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T17:09:27.000Z",
+      "description": "Werde Teil des Verivox Teams Wir bieten dir eine Vollzeitstelle (40 Stunden/Woche) an einem unserer Standorte in Heidelberg, Berlin, Leipzig oder München . Darüber hinaus hast du die Möglichkeit, mehrere Tage pro Woche im Mobile Office zu a… [pruned]",
+      "tags": [
+        "Fullstack",
+        "Engineer",
+        "Developer"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.846Z",
+      "fetchedAt": "2026-08-22T19:21:46.846Z",
+      "score": {
+        "total": 37,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.711Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorstrategicaccountexecutivefirefoxen",
+      "title": "Senior Strategic Account Executive, Firefox Enterprise (DACH)",
+      "company": "mozilla",
+      "location": "Unspecified",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/mozilla/senior-strategic-account-executive-firefox-enterprise-dach-497100",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:55:17.000Z",
+      "description": "<div class=&quot;gmail_default&quot; style=&quot;font-size: small;&quot;> <div> <p><strong>Why Mozilla</strong></p> <p>Mozilla Corporation<span style=&quot;font-weight: 400;&quot;> is a non-profit-backed technology company that has helped s… [pruned]",
+      "tags": [
+        "New Products"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.846Z",
+      "fetchedAt": "2026-08-22T19:21:46.846Z",
+      "score": {
+        "total": 23,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.712Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsolutionsengineerdachfirefoxenterp",
+      "title": "Senior Solutions Engineer (DACH), Firefox Enterprise",
+      "company": "mozilla",
+      "location": "Unspecified",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/mozilla/senior-solutions-engineer-dach-firefox-enterprise-243999",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:55:17.000Z",
+      "description": "<div class=&quot;gmail_default&quot; style=&quot;font-size: small;&quot;> <div> <p><strong>Why Mozilla?</strong></p> <p><span style=&quot;font-weight: 400;&quot;>Mozilla Corporation is the non-profit-backed technology company that has shape… [pruned]",
+      "tags": [
+        "New Products"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.846Z",
+      "fetchedAt": "2026-08-22T19:21:46.846Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.712Z"
+      }
+    },
+    {
+      "id": "arbeitnow-remoteterritoryaccountexecutivegermany36",
+      "title": "Territory Account Executive - Germany",
+      "company": "Rubrik",
+      "location": "Remote",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://www.arbeitnow.com/jobs/companies/rubrik/remote-territory-account-executive-germany-365056",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:55:17.000Z",
+      "description": "<p><strong>About Team &amp; About Role</strong></p> <p>Rubrik s sales organisation is a unified group of elite cross-functional professionals helping companies across every major industry achieve true resilience against cyberattacks, malici… [pruned]",
+      "tags": [
+        "Sales"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.846Z",
+      "fetchedAt": "2026-08-22T19:21:46.846Z",
+      "score": {
+        "total": 43,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.712Z"
+      }
+    },
+    {
+      "id": "arbeitnow-softwareengineerfoundationberlin339190",
+      "title": "Software Engineer, Foundation",
+      "company": "Knowunity GmbH",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/knowunity-gmbh/software-engineer-foundation-berlin-339190",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:40:24.000Z",
+      "description": "Job Description In short : We're looking for a Software Engineer to join our foundation team with a focus on mobile. You don't need to have years of experience in platform engineering But, you do need to have shipped real production softwar… [pruned]",
+      "tags": [
+        "Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.846Z",
+      "fetchedAt": "2026-08-22T19:21:46.846Z",
+      "score": {
+        "total": 29,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.713Z"
+      }
+    },
+    {
+      "id": "arbeitnow-financemanagerainativeberlin108568",
+      "title": "Finance Manager - AI Native (m/f/d)",
+      "company": "Voize",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/voize/finance-manager-ai-native-berlin-108568",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:40:16.000Z",
+      "description": "🎤 Why voize? Because we’re more than just a job! At voize, we believe the greatest gift to frontline workers is time - time to care, connect, and be present. Today, that time is lost to busywork and complex systems that pull them away from… [pruned]",
+      "tags": [
+        "Operations"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.846Z",
+      "fetchedAt": "2026-08-22T19:21:46.846Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.713Z"
+      }
+    },
+    {
+      "id": "arbeitnow-werkstudentitadministrationsecurityberli",
+      "title": "Werkstudent IT-Administration & Security (m/w/d)",
+      "company": "Vivira Health Lab",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/vivira-health-lab/werkstudent-it-administration-security-berlin-194135",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:10:17.000Z",
+      "description": "Intro Hilf mit, das IT-Rückgrat eines der führenden Digital-Health-Unternehmen Deutschlands aufzubauen. Bei Vivira machst Du weit mehr, als Passwörter zurückzusetzen oder Laptops einzurichten. Als Werkstudent im Bereich IT & Security sorgst… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.847Z",
+      "fetchedAt": "2026-08-22T19:21:46.847Z",
+      "score": {
+        "total": 19,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.713Z"
+      }
+    },
+    {
+      "id": "arbeitnow-itsystemengineermicrosoftcloudinfrastruc",
+      "title": "IT System Engineer Microsoft Cloud & Infrastructure (m/w/d)",
+      "company": "Michael Wessel",
+      "location": "Hannover",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/michael-wessel/it-system-engineer-microsoft-cloud-infrastructure-hannover-438846",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:09:37.000Z",
+      "description": "IT System Engineer Microsoft Cloud & Infrastructure (m/w/d) Du möchtest Microsoft-Infrastrukturen nicht nur betreiben, sondern planen, modernisieren und weiterentwickeln? Dann verstärke unser Team Modern Workspace & Infrastructure. Wir such… [pruned]",
+      "tags": [
+        "Microsoft Azure",
+        "Cloud",
+        "Infrastructure",
+        "Server",
+        "Active Directory",
+        "Intune",
+        "Systemmanagement"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.847Z",
+      "fetchedAt": "2026-08-22T19:21:46.847Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.714Z"
+      }
+    },
+    {
+      "id": "arbeitnow-strategymanagerkrankentransportbusinessd",
+      "title": "Strategy Manager Krankentransport (m/w/d) – Business Development & Go-to-Market, Healthcare SaaS",
+      "company": "DMRZ",
+      "location": "Düsseldorf",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/dmrz/strategy-manager-krankentransport-business-development-go-to-market-healthcare-saas-dusseldorf-487432",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:09:34.000Z",
+      "description": "Deine Aufgaben Als Strategy Manager Krankentransport (m/w/d) verantwortest du Business Development, Go-to-Market und die Vermarktung unserer Software für Krankentransportdienstleister. Du ergänzt unser Produktteam – zwei erfahrene Product O… [pruned]",
+      "tags": [
+        "PO",
+        "Product Manager",
+        "PM",
+        "KTL",
+        "Produkt",
+        "Product"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.847Z",
+      "fetchedAt": "2026-08-22T19:21:46.847Z",
+      "score": {
+        "total": 28,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.714Z"
+      }
+    },
+    {
+      "id": "arbeitnow-technischequalitatssicherungreleasemanag",
+      "title": "Technische Qualitätssicherung & Release Manager",
+      "company": "Objectway",
+      "location": "EBERSBERG",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/objectway/technische-qualitatssicherung-release-manager-ebersberg-180404",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:04:44.000Z",
+      "description": "Aufbauend auf mehr als 30 Jahren Geschäftserfahrung ist Objectway ein internationaler Anbieter von Software für Vermögensverwaltung, Bankwesen und Asset Management, der seine Kunden in die Lage versetzt, sich den Herausforderungen der Zukun… [pruned]",
+      "tags": [
+        "SW Development & Delivery"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.847Z",
+      "fetchedAt": "2026-08-22T19:21:46.847Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.715Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsoftwareentwicklerbackendcoboleber",
+      "title": "Senior Softwareentwickler Backend  / Cobol (m/w/d)",
+      "company": "Objectway",
+      "location": "EBERSBERG",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/objectway/senior-softwareentwickler-backend-cobol-ebersberg-359479",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:04:44.000Z",
+      "description": "Aufbauend auf mehr als 30 Jahren Geschäftserfahrung ist Objectway ein internationaler Anbieter von Software für Vermögensverwaltung, Bankwesen und Asset Management, der seine Kunden in die Lage versetzt, sich den Herausforderungen der Zukun… [pruned]",
+      "tags": [
+        "SW Development & Delivery"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.847Z",
+      "fetchedAt": "2026-08-22T19:21:46.847Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.715Z"
+      }
+    },
+    {
+      "id": "arbeitnow-devopsplatformengineerebersberg47308",
+      "title": "DevOps / Platform Engineer (m/f/d)",
+      "company": "Objectway",
+      "location": "EBERSBERG",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/objectway/devops-platform-engineer-ebersberg-47308",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T14:04:44.000Z",
+      "description": "Aufbauend auf mehr als 30 Jahren Geschäftserfahrung ist Objectway ein internationaler Anbieter von Software für Vermögensverwaltung, Bankwesen und Asset Management, der seine Kunden in die Lage versetzt, sich den Herausforderungen der Zukun… [pruned]",
+      "tags": [
+        "SW Architecture"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.847Z",
+      "fetchedAt": "2026-08-22T19:21:46.847Z",
+      "score": {
+        "total": 39,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.715Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsoftwareengineertypescriptnextjsno",
+      "title": "Senior Software Engineer (TypeScript, Next.js / Node.js) (m/f/x)",
+      "company": "Atolls",
+      "location": "Munich, Bavaria, Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/atolls/senior-software-engineer-typescript-nextjs-nodejs-munich-51691",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T13:45:21.000Z",
+      "description": "Atolls is the world's largest community-driven shopping platform, active in 20+ markets. We help millions make smarter spending decisions across discovery, evaluation, and (re-)purchase by connecting people with the right brands and retailers. Our 1,000+ team across 10 countries builds products used every day at global scale, where you'll have real ownership and see your impact. Want to shape the destinations people rely on to shop with confidence? Keep reading. About This Role: We are looking for a Senior Software Engineer (TypeScript, Next.js / Node.js) to join our Engineering team in Munich. At Atolls, your role will play a key role in helping us provide a seamless web experience that enables users to find the Smart Shopping capability that best matches their intent through search, navigation, and a personalized home page, creating exceptional user experiences and empowering consumers to make informed and confident shopping decisions. As a key part of our team, you'll be directly involved in building and enhancing the digital destinations our users rely on throughout their shopping journeys. Your contributions will help shape how millions of consumers interact with our platforms, guiding them to make smart, fair, and rewarding choices. Our Benefits: At Atolls, we believe in nurturing both your professional and personal growth. Here's what you can expect: A culture that values personal and professional development, with internal mobility opportunities. A supportive and open-minded team that embraces diverse perspectives and innovative ideas. 32 days of paid vacation plus your birthday off, giving you the time you need to recharge. A flexible hybrid working scheme to balance work and life. Access to a learning budget and internal training to help you grow in your role. Mental health coaching to support your well-being. Regular global and local get-togethers to celebrate successes and build connections. The possibility of taking a sabbatical after three years with the company. A cloud-based company setup, providing flexibility and collaboration opportunities no matter where you are. *These are global benefits that apply to all employees, with additional local perks based on your location. Responsibilities: As a Senior Software Engineer , you will: Design and develop modern architectures using NEXT.JS, AWS technologies, Microservices, NoSQL, and event-driven architectures . Take ownership of solution architecture, improving performance, security, scalability, modularity, and operational efficiency. Drive feature development from inception to delivery, contributing to an ambitious product roadmap. Conduct knowledge-sharing sessions and hands-on exposure to emerging technologies. Foster an open communication culture, encouraging feedback and supporting conflict resolution. Your Profile: 6+ years of experience in software development. Proficiency in Next.js / Node.js , with experience building reusable libraries using an atomic design system. Strong foundation in object-oriented programming and concurrent event-based systems. Advanced knowledge of TypeScript , including its environment and type system. Extensive expertise in GraphQL . Keen architectural mindset with an eye for application design patterns . Excellent communication skills with fluency in English (written and spoken). Desirable Skills: Working knowledge of Apollo GraphQL . Experience with PHP Symfony . Experience working with AWS cloud . Basic understanding of SQL databases and schema-less concepts. Knowledge of E2E testing (e.g., WebdriverIO, Selenium, or similar tools). Our hiring process : TA Call : Meet one of our Talent Experts and get to know Atolls better. Technical Round : Focus on the technical aspects of the role (Through a Live Case) , and meet your potential manager. Final Round : Meet other Atollians 🏝️ It varies from 1 to 3 interviews *Some processes might slightly change according to needs Ready to apply? Be part of a destination where your work helps millions of people make better decisions every day. One focused application is all we need. If you truly fit more than one role, you're welcome to apply to up to three . This helps us match you with the right opportunity faster. We review every application with equal care and will reach out if your profile aligns. Apply now with your CV in English. #LI-AK1 At Atolls, we want to ensure that all employees can thrive in an inclusive environment. Our employment opportunities are open to every gender, race, religion, age, sexual orientation, ability, place of origin, or socioeconomic status. We remain committed to a culture of diversity, equity and belonging, where all employees are welcomed, respected, connected, and engaged. Find Jobs in Germany on Arbeitnow",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.847Z",
+      "fetchedAt": "2026-08-22T19:21:46.847Z",
+      "score": {
+        "total": 57,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 37,
+            "max": 45,
+            "detail": "10 skill terms across 6/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 15,
+            "max": 25,
+            "detail": "Senior band — a step below target"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 0,
+            "max": 15,
+            "detail": "No market signal"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 0,
+            "max": 10,
+            "detail": "No domain overlap found"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 0d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "aws",
+          "typescript",
+          "sql",
+          "graphql",
+          "microservices",
+          "scalability",
+          "event-driven",
+          "next.js",
+          "node.js",
+          "security"
+        ],
+        "missingKeywords": [
+          "php"
+        ],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.715Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsoftwareengineeridentityandaccessm",
+      "title": "Senior Software Engineer | Identity and Access Management | Full-Stack",
+      "company": "DeepL",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/deepl/senior-software-engineer-identity-and-access-management-full-stack-london-219863",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T15:40:22.000Z",
+      "description": "Meet DeepL DeepL is a global AI product and research company focused on building secure, intelligent solutions to complex business problems. Over 200,000 business customers and millions of individuals across 228 global markets today trust DeepL's Language AI platform for human-like translation, improved writing and real-time voice translation. Founded in 2017 by CEO Jaroslaw “Jarek” Kutylowski, DeepL now has around 1,000 passionate employees and is supported by world-renowned investors including Benchmark, IVP, and Index Ventures. Our goal is to become the global leader in trusted, intelligent AI technology, building products that drive better communication, foster connections, and create a meaningful impact. To achieve this, we need talented people like you to join our journey. If you’re ready to shape the future of AI and grow your career in a fast-moving, purpose-driven environment, DeepL is your next destination. What sets us apart What sets us apart is our blend of cutting-edge AI technology, meaningful work, and a culture where people truly thrive. We’re a team of innovators, researchers, and creators driven by a shared purpose to unlock human potential by making work simpler, smarter, and more connected. When we share what it’s like to work at DeepL, the reactions are overwhelmingly positive. This might be because of our technology that helps millions of people and businesses communicate and work better every day, or because of the trust, curiosity, and care that shape our culture. What we know for sure is this: being part of DeepL means joining a team dedicated to innovation, growth, and well-being. Discover more about life at DeepL on LinkedIn , Instagram , and our Blog . Meet the team behind this journey DeepL is not just a translation tool; we are building the Operating System for Global Communication . We are the rare AI company that builds the entire stack in-house: from training next-gen LLMs on our own NVIDIA DGX SuperPODs to delivering real-time Language AI to over 300 million users and 200,000+ businesses globally. You will join the Identity and Access Management team . Owning DeepL's full identity stack: organisation, account and session management, SSO federation, SCIM provisioning, and the OIDC provider, for both internal and external users. It is the foundation every DeepL product relies on to authenticate and authorise users securely and at scale. When identity is unavailable, no one can log in, so reliability and performance sit at the heart of everything the team does. We are shifting gears from \"Software-First\" to \"Product-First.\" We don't hire engineers to simply maintain legacy endpoints or close Jira tickets. We hire Missionaries — builders who obsess over the Why before the How. You will contribute across the stack, shipping features that create delightful, frictionless experiences for both external developers and internal engineering teams. Your responsibilities Own the Identity Experience End-to-End: You will architect and build complex, user-facing features across our identity stack. You will own business-critical systems from the initial problem definition through to architectural design, deployment, and production reliability. You measure success by user impact, not just pull requests merged Build for \"Consumer-Grade\" Enterprise: You understand that authentication and authorization systems cannot fail. You build for reliability and maintainability, while delivering a user-friendly experience. You will lead incident response, and continuously raise the bar on code quality and operational health Collaborate to Raise the Bar: You will work closely with teammates across Identity and adjacent teams - other product teams, Product Management and Support. You will lead designs, scoping, shaping, and solving hard product and technical challenges in collaboration with your team and other engineers Drive Technical Pragmatism: Whether using our core stack (C#/.NET Core, Kubernetes, Postgres) or exploring new tools, you choose the technology that solves the customer problem most effectively, ensuring long-term maintainability over short-term trends. You use AI for boilerplate code, test generation, and debugging, allowing you to focus your cognitive energy on high-value architectural decisions and complex problem-solving Qualities we look for Extreme Ownership & Operational Excellence: You own your services end-to-end (production operations, incident response, and on-call) and you're motivated by pushing reliability toward four nines. You write comprehensive tests, monitor the systems in production, and you treat each incident as an opportunity to learn A \"System Thinker\" Mindset: You don't just know syntax; you understand failure modes, system boundaries, and how your code impacts the broader architecture at scale. You can design systems that deliver high availability for our millions of users. Backend Mastery at Scale (C# / .NET): You have deep expertise designing scalable backend systems and distributed architectures, and you've worked with high-scale distributed systems in production. Strong system design is core to how you work. Roughly 80-90% of the work is backend; working on the frontend (React/Javascript) is a welcome plus, not a requirement Enterprise Domain Curiosity: You are interested in the hard problems of B2B SaaS Identity - authentication (SSO/OIDC), authorization, and requirements such as security and auditing. You understand that these aren't \"boring details\"; they are the pillars of trust for enterprise clients AI-Native Velocity: You leverage AI-powered tools (like GitHub Copilot or Claude) to accelerate your velocity and eliminate repetitive toil. You use AI for boilerplate code, test generation, and debugging, allowing you to focus your cognitive energy on high-value architectural decisions and complex problem-solving A Note on Our Hiring Process: DeepL hires for the Company , not just a specific team. We operate a Unified Engineering Pipeline ",
+      "tags": [
+        "Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.851Z",
+      "fetchedAt": "2026-08-22T19:21:46.851Z",
+      "score": {
+        "total": 67,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 37,
+            "max": 45,
+            "detail": "8 skill terms across 6/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 15,
+            "max": 25,
+            "detail": "Senior band — a step below target"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 0,
+            "max": 15,
+            "detail": "No market signal"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 10,
+            "max": 10,
+            "detail": "saas, b2b, enterprise"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 0d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "kubernetes",
+          "javascript",
+          "sso",
+          "distributed systems",
+          "system design",
+          "react",
+          "security",
+          "postgres"
+        ],
+        "missingKeywords": [
+          "c#",
+          ".net"
+        ],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.716Z"
+      },
+      "tailoredResume": "%-------------------------\n% Resume in Latex\n% Author : Jake Gutierrez\n% Based off of: https://github.com/sb2nov/resume\n% License : MIT\n%------------------------\n\\documentclass[letterpaper,10.5pt]{extarticle}\n\\setlength{\\footskip}{4.08003pt}\n\n\\usepackage{latexsym}\n\\usepackage[empty]{fullpage}\n\\usepackage{titlesec}\n\\usepackage{marvosym}\n\\usepackage[usenames,dvipsnames]{color}\n\\usepackage{verbatim}\n\\usepackage{enumitem}\n\\usepackage[hidelinks]{hyperref}\n\\usepackage{fancyhdr}\n\\usepackage[english]{babel}\n\\usepackage{tabularx}\n\\input{glyphtounicode}\n\n\\pagestyle{fancy}\n\\fancyhf{}\n\\fancyfoot{}\n\\renewcommand{\\headrulewidth}{0pt}\n\\renewcommand{\\footrulewidth}{0pt}\n\n\\addtolength{\\oddsidemargin}{-0.5in}\n\\addtolength{\\evensidemargin}{-0.5in}\n\\addtolength{\\textwidth}{1in}\n\\addtolength{\\topmargin}{-0.78in}\n\\addtolength{\\textheight}{1.7in}\n\n\\urlstyle{same}\n\\raggedbottom\n\\raggedright\n\\setlength{\\tabcolsep}{0in}\n\n\\titleformat{\\section}{\n  \\vspace{-6pt}\\scshape\\raggedright\\large\n}{}{0em}{}[\\color{black}\\titlerule \\vspace{-6pt}]\n\n\\pdfgentounicode=1\n\n\\newcommand{\\resumeItem}[1]{\n  \\item\\small{\n    {#1 \\vspace{-2pt}}\n  }\n}\n\n\\newcommand{\\resumeWorkExpHeading}[4]{\n  \\vspace{-2pt}\\item\n    \\begin{tabular*}{0.98\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}\n      \\textbf{#1} & \\textnormal{\\small#2} \\\\\n      \\textit{\\small#3} & \\textnormal{\\small #4} \\\\\n    \\end{tabular*}\\vspace{-6pt}\n}\n\n\\newcommand{\\resumeSubheading}[4]{\n  \\vspace{-2pt}\\item\n    \\begin{tabular*}{0.97\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}\n      \\textbf{#1} & #2 \\\\\n      \\textit{\\small#3} & \\textit{\\small #4} \\\\\n    \\end{tabular*}\\vspace{-7pt}\n}\n\n\\newcommand{\\resumeProjectHeading}[2]{\n    \\item\n    \\begin{tabular*}{0.97\\textwidth}{l@{\\extracolsep{\\fill}}r}\n      \\small#1 & #2 \\\\\n    \\end{tabular*}\\vspace{-7pt}\n}\n\n\\newcommand{\\resumeSubItem}[1]{\\resumeItem{#1}\\vspace{-4pt}}\n\n\\renewcommand\\labelitemii{$\\vcenter{\\hbox{\\tiny$\\bullet$}}$}\n\n\\newcommand{\\resumeSubHeadingListStart}{\\begin{itemize}[leftmargin=0.15in, label={}]}\n\\newcommand{\\resumeSubHeadingListEnd}{\\end{itemize}}\n\\newcommand{\\resumeItemListStart}{\\begin{itemize}[itemsep=2pt, parsep=0pt, topsep=2pt]}\n\\newcommand{\\resumeItemListEnd}{\\end{itemize}\\vspace{-4pt}}\n\n\n% Tailored for: Senior Software Engineer | Identity and Access Management | Full-Stack at DeepL\n% Match score: 67/100\n% Keywords surfaced: kubernetes, javascript, sso, distributed systems, system design, react, security, postgres\n% Gaps to prepare for: c\\#, .net\n\n\\begin{document}\n\\fontsize{11pt}{14.5pt}\\selectfont\n\n\\begin{center}\n    \\textbf{\\Huge \\scshape Ankith D Rai} \\\\ \\vspace{6pt}\n    \\small +91 9449549160 $|$ \\href{mailto:raiankith1@gmail.com}{\\underline{raiankith1@gmail.com}} $|$\n    \\href{https://www.linkedin.com/in/ankithrai97}{\\underline{linkedin.com/in/ankithrai97}} $|$\n    \\href{https://leetcode.com/ankith-rai}{\\underline{leetcode.com/ankith-rai}} $|$\n    \\href{https://github.com/ankith-rai}{\\underline{github.com/ankith-rai}}\n\\end{center}\n\n\\section{Professional Summary}\n \\begin{itemize}[leftmargin=0.15in, label={}]\n    \\small{\\item{\n     {Principal Software Engineer with 7+ years architecting and scaling enterprise cloud integration platforms across US and EU regions. Owns a multi-tenant Apache Airflow platform serving 14+ enterprise customers; strongest in cloud \\& infrastructure, languages, integration \\& ipaas. Looking to bring multi-region Airflow and AWS platform depth to DeepL.}\n    \\vspace{-6pt}\n    }}\n \\end{itemize}\n\n\\section{Skills Summary}\n \\begin{itemize}[leftmargin=0.15in, label={}]\n    \\small{\\item{\n     \\textbf{AWS Cloud}{: EKS, Aurora Serverless PostgreSQL, RDS, EC2, S3, ECR, Route 53, CloudWatch, WAF, CodePipeline} \\\\\n     \\textbf{DevOps}{: Docker, Kubernetes, Helm, AWS CodeBuild, Jenkins, GitHub Workflows, Circle-CI, Prometheus, Grafana} \\\\\n     \\textbf{Programming Languages}{: Python, Javascript (ES6), Typescript, SQL, Terraform, YAML, Salesforce Apex} \\\\\n     \\textbf{Libraries and APIs}{: Pandas, Numpy, Boto3, SQLAlchemy, Paramiko, Atlassian Connect Express, Salesforce-DX} \\\\\n     \\textbf{Frameworks}{: Apache Airflow, Next.js, Node.js, React, OAuth 2.0, GraphQL, SAP Cloud Integration, SAP UI5/Fiori} \\\\\n     \\textbf{Database and Storage}{: DynamoDB, Redis, Kafka, SFTP} \\\\\n     \\textbf{AI-Assisted Development}{: Claude Code, Agentic Skills, LLM-Driven Code Generation and Automated Code Review} \\\\\n     \\textbf{Design Patterns}{: Abstract Factory, Builder, Singleton, Template, Adapter, Iterator, State, Observer, SOLID Principles} \\\\\n    }}\n \\end{itemize}\n \\vspace{-6pt}\n\\section{Work Experience}\n  \\resumeSubHeadingListStart\n    \\resumeWorkExpHeading\n      {Deltek}\n      {Principal Software Engineer (Jan 2025 - Present)}\n      {Bengaluru, India}\n      {Sr. Software Engineer (Nov 2023 - Dec 2024)}\n      \\\\\n      \\resumeItemListStart\n        \\resumeItem{Spearheaded an OAuth2 React, Node.js, and TypeScript web application on the core platform, integrating Apache Airflow for event-driven ETL with ERP systems including Salesforce and QuickBooks.}\n        \\resumeItem{Built and scaled Python data pipelines on Apache Airflow processing 53K+ records/day, reducing processing time by 37\\% via custom batch operators, and authored a company-wide library of reusable hooks and operators (SQLAlchemy, AWS S3/Boto3, SFTP/Paramiko, REST APIs).}\n        \\resumeItem{Led multi-region Airflow platform upgrades and a zero-downtime EKS cluster migration (1.31 to 1.32) with Helm-based CI/CD changes across three AWS regions, and established Prometheus/Grafana observability for AWS Aurora Serverless and Kubernetes workloads.}\n        \\resumeItem{Own the architecture and reliability of a multi-tenant Apache Airflow integration platform serving 14+ enterprise customers (PwC, DXC, Capgemini, Dominos, Technicolor, Frontdoor) across US and EU regions.}\n        \\resumeItem{Architected integration-platform-api, a WAF-secured Next.js and PostgreSQL service (40+ endpoints) enabling Deltek product teams to autonomously deploy and manage ERP integrations via Apache Airflow.}\n        \\resumeItem{Drove a platform-wide FIPS 140-2 compliance initiative, delivering a hardened FIPS Docker image, TLS-encrypted webhook transport, FIPS-compliant ALB/ELB endpoints, and vulnerability remediation across the Airflow fleet.}\n        \\resumeItem{Authored AIDLC (AI-Driven Development Lifecycle), a Claude Code skill enforcing a structured workflow from requirements and design through code generation, build, and test; adopted across multiple engineering teams, and complemented by an automated Claude Code review bot posting inline pull-request comments.}\n      \\resumeItemListEnd\n    \\resumeWorkExpHeading\n      {Replicon}\n      {Sr. Software Engineer (Jan 2023 - Oct 2023)}\n      {Bengaluru, India}\n      {Software Engineer (Aug 2019 - Dec 2022)}\n      \\\\\n      \\resumeItemListStart\n        \\resumeItem{Piloted a company-wide Integration Platform using Apache Airflow and Kafka hosted on AWS, achieving a 60\\% cost reduction (averaging USD 2,500 per client) by eliminating third-party iPaaS dependencies.}\n        \\resumeItem{Pioneered the Integration Platform team, developing a Salesforce Connected App with Salesforce DX and Node.js for OAuth2 user interaction, leveraging platform events for webhooks published on the Salesforce Marketplace.}\n        \\resumeItem{Owned the SAP SuccessFactors integration suite over \\textasciitilde{}2 years, delivering payroll data transfer, time-off synchronization, and schedule import, and earning SAP Endorsed App premium certification.}\n      \\resumeItemListEnd\n  \\resumeSubHeadingListEnd\n\\section{Education}\n  \\resumeSubHeadingListStart\n    \\resumeSubheading{NMAM Institute of Technology}{June 2015 -- July 2019}{Information Science and Engineering --- CGPA: 8.22}{Karnataka, IN}\n  \\resumeSubHeadingListEnd\n\\section{Certifications}\n    \\resumeSubHeadingListStart\n        \\resumeProjectHeading{\\textbf{\\href{https://www.credly.com/badges/7b47849c-988a-42f0-9525-5e235a65595b}{DAG Authoring for Apache Airflow 3}} $|$ \\emph{Astronomer}}{Oct 2025}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.linkedin.com/learning/certificates/0b0ea6f8ef3c25fb899f1b278ec5763b7ca6d2b02745492aecce0df7a2e6b770}{Docker Fundamentals}} $|$ \\emph{Docker and LinkedIn}}{May 2025}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.credly.com/badges/abb3eb34-207c-4b1e-af14-39ad3eb03d28}{Apache Airflow Fundamentals}} $|$ \\emph{Astronomer}}{Oct 2024}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.linkedin.com/learning/certificates/654e22e124fcb0767d36cad9274ab4ddf9c7f34ab469deced37064d7c4e44838}{Career Essentials in Generative AI}} $|$ \\emph{Microsoft and LinkedIn}}{Oct 2024}\n    \\resumeSubHeadingListEnd\n\\section{Awards}\n    \\resumeSubHeadingListStart\n        \\resumeProjectHeading{\\textbf{Spot Award} $|$ \\emph{Onboarding of Enterprise customers in Airflow}}{2023 | 2022}\n        \\resumeProjectHeading{\\textbf{Trailblazer and MVP Awards} $|$ \\emph{Awarded twice for the best developers in R\\&D}}{2021 | 2020}\n    \\resumeSubHeadingListEnd\n\\section{Projects}\n    \\resumeSubHeadingListStart\n      \\resumeProjectHeading{\\textbf{Apply Pilot} $|$ \\emph{TypeScript, Next.js}}{}\n          \\resumeItemListStart\n            \\resumeItem{Next.js + TypeScript dashboard that aggregates job postings, scores them against a skill profile, and auto-tailors an ATS-optimized LaTeX resume per role.}\n          \\resumeItemListEnd\n    \\resumeSubHeadingListEnd\n\\end{document}"
+    },
+    {
+      "id": "arbeitnow-seniorintegratedcampaignmanagerlondon261",
+      "title": "Senior Integrated Campaign Manager",
+      "company": "DeepL",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/deepl/senior-integrated-campaign-manager-london-261574",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T15:40:22.000Z",
+      "description": "Meet DeepL DeepL is a global AI product and research company focused on building secure, intelligent solutions to complex business problems. Over 200,000 business customers and millions of individuals across 228 global markets today trust D… [pruned]",
+      "tags": [
+        "Marketing"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.851Z",
+      "fetchedAt": "2026-08-22T19:21:46.851Z",
+      "score": {
+        "total": 28,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.716Z"
+      }
+    },
+    {
+      "id": "arbeitnow-senioranalystgtmstrategylondon392743",
+      "title": "Senior Analyst - GTM Strategy",
+      "company": "DeepL",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/deepl/senior-analyst-gtm-strategy-london-392743",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T15:40:22.000Z",
+      "description": "Meet DeepL DeepL is a global AI product and research company focused on building secure, intelligent solutions to complex business problems. Over 200,000 business customers and millions of individuals across 228 global markets today trust D… [pruned]",
+      "tags": [
+        "Sales"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.852Z",
+      "fetchedAt": "2026-08-22T19:21:46.852Z",
+      "score": {
+        "total": 29,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.717Z"
+      }
+    },
+    {
+      "id": "arbeitnow-socialcontentproducerlondon135923",
+      "title": "Social Content Producer",
+      "company": "Healf",
+      "location": "London Office",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/healf/social-content-producer-london-135923",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T15:40:20.000Z",
+      "description": "Healf is Europe's fastest-growing company. Number one on the FT1000, number one on the Sifted 100. From £1m to over £100m in under three years, with a small, talent-dense team and an electric culture with day one founder intensity. Now we'r… [pruned]",
+      "tags": [
+        "Brand"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.852Z",
+      "fetchedAt": "2026-08-22T19:21:46.852Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.717Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorinnovationconsultantuk138786",
+      "title": "Senior Innovation Consultant",
+      "company": "PNO Innovation",
+      "location": "UK",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/pno-innovation/senior-innovation-consultant-uk-138786",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T15:09:55.000Z",
+      "description": "Job summary (Short promotional text) PNO Innovation UK is looking for an experienced Senior Innovation Consultant / Senior Grant Writer to lead complex Horizon Europe proposals and advise innovative organisations on their funding strategies… [pruned]",
+      "tags": [
+        "Horizon Europe",
+        "Grant Writing",
+        "Proposal Leadership",
+        "Innovation Consultancy",
+        "Client Advisory",
+        "Consortium Management"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.852Z",
+      "fetchedAt": "2026-08-22T19:21:46.852Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.717Z"
+      }
+    },
+    {
+      "id": "arbeitnow-ukcscprincipalorcharteredprofessionalgov",
+      "title": "UKCSC Enterprise Advisor - Governance and Risk",
+      "company": "Intelance",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/intelance/ukcsc-principal-or-chartered-professional-governance-and-risk-london-495616",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-22T13:17:30.000Z",
+      "description": "Intelance is an independent UK advisory and assurance firm and an IASME Certification Body for Cyber Essentials, Cyber Essentials Plus and IASME Cyber Assurance. We work with mid-market, enterprise and regulated organisations across cyber a… [pruned]",
+      "tags": [
+        "Remote",
+        "Business Consulting"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:46.853Z",
+      "fetchedAt": "2026-08-22T19:21:46.853Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.718Z"
+      }
+    },
+    {
+      "id": "jobicy-149545",
+      "title": "Ubuntu Sales Engineer (Entry-Level)",
+      "company": "Canonical Ltd.",
+      "location": "Anywhere",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149545-ubuntu-sales-engineer-entry-level",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T16:15:04+00:00",
+      "description": "Canonical is a leading provider of open source software and operating systems to the global enterprise and technology markets. Our platform, Ubuntu, is very widely used in breakthrough enterprise initiatives such as public cloud, data scien… [pruned]",
+      "tags": [
+        "Sales",
+        "Full-Time",
+        "Entry-Level, Junior"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:50.407Z",
+      "fetchedAt": "2026-08-22T19:21:50.407Z",
+      "score": {
+        "total": 40,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.718Z"
+      }
+    },
+    {
+      "id": "jobicy-149548",
+      "title": "Cloud Professional Services Manager",
+      "company": "Canonical Ltd.",
+      "location": "Anywhere",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149548-cloud-professional-services-manager",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T16:15:02+00:00",
+      "description": "This is an opportunity to run a Professional Services team (also known as Field Engineering) team, helping customers understand and implement Canonical's open source solutions in public clouds and in their own data centers. We work across t… [pruned]",
+      "tags": [
+        "Product &amp; Operations",
+        "Full-Time",
+        "Midweight"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:50.407Z",
+      "fetchedAt": "2026-08-22T19:21:50.407Z",
+      "score": {
+        "total": 43,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.718Z"
+      }
+    },
+    {
+      "id": "jobicy-149503",
+      "title": "Partner Solutions Architect",
+      "company": "Nebius",
+      "location": "Europe",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149503-partner-solutions-architect",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T15:58:26+00:00",
+      "description": "About Nebius: Nebius is leading a new era in cloud infrastructure for the global AI economy. We are building a full-stack AI cloud platform that supports developers and enterprises from data and model training through to production deployment, without the cost and complexity of building large in-house AI/ML infrastructure. Built by engineers, for engineers. From large-scale GPU orchestration to inference optimization, we own the hard problems across compute, storage, networking and applied AI. Listed on Nasdaq (NBIS) and headquartered in Amsterdam, we have a global footprint with R&D hubs across Europe, the UK, North America and Israel. Our team of 1,500+ includes hundreds of engineers with deep expertise across hardware, software and AI R&D. Customer experience Customer experience at Nebius AI Cloud involves tackling customers’ challenges and directly impacting their success by solving real-world AI and ML problems at massive GPU cloud scale. You’ll not only resolve issues, but play a key role in shaping clients’ business success by optimizing their AI solutions. Working with advanced GPUs such as H200, B200 and GB200, as well as modern ML frameworks, you’ll influence the development of the Nebius AI Cloud and gain experience at the intersection of infrastructure and AI. With minimal bureaucracy, you’ll have the freedom to innovate, take ownership and drive change. Opportunities for growth are abundant in this vibrant and supportive professional community. The role We are looking for a Partner Solutions Architect to serve as the technical interface between Nebius and our strategic technology partners, ranging from data platforms and MLOps vendors to AI frameworks and ISVs that build on GPU infrastructure. This is a hands-on engineering and integration role. You will design and develop integrated solutions, build reference implementations, enable partner engineering teams, and ensure joint customers succeed with combined offerings. You will influence Nebius’ product roadmap and drive deep technical collaboration across partner ecosystems. You’re welcome to work from our office in Amsterdam or remotely from any EU country . Your responsibilities will include: Own the technical relationship with strategic partners as the primary interface to Nebius engineering and product Design and architect high-impact integration solutions, delivering clear joint customer value Build and maintain reference implementations and production-grade integrations Define enterprise-ready integration patterns (networking, security, compliance, observability) Translate partner and customer feedback into actionable product and roadmap requirements Enable partner teams through technical documentation, training, and demo environments Provide technical leadership in joint customer deployments, architecture reviews, and complex troubleshooting We expect you to have: 5+ years in solutions architecture, partner engineering, or technical pre-sales at cloud or data platform companies Strong expertise in cloud infrastructure Hands-on experience with GPU-accelerated AI/ML workflows (training, inference, MLOps) Proven background in integration architecture (API design, data pipelines, security, observability) Experience with Python and IaC tools Excellent communication skills with the ability to engage technical and non-technical stakeholders It will be an added bonus if you have: Track record of building or scaling partner technical programs or ecosystems Experience working with or at Snowflake, Databricks, AWS, Azure, or GCP Background in ML lifecycle (training pipelines, fine-tuning, inference optimization, RAG Benefits & Perks: Competitive compensation Career growth and learning opportunities Flexibility and ownership Collaborative and innovative culture Opportunity to work on impactful AI projects International environment and talented teams What's it like to work at Nebius: Fast moving - Bold thinking - Constant growth - Meaningful impact - Trust and real ownership - Opportunity to shape the future of AI Equal Opportunity Statement: Nebius is an equal opportunity employer. We are committed to fostering an inclusive and diverse workplace and to providing equal employment opportunities in all aspects of employment. We do not discriminate on the basis of race, color, religion, sex (including pregnancy), national origin, ancestry, age, disability, genetic information, marital status, veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by applicable law. Applicants must be authorized to work in the country in which they apply and will be required to provide proof of employment eligibility as a condition of hire. If you need accommodations during the application process, please let us know.",
+      "tags": [
+        "Software Engineering",
+        "Full-Time",
+        "Senior"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:50.408Z",
+      "fetchedAt": "2026-08-22T19:21:50.408Z",
+      "score": {
+        "total": 52,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 24,
+            "max": 45,
+            "detail": "6 skill terms across 4/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 8,
+            "max": 25,
+            "detail": "Band unclear from title"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 8,
+            "max": 15,
+            "detail": "remote"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 7,
+            "max": 10,
+            "detail": "data platform, enterprise"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 0d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "aws",
+          "python",
+          "api design",
+          "observability",
+          "compliance",
+          "security"
+        ],
+        "missingKeywords": [
+          "snowflake",
+          "databricks",
+          "gcp",
+          "azure"
+        ],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.719Z"
+      }
+    },
+    {
+      "id": "jobicy-151398",
+      "title": "VP, Platform Engineering",
+      "company": "Frontify",
+      "location": "Europe",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151398-vp-platform-engineering",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T12:24:32+00:00",
+      "description": "We're all about helping brands turn ideas into impact. Frontify’s brand platform transforms how teams organize digital assets, collaborate on projects, and create engaging campaigns. Our people empower thousands of marketers and designers —… [pruned]",
+      "tags": [
+        "DevOps &amp; Infrastructure",
+        "Full-Time",
+        "Director"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:50.408Z",
+      "fetchedAt": "2026-08-22T19:21:50.408Z",
+      "score": {
+        "total": 36,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.719Z"
+      }
+    },
+    {
+      "id": "jobicy-151394",
+      "title": "Senior Backend Engineer - Product Platform",
+      "company": "Frontify",
+      "location": "Europe,  Switzerland",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151394-senior-backend-engineer-product-platform",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T12:23:31+00:00",
+      "description": "We're all about helping brands turn ideas into impact. Frontify’s brand platform transforms how teams organize digital assets, collaborate on projects, and create engaging campaigns. Our people empower thousands of marketers and designers —… [pruned]",
+      "tags": [
+        "Software Engineering",
+        "Full-Time",
+        "Senior"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:52.033Z",
+      "fetchedAt": "2026-08-22T19:21:52.033Z",
+      "score": {
+        "total": 44,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.719Z"
+      }
+    },
+    {
+      "id": "jobicy-151391",
+      "title": "Senior Software Engineer",
+      "company": "Builder.io",
+      "location": "Europe",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151391-senior-software-engineer-4",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T12:18:30+00:00",
+      "description": "About the team: Builder.io's Publish engineering team builds the platform that empowers marketing and content teams to launch pages and campaigns using production-grade components, without engineering bottlenecks. This is a full-stack platform engineering team. You will work across the APIs, SDKs, and plugins that power Publish, as well as the visual layer that sits on top of it. The platform must integrate reliably into diverse customer codebases and tech stacks, making backend fluency and API design just as important as frontend craft. We are moving fast toward agentic Publish workflows, where AI can autonomously create, manage, and ship content experiences, and this team will be at the center of building that future. If you are excited about building scalable platform infrastructure that sits at the intersection of developer tooling, content management, and AI-driven automation, this is the team for you. As a Senior Software Engineer at Builder.io, you will… Design and build the APIs, and SDKs that power Publish, ensuring they are scalable, well-documented, and reliable for the engineering teams that integrate them into their own codebases. Contribute to the agentic future of Publish , building the backend infrastructure and APIs that will power AI-driven content creation, management, and publishing workflows. Act as a technical bridge between the platform and the customer , translating complex enterprise requirements into scalable solutions and shortening the feedback loop between user pain and feature release. Navigate the complexity of a visual CMS at scale . You are not just shipping features; you are building a platform that must render reliably and integrate seamlessly across wildly diverse customer tech stacks, hosting environments, and design systems. Shape the technical direction of the Publish platform , leading through code reviews, pair programming, and taking proactive ownership of technical debt and quality issues. You will help raise the technical bar through design docs, architectural decisions, and giving substantive feedback on others' designs. Drive drama-free launches , anticipating edge cases, surfacing risks early, scoping projects to the right balance of effort and value, and delivering work that stands up to scrutiny. You will thrive in this role if you have… 6+ years of experience in full-stack web development with a proven track record of shipping complex, production-grade features independently. Deep expertise in React and TypeScript/Node.js , with strong instincts for performance, architectural patterns, and the rendering challenges specific to visual editors and component-driven systems. Strong API and backend fluency , including experience designing and building scalable REST or GraphQL APIs, and a genuine interest in the platform and infrastructure layer, not just the UI. Curiosity about AI and agentic systems . You are excited about building products where AI plays an active role in content workflows, and you want to help shape what that looks like in practice. Strong product intuition . You care as much about why you are building something as how, and you are comfortable making product micro-decisions and navigating ambiguity without waiting for perfect requirements. A customer-first mindset . You are comfortable speaking directly with enterprise customers, asking the right questions to uncover root problems, and owning the resolution end-to-end. Cloud fluency . Experience architecting scalable systems on AWS or Google Cloud. High agency . You do not wait for a ticket to be perfectly defined; you seek out the problem, define the solution, and deliver value iteratively. The items above are a starting point for a conversation, not a hard list of requirements. If this role excites you, we hope you will apply! The base salary range for this role is €110,000 - €135,000 . This role is also eligible for meaningful company equity and benefits. This position is fully remote and open to candidates in multiple locations. Compensation may vary by country and local market and will be discussed early in the interview process. Final offer amounts are determined based on experience, role-related knowledge, skills, and abilities. What Builder.io offers you: Unlimited time off. 3 weeks is the minimum that we will ask you to take each year Mental health days. We encourage you to take at least one per quarter to recharge Paid parental leave. 12 weeks of full pay for the birth and care of a newborn child, or for the placement of a child for adoption or foster care $500 home office improvement budget. Help get what you need to be comfortable working in a digital-first environment $500 annual learning & development budget. Feel supported and empowered to continue developing your skills Co-working space reimbursement. Work from any WeWork at anytime with an All Access pass, or reimburse up to $300/month at another local co-working space Health Insurance. 100% employer-paid premiums for medical, dental, and vision insurance for employees, and 50% covered for eligible dependents Additional Insurance. Depending on location, Builder covers your life insurance, short- and long-term disability, and you'll have access to supplemental benefits like accident and critical illness insurance 401k (for US based team members). Contribute to your financial future Real equity. We have a four year vesting schedule with a one year cliff. We also have a ten (10!!) year exercise window (yeah, we're pretty stoked about it!) About Builder.io: Builder.io is the collaborative AI development platform where teams and AI agents build, review, and ship together on existing apps and sites. We do it through two products — Fusion and Publish — built to replace the sequential handoffs that have always slowed teams down. Fusion enables every role across product development to produce production-ready features from your real codebase and design system. Publish empowers marketing to launch pages and campaigns ",
+      "tags": [
+        "Software Engineering",
+        "Full-Time",
+        "Senior"
+      ],
+      "salary": "110k–135k EUR",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:52.033Z",
+      "fetchedAt": "2026-08-22T19:21:52.033Z",
+      "score": {
+        "total": 65,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 34,
+            "max": 45,
+            "detail": "7 skill terms across 5/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 15,
+            "max": 25,
+            "detail": "Senior band — a step below target"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 8,
+            "max": 15,
+            "detail": "remote"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 3,
+            "max": 10,
+            "detail": "enterprise"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 0d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "aws",
+          "typescript",
+          "graphql",
+          "api design",
+          "platform engineering",
+          "react",
+          "node.js"
+        ],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.720Z"
+      },
+      "tailoredResume": "%-------------------------\n% Resume in Latex\n% Author : Jake Gutierrez\n% Based off of: https://github.com/sb2nov/resume\n% License : MIT\n%------------------------\n\\documentclass[letterpaper,10.5pt]{extarticle}\n\\setlength{\\footskip}{4.08003pt}\n\n\\usepackage{latexsym}\n\\usepackage[empty]{fullpage}\n\\usepackage{titlesec}\n\\usepackage{marvosym}\n\\usepackage[usenames,dvipsnames]{color}\n\\usepackage{verbatim}\n\\usepackage{enumitem}\n\\usepackage[hidelinks]{hyperref}\n\\usepackage{fancyhdr}\n\\usepackage[english]{babel}\n\\usepackage{tabularx}\n\\input{glyphtounicode}\n\n\\pagestyle{fancy}\n\\fancyhf{}\n\\fancyfoot{}\n\\renewcommand{\\headrulewidth}{0pt}\n\\renewcommand{\\footrulewidth}{0pt}\n\n\\addtolength{\\oddsidemargin}{-0.5in}\n\\addtolength{\\evensidemargin}{-0.5in}\n\\addtolength{\\textwidth}{1in}\n\\addtolength{\\topmargin}{-0.78in}\n\\addtolength{\\textheight}{1.7in}\n\n\\urlstyle{same}\n\\raggedbottom\n\\raggedright\n\\setlength{\\tabcolsep}{0in}\n\n\\titleformat{\\section}{\n  \\vspace{-6pt}\\scshape\\raggedright\\large\n}{}{0em}{}[\\color{black}\\titlerule \\vspace{-6pt}]\n\n\\pdfgentounicode=1\n\n\\newcommand{\\resumeItem}[1]{\n  \\item\\small{\n    {#1 \\vspace{-2pt}}\n  }\n}\n\n\\newcommand{\\resumeWorkExpHeading}[4]{\n  \\vspace{-2pt}\\item\n    \\begin{tabular*}{0.98\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}\n      \\textbf{#1} & \\textnormal{\\small#2} \\\\\n      \\textit{\\small#3} & \\textnormal{\\small #4} \\\\\n    \\end{tabular*}\\vspace{-6pt}\n}\n\n\\newcommand{\\resumeSubheading}[4]{\n  \\vspace{-2pt}\\item\n    \\begin{tabular*}{0.97\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}\n      \\textbf{#1} & #2 \\\\\n      \\textit{\\small#3} & \\textit{\\small #4} \\\\\n    \\end{tabular*}\\vspace{-7pt}\n}\n\n\\newcommand{\\resumeProjectHeading}[2]{\n    \\item\n    \\begin{tabular*}{0.97\\textwidth}{l@{\\extracolsep{\\fill}}r}\n      \\small#1 & #2 \\\\\n    \\end{tabular*}\\vspace{-7pt}\n}\n\n\\newcommand{\\resumeSubItem}[1]{\\resumeItem{#1}\\vspace{-4pt}}\n\n\\renewcommand\\labelitemii{$\\vcenter{\\hbox{\\tiny$\\bullet$}}$}\n\n\\newcommand{\\resumeSubHeadingListStart}{\\begin{itemize}[leftmargin=0.15in, label={}]}\n\\newcommand{\\resumeSubHeadingListEnd}{\\end{itemize}}\n\\newcommand{\\resumeItemListStart}{\\begin{itemize}[itemsep=2pt, parsep=0pt, topsep=2pt]}\n\\newcommand{\\resumeItemListEnd}{\\end{itemize}\\vspace{-4pt}}\n\n\n% Tailored for: Senior Software Engineer at Builder.io\n% Match score: 65/100\n% Keywords surfaced: aws, typescript, graphql, api design, platform engineering, react, node.js\n% Gaps to prepare for: none\n\n\\begin{document}\n\\fontsize{11pt}{14.5pt}\\selectfont\n\n\\begin{center}\n    \\textbf{\\Huge \\scshape Ankith D Rai} \\\\ \\vspace{6pt}\n    \\small +91 9449549160 $|$ \\href{mailto:raiankith1@gmail.com}{\\underline{raiankith1@gmail.com}} $|$\n    \\href{https://www.linkedin.com/in/ankithrai97}{\\underline{linkedin.com/in/ankithrai97}} $|$\n    \\href{https://leetcode.com/ankith-rai}{\\underline{leetcode.com/ankith-rai}} $|$\n    \\href{https://github.com/ankith-rai}{\\underline{github.com/ankith-rai}}\n\\end{center}\n\n\\section{Professional Summary}\n \\begin{itemize}[leftmargin=0.15in, label={}]\n    \\small{\\item{\n     {Principal Software Engineer with 7+ years architecting and scaling enterprise cloud integration platforms across US and EU regions. Owns a multi-tenant Apache Airflow platform serving 14+ enterprise customers; strongest in cloud \\& infrastructure, languages, integration \\& ipaas. Looking to bring multi-region Airflow and AWS platform depth to Builder.io.}\n    \\vspace{-6pt}\n    }}\n \\end{itemize}\n\n\\section{Skills Summary}\n \\begin{itemize}[leftmargin=0.15in, label={}]\n    \\small{\\item{\n     \\textbf{AWS Cloud}{: EKS, Aurora Serverless PostgreSQL, RDS, EC2, S3, ECR, Route 53, CloudWatch, WAF, CodePipeline} \\\\\n     \\textbf{DevOps}{: Docker, Kubernetes, Helm, AWS CodeBuild, Jenkins, GitHub Workflows, Circle-CI, Prometheus, Grafana} \\\\\n     \\textbf{Programming Languages}{: Python, Javascript (ES6), Typescript, SQL, Terraform, YAML, Salesforce Apex} \\\\\n     \\textbf{Libraries and APIs}{: Pandas, Numpy, Boto3, SQLAlchemy, Paramiko, Atlassian Connect Express, Salesforce-DX} \\\\\n     \\textbf{Frameworks}{: Apache Airflow, Next.js, Node.js, React, OAuth 2.0, GraphQL, SAP Cloud Integration, SAP UI5/Fiori} \\\\\n     \\textbf{Database and Storage}{: DynamoDB, Redis, Kafka, SFTP} \\\\\n     \\textbf{AI-Assisted Development}{: Claude Code, Agentic Skills, LLM-Driven Code Generation and Automated Code Review} \\\\\n     \\textbf{Design Patterns}{: Abstract Factory, Builder, Singleton, Template, Adapter, Iterator, State, Observer, SOLID Principles} \\\\\n    }}\n \\end{itemize}\n \\vspace{-6pt}\n\\section{Work Experience}\n  \\resumeSubHeadingListStart\n    \\resumeWorkExpHeading\n      {Deltek}\n      {Principal Software Engineer (Jan 2025 - Present)}\n      {Bengaluru, India}\n      {Sr. Software Engineer (Nov 2023 - Dec 2024)}\n      \\\\\n      \\resumeItemListStart\n        \\resumeItem{Spearheaded an OAuth2 React, Node.js, and TypeScript web application on the core platform, integrating Apache Airflow for event-driven ETL with ERP systems including Salesforce and QuickBooks.}\n        \\resumeItem{Built and scaled Python data pipelines on Apache Airflow processing 53K+ records/day, reducing processing time by 37\\% via custom batch operators, and authored a company-wide library of reusable hooks and operators (SQLAlchemy, AWS S3/Boto3, SFTP/Paramiko, REST APIs).}\n        \\resumeItem{Led multi-region Airflow platform upgrades and a zero-downtime EKS cluster migration (1.31 to 1.32) with Helm-based CI/CD changes across three AWS regions, and established Prometheus/Grafana observability for AWS Aurora Serverless and Kubernetes workloads.}\n        \\resumeItem{Own the architecture and reliability of a multi-tenant Apache Airflow integration platform serving 14+ enterprise customers (PwC, DXC, Capgemini, Dominos, Technicolor, Frontdoor) across US and EU regions.}\n        \\resumeItem{Architected integration-platform-api, a WAF-secured Next.js and PostgreSQL service (40+ endpoints) enabling Deltek product teams to autonomously deploy and manage ERP integrations via Apache Airflow.}\n        \\resumeItem{Drove a platform-wide FIPS 140-2 compliance initiative, delivering a hardened FIPS Docker image, TLS-encrypted webhook transport, FIPS-compliant ALB/ELB endpoints, and vulnerability remediation across the Airflow fleet.}\n        \\resumeItem{Authored AIDLC (AI-Driven Development Lifecycle), a Claude Code skill enforcing a structured workflow from requirements and design through code generation, build, and test; adopted across multiple engineering teams, and complemented by an automated Claude Code review bot posting inline pull-request comments.}\n      \\resumeItemListEnd\n    \\resumeWorkExpHeading\n      {Replicon}\n      {Sr. Software Engineer (Jan 2023 - Oct 2023)}\n      {Bengaluru, India}\n      {Software Engineer (Aug 2019 - Dec 2022)}\n      \\\\\n      \\resumeItemListStart\n        \\resumeItem{Piloted a company-wide Integration Platform using Apache Airflow and Kafka hosted on AWS, achieving a 60\\% cost reduction (averaging USD 2,500 per client) by eliminating third-party iPaaS dependencies.}\n        \\resumeItem{Pioneered the Integration Platform team, developing a Salesforce Connected App with Salesforce DX and Node.js for OAuth2 user interaction, leveraging platform events for webhooks published on the Salesforce Marketplace.}\n        \\resumeItem{Owned the SAP SuccessFactors integration suite over \\textasciitilde{}2 years, delivering payroll data transfer, time-off synchronization, and schedule import, and earning SAP Endorsed App premium certification.}\n      \\resumeItemListEnd\n  \\resumeSubHeadingListEnd\n\\section{Education}\n  \\resumeSubHeadingListStart\n    \\resumeSubheading{NMAM Institute of Technology}{June 2015 -- July 2019}{Information Science and Engineering --- CGPA: 8.22}{Karnataka, IN}\n  \\resumeSubHeadingListEnd\n\\section{Certifications}\n    \\resumeSubHeadingListStart\n        \\resumeProjectHeading{\\textbf{\\href{https://www.credly.com/badges/7b47849c-988a-42f0-9525-5e235a65595b}{DAG Authoring for Apache Airflow 3}} $|$ \\emph{Astronomer}}{Oct 2025}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.linkedin.com/learning/certificates/0b0ea6f8ef3c25fb899f1b278ec5763b7ca6d2b02745492aecce0df7a2e6b770}{Docker Fundamentals}} $|$ \\emph{Docker and LinkedIn}}{May 2025}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.credly.com/badges/abb3eb34-207c-4b1e-af14-39ad3eb03d28}{Apache Airflow Fundamentals}} $|$ \\emph{Astronomer}}{Oct 2024}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.linkedin.com/learning/certificates/654e22e124fcb0767d36cad9274ab4ddf9c7f34ab469deced37064d7c4e44838}{Career Essentials in Generative AI}} $|$ \\emph{Microsoft and LinkedIn}}{Oct 2024}\n    \\resumeSubHeadingListEnd\n\\section{Awards}\n    \\resumeSubHeadingListStart\n        \\resumeProjectHeading{\\textbf{Spot Award} $|$ \\emph{Onboarding of Enterprise customers in Airflow}}{2023 | 2022}\n        \\resumeProjectHeading{\\textbf{Trailblazer and MVP Awards} $|$ \\emph{Awarded twice for the best developers in R\\&D}}{2021 | 2020}\n    \\resumeSubHeadingListEnd\n\\section{Projects}\n    \\resumeSubHeadingListStart\n      \\resumeProjectHeading{\\textbf{Apply Pilot} $|$ \\emph{TypeScript, Next.js}}{}\n          \\resumeItemListStart\n            \\resumeItem{Next.js + TypeScript dashboard that aggregates job postings, scores them against a skill profile, and auto-tailors an ATS-optimized LaTeX resume per role.}\n          \\resumeItemListEnd\n    \\resumeSubHeadingListEnd\n\\end{document}"
+    },
+    {
+      "id": "jobicy-151390",
+      "title": "Cloud Data Architect",
+      "company": "Oddball",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151390-cloud-data-architect",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T12:18:12+00:00",
+      "description": "Oddball believes that we can bring change and improve the daily lives of millions by bringing quality software to the federal space. Our team is full of experienced engineering, product, and user experience professionals who love bringing s… [pruned]",
+      "tags": [
+        "Data Science &amp; Analytics",
+        "Full-Time",
+        "Senior"
+      ],
+      "salary": "150k–180k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:50.408Z",
+      "fetchedAt": "2026-08-22T19:21:50.408Z",
+      "score": {
+        "total": 45,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-22T19:22:01.720Z"
+      }
+    },
+    {
+      "id": "jobicy-151387",
+      "title": "Back End Engineer",
+      "company": "Oddball",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151387-back-end-engineer",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T12:17:27+00:00",
+      "description": "Oddball believes that the best products are built when companies understand and value the things they are working on. We value learning and growth and the ability to make a big impact at a small company. We believe that we can make big changes happen and improve the daily lives of millions of people by bringing quality software to the federal space. We're looking for a Backend Engineer to join our CMS team, building and maintaining the APIs and backend services that power Healthcare.gov tools used by millions of Americans enrolling in and exploring health coverage — including third party enrollment platforms. What you'll be doing: Develop, enhance, and maintain backend services and APIs in Go supporting healthcare marketplace features Build and maintain ETL pipelines using Python to clean, transform, and move data across the healthcare data ecosystem Design and build REST APIs backed by PostgreSQL with a focus on reliability and backward compatibility Work with AWS services including S3 , Lambda , Step Functions , and Glue to support data processing and pipeline workflows Write clean, well-tested code with a focus on performance, maintainability, and security Support ongoing operations and maintenance of existing digital products alongside new feature development Contribute to code reviews and help uphold engineering standards across the team What you’ll bring: Hands-on experience writing backend services in Go (Golang) Experience with Python for data cleaning, manipulation, and ETL workflows Familiarity with Pandas and/or PySpark is a strong plus Familiarity with FHIR or healthcare interoperability standards is a plus Proficiency with PostgreSQL or similar relational databases and SQL Experience with AWS services including S3 , Lambda , Step Functions , or Glue Experience designing and building REST APIs in production environments Familiarity with federal security and compliance requirements is a plus Thrives in a remote, collaborative Agile environment and genuinely enjoys working closely with a cross-functional team Communicates clearly and openly, whether in a code review or a cross-team planning session Performs other related duties as assigned Requirements: Applicants must be authorized to work in the United States. In alignment with federal contract requirements, certain roles may also require U.S. citizenship and the ability to obtain and maintain a federal background investigation and/or a security clearance. Education: Bachelor’s Degree Benefits: Fully remote Tech & Education Stipend Comprehensive Benefits Package Company Match 401(k) plan Flexible PTO, Paid Holidays Oddball is an Equal Opportunity Employer and does not discriminate against applicants based on race, religion, color, disability, medical condition, legally protected genetic information, national origin, gender, sexual orientation, marital status, gender identity or expression, sex (including pregnancy, childbirth or related medical conditions), age, veteran status or other legally protected characteristics. Any applicant with a mental or physical disability who requires an accommodation during the application process should contact an Oddball HR representative to request such an accommodation by emailing hello@Oddball.io Compensation : At Oddball, it’s important each employee is compensated competitively and fairly. In alignment with state legal requirements. A range for the included position is listed below. Be advised, actual offer details are determined by job category, job location, and candidate skill level. United States Wage Range: $100,000 – $135,000",
+      "tags": [
+        "Software Engineering",
+        "Full-Time",
+        "Any"
+      ],
+      "salary": "100k–135k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:50.409Z",
+      "fetchedAt": "2026-08-22T19:21:50.409Z",
+      "score": {
+        "total": 52,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 26,
+            "max": 45,
+            "detail": "12 skill terms across 4/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 8,
+            "max": 25,
+            "detail": "Band unclear from title"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 13,
+            "max": 15,
+            "detail": "remote, US"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 0,
+            "max": 10,
+            "detail": "No domain overlap found"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 0d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "etl",
+          "aws",
+          "s3",
+          "lambda",
+          "python",
+          "sql",
+          "go",
+          "pandas",
+          "compliance",
+          "security",
+          "postgresql",
+          "code review"
+        ],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-22T19:22:01.720Z"
+      }
+    },
+    {
+      "id": "jobicy-149539",
+      "title": "Embedded Devices Software Solution Sales - All Roles",
+      "company": "Canonical Ltd.",
+      "location": "Anywhere",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149539-embedded-devices-software-solution-sales-all-roles",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T16:20:07+00:00",
+      "description": "Canonical is a leading provider of open source software and operating systems to the global enterprise and technology markets. Our platform, Ubuntu, is very widely used in breakthrough enterprise initiatives such as public cloud, data scien… [pruned]",
+      "tags": [
+        "Sales",
+        "Full-Time",
+        "Director"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:53.746Z",
+      "fetchedAt": "2026-08-22T19:21:53.746Z",
+      "score": {
+        "total": 35,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.721Z"
+      }
+    },
+    {
+      "id": "jobicy-149502",
+      "title": "Business Development Representative",
+      "company": "Smartling",
+      "location": "Europe",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149502-business-development-representative-3",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T16:05:05+00:00",
+      "description": "Overview Smartling is seeking a French-speaking Business Development Representative for a remote, work-from-home position based in Ireland. Smartling’s Business Development team is a group of highly motivated sales professionals whose focus… [pruned]",
+      "tags": [
+        "Sales",
+        "Full-Time",
+        "Entry-Level, Junior"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:53.746Z",
+      "fetchedAt": "2026-08-22T19:21:53.746Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.721Z"
+      }
+    },
+    {
+      "id": "jobicy-151396",
+      "title": "Customer Success Manager",
+      "company": "Payoneer",
+      "location": "Poland,  Ukraine",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151396-customer-success-manager-15",
+      "source": "Jobicy",
+      "postedAt": "2026-08-22T12:24:02+00:00",
+      "description": "About Payoneer Founded in 2005, Payoneer is the global financial platform that removes friction from doing business across borders, with a mission to connect the world’s underserved businesses to a rising global economy. We’re a community with over 2,500 colleagues all over the world, working to serve customers, and partners in over 190 countries and territories. By taking the complexity out of the financial workflows–including everything from global payments and compliance to multi-currency and workforce management, to providing working capital and business intelligence–we give businesses the tools they need to work efficiently worldwide and grow with confidence. Location: Poland Remote Full-time Role Summary We’re looking for a highly talented Customer Success Manager to join our growing team in a strategic and commercial role focused on customer retention and revenue growth. You will manage a portfolio of high-potential customers, build strong executive relationships, and identify opportunities for expansion through long-term account planning and exceptional execution. This role is ideal for someone with a strong background in Customer Success, Account Management, or B2B Sales who combines commercial acumen with a customer-centric mindset and thrives in a fast-paced environment. What You’ll Do Own a portfolio of strategic customers and drive retention, renewals, and expansion opportunities. Lead commercial conversations, including upsell, cross-sell, and renewal discussions. Build and maintain strong relationships with C-level executives and senior stakeholders. Develop and execute quarterly and annual account growth plans to maximize customer value. Deliver executive-level Quarterly Business Reviews (QBRs) and customer presentations with clear business impact and compelling storytelling. Partner cross-functionally with internal teams to resolve challenges, drive customer outcomes, and ensure a seamless customer experience. Track customer health, opportunities, and pipeline activity within CRM systems, maintaining accurate reporting and forecasting. Create customer success stories, case studies, and advocacy opportunities to showcase business impact. Identify strategic growth opportunities within existing accounts and drive long-term customer success. Who You Are Bachelor’s degree, preferably in Business, Marketing, Communications, or a related field. 3+ years of experience in Customer Success, Account Management, or B2B Sales roles. Strong commercial mindset with proven experience driving revenue growth through customer retention and expansion. Excellent negotiation, relationship-building, and stakeholder management skills. Confident presenter with experience leading executive meetings and engaging senior decision-makers. Strong organizational and planning abilities, with the capacity to manage multiple priorities and perform under pressure. Customer-focused and proactive, with a strong sense of ownership and accountability. Analytical thinker with the ability to translate customer insights into strategic actions. Experience using Salesforce or similar CRM platforms. Preferred Qualifications Experience in Enterprise Sales or Enterprise Account Management. Background in Fintech, Payments, or SaaS environments. Familiarity with customer lifecycle management and strategic account planning. #LI-FD1 The Payoneer Ways of Working Act as our customer’s partner on the inside Learning what they need and creating what will help them go further. Do it. Own it. Being fearlessly accountable in everything we do. Continuously improve Always striving for a higher standard than our last. Build each other up Helping each other grow, as professionals and people. If this sounds like a business, a community, and a mission you want to be part of, apply today. We are committed to providing a diverse and inclusive workplace. Payoneer is an equal opportunity employer, and all qualified applicants will receive consideration for employment no matter your race, color, ancestry, religion, sex, sexual orientation, gender identity, national origin, age, disability status, protected veteran status, or any other characteristic protected by law. If you require reasonable accommodation at any stage of the hiring process, please speak to the recruiter managing the role for any adjustments. Decisions about requests for reasonable accommodation are made on a case-by-case basis.",
+      "tags": [
+        "Customer Support &amp; Success",
+        "Full-Time",
+        "Director"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-22T19:21:53.746Z",
+      "fetchedAt": "2026-08-22T19:21:53.746Z",
+      "score": {
+        "total": 50,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 19,
+            "max": 45,
+            "detail": "3 skill terms across 3/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 8,
+            "max": 25,
+            "detail": "Band unclear from title"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 8,
+            "max": 15,
+            "detail": "remote"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 10,
+            "max": 10,
+            "detail": "saas, b2b, enterprise"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 0d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "go",
+          "salesforce",
+          "compliance"
+        ],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-22T19:22:01.721Z"
+      }
     }
   ],
   "runs": [
+    {
+      "id": "run-1787426522130",
+      "startedAt": "2026-08-22T19:21:46.745Z",
+      "finishedAt": "2026-08-22T19:22:02.130Z",
+      "stages": [
+        {
+          "key": "collect",
+          "label": "Collect postings",
+          "status": "warn",
+          "count": 13377,
+          "detail": "116/118 sources responded · quiet: Adzuna:IN, Adzuna:US",
+          "ms": 12026
+        },
+        {
+          "key": "filter",
+          "label": "Gate against your resume",
+          "status": "ok",
+          "count": 2035,
+          "detail": "2035 of 13377 dropped — off-band titles and postings matching none of your skills · Greenhouse:stripe 146, Greenhouse:samsara 96, Greenhouse:anthropic 95, Greenhouse:celonis 87 · not stored, so they are re-checked every run",
+          "ms": 2889
+        },
+        {
+          "key": "dedupe",
+          "label": "Drop duplicates",
+          "status": "ok",
+          "count": 11304,
+          "detail": "38 new, 11304 already tracked",
+          "ms": 162
+        },
+        {
+          "key": "score",
+          "label": "Score against profile",
+          "status": "ok",
+          "count": 38,
+          "detail": "Scored 38 new postings on skills, seniority, market, domain, freshness",
+          "ms": 0
+        },
+        {
+          "key": "tailor",
+          "label": "Tailor resumes",
+          "status": "ok",
+          "count": 2,
+          "detail": "2 resumes generated for matches scoring 60+",
+          "ms": 107
+        },
+        {
+          "key": "prune",
+          "label": "Prune the store",
+          "status": "ok",
+          "count": 32,
+          "detail": "0 stale postings dropped, 32 closed ones slimmed · 19.6MB → 19.4MB · 9847 tracked",
+          "ms": 200
+        },
+        {
+          "key": "review",
+          "label": "Queue for your review",
+          "status": "ok",
+          "count": 289,
+          "detail": "289 waiting on your approval — nothing was submitted",
+          "ms": 1
+        }
+      ],
+      "fetched": 13377,
+      "added": 38,
+      "duplicates": 11304,
+      "scored": 38,
+      "tailored": 2,
+      "offline": false,
+      "filtered": 2035
+    },
     {
       "id": "run-1787407095976",
       "startedAt": "2026-08-22T13:58:00.963Z",
