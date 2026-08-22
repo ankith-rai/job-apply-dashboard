@@ -1,6 +1,6 @@
 import type { Job, Market } from "./types";
 import { inferMarkets } from "./match";
-import { buildQueries } from "./resumeSearch";
+import { buildQueries, signatureSkills } from "./resumeSearch";
 
 /**
  * Every source here is a documented public API or a company's own ATS feed.
@@ -16,7 +16,37 @@ export interface SourceResult {
 }
 
 const UA = "job-apply-dashboard/0.1 (personal job search)";
-const TIMEOUT_MS = 12_000;
+
+/**
+ * Per-request deadline, covering the body read as well as the response — the
+ * payloads here are the slow part, not the handshake.
+ *
+ * Was 12s, which was ample for 7 boards and wrong for 113. Measured serially, with
+ * nothing else in flight:
+ *
+ *   ashby:openai          11.4MB   10.4s
+ *   ashby:airwallex        9.9MB    3.9s
+ *   greenhouse:databricks  8.7MB    6.3s
+ *   greenhouse:anthropic   6.5MB    7.1s
+ *   lever:paytm            3.4MB   17.9s, then 40.6s on a second measurement
+ *
+ * So openai used 87% of the old budget uncontended, and Lever blew past it outright
+ * — Lever is slow out of proportion to its payload and varies by more than 2x run
+ * to run. A full sweep was reporting up to 15 boards "dead — timed out" while every
+ * one answered fine when probed alone. That is the worst possible failure: a real
+ * board, a valid token, and a run that quietly drops several hundred postings.
+ *
+ * 90s is sized off Lever's worst observed 40.6s with room for contention on top.
+ * A wrong token is unaffected — it 404s immediately, and a 404 is never retried —
+ * so the only thing a long deadline buys is patience with a genuinely hung
+ * connection, and the pool means that stalls one slot rather than the run. The
+ * nightly workflow has no job timeout set, so GitHub's 6-hour default applies and
+ * there is nothing to bump up against.
+ */
+const TIMEOUT_MS = 90_000;
+
+/** First backoff in getJson's retry ladder. Long enough to outlast a blip. */
+const RETRY_DELAY_MS = 750;
 
 /** Reads a comma-separated env var, falling back to a default list. */
 function envList(name: string, fallback: string[]): string[] {
@@ -29,7 +59,59 @@ function envList(name: string, fallback: string[]): string[] {
   return parsed.length ? parsed : fallback;
 }
 
-async function getJson<T>(url: string): Promise<T> {
+/**
+ * Same, but preserves case.
+ *
+ * Needed because envList lowercases, and The Muse's `category` filter is
+ * case-sensitive in the worst possible way: `Software Engineering` matches 40,519
+ * postings and `software engineering` matches zero, with HTTP 200 both times. That
+ * is the same silent-zero failure a wrong ATS token gives you, so the two helpers
+ * stay separate rather than one growing a flag.
+ */
+function envListRaw(name: string, fallback: string[]): string[] {
+  const raw = process.env[name];
+  if (!raw) return fallback;
+  const parsed = raw.split(",").map((s) => s.trim()).filter(Boolean);
+  return parsed.length ? parsed : fallback;
+}
+
+/**
+ * How many source requests may be in flight at once.
+ *
+ * This exists because the board lists grew from 7 entries to 113. `Promise.all`
+ * over all of them fires 113 simultaneous requests, and the big boards are not
+ * small — Greenhouse with `content=true` returns ~800 postings with full
+ * descriptions for Databricks alone. Unbounded, that is tens of megabytes in
+ * flight and a good way to get rate-limited into false negatives, which here look
+ * identical to a company that stopped hiring.
+ */
+export const FETCH_CONCURRENCY = Math.max(1, Number(process.env.FETCH_CONCURRENCY ?? 10));
+
+/**
+ * Runs thunks with at most `size` in flight, preserving input order.
+ *
+ * Order matters: the run history and the Settings page read these results
+ * positionally against the board lists, so a completion-ordered result array
+ * would silently mislabel which board reported what.
+ *
+ * Exported for scripts/check-boards.mts, which probes the same 113 boards and
+ * needs the same bound — a health check that trips the rate limit reports dead
+ * boards that are fine.
+ */
+export async function pool<R>(tasks: Array<() => Promise<R>>, size: number): Promise<R[]> {
+  const out: R[] = new Array(tasks.length);
+  let next = 0;
+  const workers = Array.from({ length: Math.min(size, tasks.length) }, async () => {
+    while (next < tasks.length) {
+      const i = next++;
+      out[i] = await tasks[i]();
+    }
+  });
+  await Promise.all(workers);
+  return out;
+}
+
+async function getJsonOnce<T>(url: string): Promise<T> {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   try {
@@ -42,6 +124,58 @@ async function getJson<T>(url: string): Promise<T> {
     return (await res.json()) as T;
   } finally {
     clearTimeout(timer);
+  }
+}
+
+/**
+ * A transient failure that says nothing about whether the token is valid.
+ *
+ * Retried; an HTTP 404 is not. That distinction is the point — a 404 means the
+ * company moved ATS and the config needs editing, which is worth surfacing
+ * immediately. A timeout means nothing at all.
+ *
+ * Exported for the test suite. Getting this wrong in the permissive direction
+ * would triple every request for all 113 boards on a run where a token is
+ * genuinely dead, which is the opposite of what the retry is for.
+ */
+export function isTransient(err: unknown): boolean {
+  if (!(err instanceof Error)) return false;
+  if (err.name === "AbortError") return true;
+  return /fetch failed|ECONNRESET|ETIMEDOUT|EAI_AGAIN|socket hang up|HTTP (429|5\d\d)/i.test(
+    err.message,
+  );
+}
+
+/**
+ * Two retries on transient failures, with a widening backoff.
+ *
+ * Measured need, not defensive habit. Sweeping all 113 boards, a handful fail per
+ * run — a different handful each time, and every one answers fine when probed
+ * alone. Consecutive full sweeps reported 15, then 5, then 2, then 0 dead boards
+ * with no config change between them. Without retries that variance means several
+ * companies silently contribute zero postings on any given night, and a zero here
+ * is indistinguishable from a company that stopped hiring. That is the failure this
+ * whole project keeps tripping over, so it is worth the extra requests to close it.
+ *
+ * Two rather than one because the failures that survived a single retry were
+ * `fetch failed` — a connection dropped mid-sweep, not a slow server — and 750ms
+ * is not long enough for that to clear. The second wait is 3s.
+ *
+ * Still a short ladder, not an indefinite one: the first attempt already waits
+ * TIMEOUT_MS, so a board that cannot answer three times is better reported as a
+ * problem than waited on. A wrong token costs nothing extra either way, since a
+ * 404 is not transient and is never retried.
+ */
+const RETRY_DELAYS_MS = [RETRY_DELAY_MS, 3_000];
+
+async function getJson<T>(url: string): Promise<T> {
+  for (let attempt = 0; ; attempt++) {
+    try {
+      return await getJsonOnce<T>(url);
+    } catch (err) {
+      if (attempt >= RETRY_DELAYS_MS.length || !isTransient(err)) throw err;
+      await new Promise((r) => setTimeout(r, RETRY_DELAYS_MS[attempt]));
+    }
   }
 }
 
@@ -199,6 +333,171 @@ export async function fetchArbeitnow(): Promise<SourceResult> {
   }
 }
 
+// ── Jobicy (remote-first, tag-filterable) ───────────────────────────────────
+interface JobicyJob {
+  id: number;
+  url: string;
+  jobTitle: string;
+  companyName: string;
+  jobGeo?: string;
+  jobLevel?: string;
+  jobIndustry?: string[];
+  jobType?: string[];
+  jobExcerpt?: string;
+  jobDescription?: string;
+  pubDate: string;
+  salaryMin?: number;
+  salaryMax?: number;
+  salaryCurrency?: string;
+}
+
+/**
+ * Tags sent to Jobicy, taken from the resume's signature skills.
+ *
+ * Reuses signatureSkills() rather than a literal list for the same reason QUERIES
+ * does: a hardcoded set would drift from the resume the moment a skill changed.
+ * Jobicy's `tag` is a loose full-text match, so a skill term works directly where
+ * a strict tag vocabulary would not.
+ *
+ * This targeting is why Jobicy measured the best signal density of any source
+ * tested — 18% of what it returns scores fair or better, against 6.4% for the ATS
+ * boards, which have no way to be asked a question.
+ */
+export const JOBICY_TAGS = envList(
+  "JOBICY_TAGS",
+  signatureSkills().slice(0, 5).map((s) => s.term),
+);
+
+/**
+ * Jobicy asks API consumers to credit them and to send applicants to the job URL
+ * from the feed rather than a rewritten one. Both are honoured: `source` is shown
+ * on every card in the UI, and `url` is passed through untouched.
+ */
+export async function fetchJobicy(tag: string): Promise<SourceResult> {
+  const label = "Jobicy";
+  try {
+    const data = await getJson<{ jobs: JobicyJob[] }>(
+      `https://jobicy.com/api/v2/remote-jobs?count=50&tag=${encodeURIComponent(tag)}`,
+    );
+    const jobs = (data.jobs ?? []).map((j) =>
+      baseJob({
+        id: mkId("jobicy", j.id),
+        title: j.jobTitle,
+        company: j.companyName,
+        location: j.jobGeo || "Remote",
+        market: inferMarkets(j.jobGeo ?? "remote", true),
+        remote: true,
+        url: j.url,
+        source: label,
+        postedAt: j.pubDate,
+        description: stripHtml(j.jobDescription ?? j.jobExcerpt ?? "").slice(0, 6000),
+        tags: [...(j.jobIndustry ?? []), ...(j.jobType ?? []), j.jobLevel].filter(
+          Boolean,
+        ) as string[],
+        salary:
+          j.salaryMin && j.salaryMax
+            ? `${Math.round(j.salaryMin / 1000)}k–${Math.round(j.salaryMax / 1000)}k` +
+              (j.salaryCurrency ? ` ${j.salaryCurrency}` : "")
+            : undefined,
+      }),
+    );
+    return { source: label, jobs, ok: true, detail: `${jobs.length} postings` };
+  } catch (err) {
+    return { source: label, jobs: [], ok: false, detail: msg(err) };
+  }
+}
+
+// ── The Muse (large, filterable by category and level) ──────────────────────
+interface MuseJob {
+  id: number;
+  name: string;
+  contents?: string;
+  publication_date: string;
+  company?: { name: string };
+  locations?: { name: string }[];
+  levels?: { name: string }[];
+  categories?: { name: string }[];
+  refs?: { landing_page?: string };
+}
+
+/**
+ * Muse categories to pull, and how deep.
+ *
+ * envListRaw, not envList: the category filter is case-sensitive and answers HTTP
+ * 200 with `total: 0` for `software engineering`, so lowercasing these would
+ * silently disable the source. `Software Engineering` alone holds 40,519 senior
+ * postings, and unlike the remote-only feeds it covers Bangalore, which is half
+ * the target market.
+ *
+ * Paging is capped at 99 by the API (page 100 returns HTTP 400) and each page is
+ * 20 postings, so MUSE_PAGES trades requests for recall at 20 postings per
+ * request. Six pages per category is 240 postings for 12 requests.
+ */
+export const MUSE_CATEGORIES = envListRaw("MUSE_CATEGORIES", [
+  "Software Engineering",
+  "Data and Analytics",
+]);
+const MUSE_PAGES = Math.min(99, Math.max(1, Number(process.env.MUSE_PAGES ?? 6)));
+const MUSE_LEVEL = process.env.MUSE_LEVEL ?? "Senior Level";
+
+export async function fetchTheMuse(category: string): Promise<SourceResult> {
+  const label = "TheMuse";
+  const collected: Job[] = [];
+  let failure = "";
+
+  // Sequential: pages of one category are the same host, and there is no reason
+  // to race them. A mid-run failure keeps the pages already collected rather than
+  // discarding the whole category.
+  for (let page = 1; page <= MUSE_PAGES; page++) {
+    try {
+      const data = await getJson<{ results: MuseJob[] }>(
+        `https://www.themuse.com/api/public/jobs?page=${page}` +
+          `&category=${encodeURIComponent(category)}` +
+          `&level=${encodeURIComponent(MUSE_LEVEL)}`,
+      );
+      const results = data.results ?? [];
+      if (results.length === 0) break;
+      for (const j of results) {
+        const loc = (j.locations ?? []).map((l) => l.name).join("; ") || "Unspecified";
+        const remote = /remote|flexible/i.test(loc);
+        collected.push(
+          baseJob({
+            id: mkId("muse", j.id),
+            title: j.name,
+            company: j.company?.name ?? "Unknown",
+            location: loc,
+            market: inferMarkets(loc, remote),
+            remote,
+            url: j.refs?.landing_page ?? "",
+            source: label,
+            postedAt: j.publication_date,
+            description: stripHtml(j.contents ?? "").slice(0, 6000),
+            tags: [
+              ...(j.categories ?? []).map((c) => c.name),
+              ...(j.levels ?? []).map((l) => l.name),
+            ],
+          }),
+        );
+      }
+    } catch (err) {
+      failure = msg(err);
+      break;
+    }
+  }
+
+  if (!collected.length) {
+    return { source: label, jobs: [], ok: false, detail: failure || `no results for ${category}` };
+  }
+  return {
+    source: label,
+    jobs: collected,
+    ok: true,
+    detail:
+      `${collected.length} postings for ${category}` +
+      (failure ? ` · stopped early: ${failure}` : ""),
+  };
+}
+
 // ── Greenhouse public boards ────────────────────────────────────────────────
 interface GhJob {
   id: number;
@@ -209,11 +508,40 @@ interface GhJob {
   location?: { name: string };
 }
 
-/** Companies whose Greenhouse board you want watched. Set GREENHOUSE_BOARDS to override. */
-export const GREENHOUSE_BOARDS = envList(
-  "GREENHOUSE_BOARDS",
-  ["stripe", "databricks", "airbnb", "figma", "razorpay"],
-);
+/**
+ * Companies whose Greenhouse board you want watched. Set GREENHOUSE_BOARDS to override.
+ *
+ * Every token here answered with at least one posting when probed — see
+ * `npm run check:boards`. `razorpay` used to be in this list and never resolved on
+ * Greenhouse at all, so it contributed nothing for as long as it sat here.
+ *
+ * Weighted toward data platform, orchestration and iPaaS rather than headcount:
+ * Workato returned the highest strong-match rate of anything measured (6 strong out
+ * of 148 postings) because integration work is what this resume reads strongest on,
+ * while OpenAI's 729 postings produced zero.
+ */
+export const GREENHOUSE_BOARDS = envList("GREENHOUSE_BOARDS", [
+  // data platform / warehouse / orchestration
+  "databricks", "fivetran", "clickhouse", "starburst", "singlestore", "neo4j",
+  "cockroachlabs", "elastic", "mongodb", "hightouch", "sigmacomputing",
+  "hextechnologies", "imply", "portable", "sisense",
+  // integration / iPaaS — closest to this profile's own work
+  "workato", "celigo", "make", "postman",
+  // infra / devtools / observability
+  "datadog", "grafanalabs", "gitlab", "cloudflare", "vercel", "netlify",
+  "pagerduty", "launchdarkly", "honeycomb", "okta", "twilio", "webflow",
+  // fintech / payments
+  "stripe", "brex", "affirm", "coinbase", "robinhood", "chime",
+  "mercury", "checkr", "gusto", "wise",
+  // product SaaS
+  "figma", "airbnb", "asana", "airtable", "smartsheet", "amplitude", "mixpanel",
+  // enterprise / process / security
+  "celonis", "samsara", "verkada", "netskope", "druva",
+  // AI labs
+  "anthropic", "scaleai",
+  // India market
+  "phonepe", "groww", "hackerrank",
+]);
 
 export async function fetchGreenhouse(board: string): Promise<SourceResult> {
   const label = `Greenhouse:${board}`;
@@ -259,10 +587,19 @@ interface LeverJob {
  *
  * `netflix` used to be in this list and was dead: Netflix runs on Eightfold
  * (explore.jobs.netflix.net), so the Lever endpoint had nothing to return and
- * failed quietly every run. Run `npm run check:boards` before adding a token —
- * a wrong one costs you a source without ever raising an error.
+ * failed quietly every run. `plaid` was the same mistake with a subtler ending —
+ * it is a real company on a real ATS, just Ashby rather than Lever, so it moved
+ * down to ASHBY_BOARDS where it returns 102 postings instead of nothing.
+ *
+ * Run `npm run check:boards` before adding a token — a wrong one costs you a
+ * source without ever raising an error.
  */
-export const LEVER_BOARDS = envList("LEVER_BOARDS", ["plaid"]);
+export const LEVER_BOARDS = envList("LEVER_BOARDS", [
+  "sonarsource", "matillion", "snaplogic", "acceldata", "metabase",
+  "tinybird", "keboola",
+  // India market — Lever is where most of these actually live
+  "paytm", "meesho", "cred", "zeta", "porter", "eternal", "nium",
+]);
 
 export async function fetchLever(board: string): Promise<SourceResult> {
   const label = `Lever:${board}`;
@@ -318,8 +655,27 @@ interface AshbyJob {
  * Ashby, which is also why their recruiter mail arrives from @ashbyhq.com. They
  * are the Airflow company, so this is the single most relevant board in the file
  * for your background.
+ *
+ * Ashby has quietly become where the modern data stack lives — Snowflake,
+ * Confluent, Airbyte, Prefect, Atlan, Materialize and Monte Carlo are all here
+ * rather than on Greenhouse, which is why this list is no longer one entry.
  */
-export const ASHBY_BOARDS = envList("ASHBY_BOARDS", ["astronomer"]);
+export const ASHBY_BOARDS = envList("ASHBY_BOARDS", [
+  // orchestration / streaming / modern data stack
+  "astronomer", "prefect", "confluent", "airbyte", "atlan", "materialize",
+  "montecarlodata", "snowflake", "hex", "validio", "lightdash", "omni",
+  // infra / devtools
+  "docker", "supabase", "render", "railway", "sentry", "redis", "kong",
+  "temporal", "n8n", "goteleport", "gruntwork", "vanta",
+  // product SaaS
+  "notion", "linear", "miro", "clickup", "zapier",
+  // fintech
+  "ramp", "plaid", "moderntreasury", "airwallex",
+  // AI labs
+  "openai", "cohere", "harvey", "abridge", "modal", "anyscale",
+  // enterprise automation
+  "uipath",
+]);
 
 /**
  * Companies worth watching whose ATS is not yet confirmed.
@@ -334,21 +690,31 @@ export const ASHBY_BOARDS = envList("ASHBY_BOARDS", ["astronomer"]);
  * probes each against Greenhouse, Lever and Ashby and tells you which answers.
  * Move the ones that resolve into the list above, delete the ones that don't.
  *
- * The selection is Airflow-adjacent on purpose — orchestration, ingestion,
- * warehousing and streaming — because that is where your platform and
- * integration work reads strongest, not just where the headcount is.
+ * The previous ten names have all been resolved and promoted. What is left are
+ * companies that answered on none of the three — most run Workday, Eightfold or
+ * SuccessFactors, none of which expose an unauthenticated board feed. They stay
+ * listed because ATS migrations happen and a re-probe is one command.
  */
 export const WATCHLIST = [
-  "snowflake",
-  "confluent",
-  "fivetran",
-  "airbyte",
   "dbtlabs",
-  "prefect",
   "dagster",
-  "starburst",
-  "clickhouse",
-  "temporal",
+  "hashicorp",
+  "snyk",
+  "boomi",
+  "mulesoft",
+  "informatica",
+  "razorpay",
+  "atlassian",
+  "freshworks",
+  "browserstack",
+  "sprinklr",
+  // Demoted from GREENHOUSE_BOARDS, and the reason this list exists. It sat in
+  // the live list reporting "live but empty" on every single sweep — which reads
+  // as "not hiring" and is why a wrong token is so expensive. Probing all three:
+  // Greenhouse and Ashby each answer HTTP 200 with zero postings, Lever 404s. So
+  // the Greenhouse token was simply wrong, and had been silently contributing
+  // nothing for as long as it was listed.
+  "marqeta",
 ];
 
 export async function fetchAshby(board: string): Promise<SourceResult> {
@@ -442,7 +808,7 @@ function msg(err: unknown): string {
 }
 
 /**
- * Runs every configured source concurrently. Failures are reported, never thrown.
+ * Runs every configured source. Failures are reported, never thrown.
  *
  * Keyword-capable sources fan out across every term in QUERIES. They used to be
  * called with one hardcoded string each, which meant the Settings page advertised
@@ -451,16 +817,32 @@ function msg(err: unknown): string {
  * all. ATS boards take no query: you get the whole board, and the resume gate in
  * relevance.ts drops the postings unrelated to the profile before they reach the
  * store.
+ *
+ * The board fetches go through pool() rather than joining the same Promise.all as
+ * the keyword sources. At 7 boards either worked; at 113 an unbounded fan-out holds
+ * every response body in memory at once and invites the rate limiting that turns a
+ * live board into a silent zero. The keyword sources stay outside the pool because
+ * perQuery already serialises them per host — they are 5 slow tasks, not 113 fast
+ * ones, and pooling them together would let boards starve them of slots.
  */
 export async function fetchAllSources(): Promise<SourceResult[]> {
-  const tasks: Promise<SourceResult>[] = [
-    perQuery(QUERIES, fetchRemotive).then((r) => mergeResults("Remotive", r)),
-    fetchArbeitnow(),
-    ...GREENHOUSE_BOARDS.map(fetchGreenhouse),
-    ...LEVER_BOARDS.map(fetchLever),
-    ...ASHBY_BOARDS.map(fetchAshby),
-    perQuery(QUERIES, (q) => fetchAdzuna("in", q)).then((r) => mergeResults("Adzuna:IN", r)),
-    perQuery(QUERIES, (q) => fetchAdzuna("us", q)).then((r) => mergeResults("Adzuna:US", r)),
+  const boardTasks: Array<() => Promise<SourceResult>> = [
+    ...GREENHOUSE_BOARDS.map((b) => () => fetchGreenhouse(b)),
+    ...LEVER_BOARDS.map((b) => () => fetchLever(b)),
+    ...ASHBY_BOARDS.map((b) => () => fetchAshby(b)),
   ];
-  return Promise.all(tasks);
+
+  const [keyword, boards] = await Promise.all([
+    Promise.all([
+      perQuery(QUERIES, fetchRemotive).then((r) => mergeResults("Remotive", r)),
+      fetchArbeitnow(),
+      perQuery(JOBICY_TAGS, fetchJobicy).then((r) => mergeResults("Jobicy", r)),
+      perQuery(MUSE_CATEGORIES, fetchTheMuse).then((r) => mergeResults("TheMuse", r)),
+      perQuery(QUERIES, (q) => fetchAdzuna("in", q)).then((r) => mergeResults("Adzuna:IN", r)),
+      perQuery(QUERIES, (q) => fetchAdzuna("us", q)).then((r) => mergeResults("Adzuna:US", r)),
+    ]),
+    pool(boardTasks, FETCH_CONCURRENCY),
+  ]);
+
+  return [...keyword, ...boards];
 }

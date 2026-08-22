@@ -141,7 +141,122 @@ const mk = (over = {}) => ({
 });
 
 const daysAgo = (d) => new Date(Date.now() - d * 86_400_000).toISOString();
-const trimmed = (j) => String(j.description ?? "").includes("[pruned]");
+// The store's own predicate, not a re-spelling of the marker. rescore.mjs decides
+// what to skip with this exact function, so asserting through it is what keeps the
+// tombstone format and its only reader from drifting apart.
+const trimmed = (j) => store.isPruned(j);
+
+// ── the tombstone must stay recognisable to its reader ─────────────────────
+// scripts/rescore.mjs skips pruned postings, because their descriptions are 240-char
+// fragments and scoring one derives a lower total from text the prune already threw
+// away — then writes it back as the record. Two runs ratchet the same posting down
+// twice. That guard is only as good as isPruned agreeing with what pruneStore wrote,
+// so pin the round trip: slim a posting for real, then ask the predicate.
+await check("prune: a slimmed posting is recognisable as pruned afterwards", () => {
+  const long = mk({
+    id: "tombstone-round-trip",
+    score: mkScore(20), // below REVIEW_FLOOR, so the description gets tombstoned
+    description: "x".repeat(4000),
+  });
+  assert.equal(store.isPruned(long), false, "not pruned before the prune runs");
+
+  const { store: out } = store.pruneStore({ jobs: [long], runs: [] });
+  const after = out.jobs.find((j) => j.id === "tombstone-round-trip");
+
+  assert.ok(after, "a below-floor posting keeps its record");
+  assert.equal(store.isPruned(after), true, "rescore must be able to spot this");
+});
+
+// A posting that keeps its description must NOT be skipped by rescore — otherwise
+// the guard would quietly stop the taxonomy edit from reaching anything at all.
+await check("prune: a posting above the floor stays rescorable", () => {
+  const strong = mk({
+    id: "keeps-description",
+    score: mkScore(90),
+    description: "y".repeat(4000),
+  });
+  const { store: out } = store.pruneStore({ jobs: [strong], runs: [] });
+  const after = out.jobs.find((j) => j.id === "keeps-description");
+
+  assert.ok(after, "a strong posting is retained");
+  assert.equal(store.isPruned(after), false, "and is still rescorable");
+});
+
+// ── re-sighting a still-open posting ──────────────────────────────────────
+// `fetchedAt` is a last-seen stamp. It used to freeze at first sighting, so a role
+// that stayed open past STALE_AFTER_DAYS was dropped while still listed, then
+// re-added by the next run as a brand-new find — inflating "added", pushing an
+// already-passed-over posting back into review, and restarting its clock so it
+// could never actually leave. Tightening the window to 21 days made that common
+// enough to matter, hence these.
+
+await check("upsert: re-seeing a nearly-stale posting restamps it as still open", async () => {
+  await store.resetStore();
+  const old = mk({ fetchedAt: daysAgo(18), stageUpdatedAt: daysAgo(18) });
+  await store.upsertJobs([old]);
+
+  const now = new Date().toISOString();
+  const r = await store.upsertJobs([{ ...old, id: "seen-again", fetchedAt: now }]);
+  assert.equal(r.duplicates, 1, "re-sighting was not counted as a duplicate");
+  assert.equal(r.added, 0, "re-sighting was added as a second record");
+
+  const jobs = await store.getJobs();
+  assert.equal(jobs.length, 1, "re-sighting created a second record");
+  assert.equal(jobs[0].fetchedAt, now, "fetchedAt froze at first sighting");
+  assert.equal(jobs[0].id, old.id, "the original record was replaced, not restamped");
+});
+
+await check("upsert: a posting seen recently is left alone, to keep the diff small", async () => {
+  await store.resetStore();
+  const recent = mk({ fetchedAt: daysAgo(3), stageUpdatedAt: daysAgo(3) });
+  await store.upsertJobs([recent]);
+
+  await store.upsertJobs([{ ...recent, fetchedAt: new Date().toISOString() }]);
+  const [kept] = await store.getJobs();
+  assert.equal(
+    kept.fetchedAt,
+    recent.fetchedAt,
+    "restamped a posting nowhere near the cutoff — that rewrites every record nightly",
+  );
+});
+
+// The whole point of the last-seen stamp: prune must not drop a role that is open.
+await check("upsert + prune: a long-open role survives past the stale window", async () => {
+  await store.resetStore();
+  const listed = mk({ fetchedAt: daysAgo(40), stageUpdatedAt: daysAgo(40) });
+  await store.upsertJobs([listed]);
+  await store.upsertJobs([{ ...listed, fetchedAt: new Date().toISOString() }]);
+
+  const { jobs } = await store.readStore();
+  const { store: out } = store.pruneStore({ jobs, runs: [] });
+  assert.equal(out.jobs.length, 1, "a posting still listed on a board was pruned as stale");
+});
+
+await check("upsert + prune: a delisted posting still ages out", async () => {
+  await store.resetStore();
+  await store.upsertJobs([mk({ fetchedAt: daysAgo(40), stageUpdatedAt: daysAgo(40) })]);
+  // No re-sighting: the board stopped listing it.
+  const { jobs } = await store.readStore();
+  const { store: out, report } = store.pruneStore({ jobs, runs: [] });
+  assert.equal(out.jobs.length, 0, "the last-seen stamp kept a delisted posting alive");
+  assert.equal(report.dropped, 1);
+});
+
+// ── reported size ─────────────────────────────────────────────────────────
+// The prune report is the only place store size is ever surfaced, and it was
+// measuring a compact re-serialisation of a file written with indent 2 — so it
+// described a 28MB file as 20MB.
+
+await check("prune: reported bytes match the file writeStore actually writes", async () => {
+  await store.resetStore();
+  await store.upsertJobs([mk({ score: mkScore(10) }), mk({ score: mkScore(90) })]);
+  const { report } = await store.prune();
+  assert.equal(
+    report.bytesAfter,
+    fs.statSync(DB).size,
+    "bytesAfter does not match data/jobs.json on disk",
+  );
+});
 
 await check("prune: an applied job survives at any age with its description", () => {
   const job = mk({ stage: "applied", fetchedAt: daysAgo(300), stageUpdatedAt: daysAgo(90) });
@@ -164,6 +279,50 @@ await check("prune: a stale never-touched posting is dropped", () => {
   const { store: out, report } = store.pruneStore({ jobs: [job], runs: [] });
   assert.equal(out.jobs.length, 0);
   assert.equal(report.dropped, 1);
+});
+
+// ── retention thresholds ──────────────────────────────────────────────────
+// STALE_AFTER_DAYS and REVIEW_FLOOR are not exported, so these pin them from the
+// outside — through the only thing that actually matters, which is behaviour.
+// They tightened from 45 days / score 40 when the board list went from 7 boards
+// to 113: the store is committed to git nightly, and at the old settings a 7x
+// wider fetch would have grown it to 20-40MB.
+
+await check("prune: retention is 21 days, not the old 45", () => {
+  const fresh = store.pruneStore({
+    jobs: [mk({ fetchedAt: daysAgo(19), stageUpdatedAt: daysAgo(19) })],
+    runs: [],
+  }).store;
+  assert.equal(fresh.jobs.length, 1, "dropped a posting still inside the window");
+
+  const old = store.pruneStore({
+    jobs: [mk({ fetchedAt: daysAgo(30), stageUpdatedAt: daysAgo(30) })],
+    runs: [],
+  }).store;
+  assert.equal(old.jobs.length, 0, "a 30-day-old untouched posting survived — window is still 45");
+});
+
+// The floor is meant to sit exactly at the bottom of verdict()'s "fair" band, so
+// the rule is sayable: a description survives only if the posting is at least a
+// fair match. A floor between bands is a number with no meaning behind it.
+await check("prune: the description floor lines up with the fair verdict band", () => {
+  const fair = store.pruneStore({ jobs: [mk({ score: mkScore(50) })], runs: [] }).store;
+  assert.ok(!trimmed(fair.jobs[0]), "a fair match lost its description");
+
+  const under = store.pruneStore({ jobs: [mk({ score: mkScore(49) })], runs: [] }).store;
+  assert.ok(trimmed(under.jobs[0]), "a below-fair posting kept its description");
+
+  const oldFloor = store.pruneStore({ jobs: [mk({ score: mkScore(45) })], runs: [] }).store;
+  assert.ok(trimmed(oldFloor.jobs[0]), "score 45 kept its description — floor is still 40");
+});
+
+// Tightening retention must not touch the one rule that is a correctness
+// property rather than a tradeoff.
+await check("prune: tighter retention still exempts application history", () => {
+  const job = mk({ stage: "applied", score: mkScore(5), fetchedAt: daysAgo(400), stageUpdatedAt: daysAgo(400) });
+  const { store: out } = store.pruneStore({ jobs: [job], runs: [] });
+  assert.equal(out.jobs.length, 1, "history was dropped by the shorter window");
+  assert.ok(!trimmed(out.jobs[0]), "history was tombstoned by the higher floor");
 });
 
 await check("prune: a low scorer keeps its record so dedupe still sees it", () => {
