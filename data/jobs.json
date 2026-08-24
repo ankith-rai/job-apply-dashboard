@@ -329946,9 +329946,3872 @@
         "flags": [],
         "scoredAt": "2026-08-23T03:27:50.647Z"
       }
+    },
+    {
+      "id": "arbeitnow-senioruiuxdesignerallgendersberlin477563",
+      "title": "Senior UI/UX Designer (all genders)",
+      "company": "Init Ag",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-ui-ux-designer-all-genders-berlin-477563",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-24T02:09:54.000Z",
+      "description": "Über ]init[ Du möchtest die Gesellschaft von morgen mitgestalten? Dann bist du bei ]init[ richtig. Denn unsere digitalen Lösungen sind für Menschen gemacht und haben gesellschaftliche Relevanz. Klingt spannend? Dann steig ein und arbeite ge… [pruned]",
+      "tags": [
+        "UI",
+        "UX",
+        "Designer"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.370Z",
+      "fetchedAt": "2026-08-24T03:29:23.370Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.817Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorfrontendangulardeveloperallgenders",
+      "title": "Senior Frontend Angular Developer (all genders)",
+      "company": "Init Ag",
+      "location": "Hamburg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-frontend-angular-developer-all-genders-hamburg-315667",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-24T02:09:54.000Z",
+      "description": "Über ]init[ Du möchtest die Gesellschaft von morgen mitgestalten? Dann bist du bei ]init[ richtig. Denn unsere digitalen Lösungen sind für Menschen gemacht und haben gesellschaftliche Relevanz. Klingt spannend? Dann steig ein und arbeite ge… [pruned]",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "Angular",
+        "React",
+        "HTML5",
+        "CSS3",
+        "ES6",
+        "Atomic Design",
+        "BEM",
+        "Frontend"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.370Z",
+      "fetchedAt": "2026-08-24T03:29:23.370Z",
+      "score": {
+        "total": 26,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.818Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorexchangemessagingengineerallgender",
+      "title": "Senior Exchange & Messaging Engineer (all genders)",
+      "company": "Init Ag",
+      "location": "Hamburg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-exchange-messaging-engineer-all-genders-hamburg-448083",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-24T02:09:54.000Z",
+      "description": "Über ]init[ Du möchtest die Gesellschaft von morgen mitgestalten? Dann bist du bei ]init[ richtig. Denn unsere digitalen Lösungen sind für Menschen gemacht und haben gesellschaftliche Relevanz. Klingt spannend? Dann steig ein und arbeite ge… [pruned]",
+      "tags": [
+        "Microsoft Exchange",
+        "Microsoft 365",
+        "Database Availability Groups",
+        "Active Directory",
+        "Windows Server"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.372Z",
+      "fetchedAt": "2026-08-24T03:29:23.372Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.819Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorrecruiterfreelancemanagementallgen",
+      "title": "(Senior) Recruiter – Freelance Management (all genders)",
+      "company": "Init Ag",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/init-ag/senior-recruiter-freelance-management-all-genders-berlin-406572",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-24T02:09:54.000Z",
+      "description": "Über ]init[ Du möchtest die Gesellschaft von morgen mitgestalten? Dann bist du bei ]init[ richtig. Denn unsere digitalen Lösungen sind für Menschen gemacht und haben gesellschaftliche Relevanz. Klingt spannend? Dann steig ein und arbeite ge… [pruned]",
+      "tags": [
+        "Recruiting",
+        "Freelance Management",
+        "Administration",
+        "Vertragsmanagement"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.372Z",
+      "fetchedAt": "2026-08-24T03:29:23.372Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.819Z"
+      }
+    },
+    {
+      "id": "arbeitnow-nativeprocessingserverarchitectstuttgart",
+      "title": "Native Processing Server Architect (m/f/d)",
+      "company": "Q.ANT GmbH",
+      "location": "Stuttgart",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/qant-gmbh/native-processing-server-architect-stuttgart-51310",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-24T02:09:47.000Z",
+      "description": "Your mission The future of AI computing is light, not electrons. At Q.ANT, we are building photonic processing systems that compute with light—delivering a scalable, energy-efficient alternative to transistor-based architectures for next-ge… [pruned]",
+      "tags": [
+        "Hardware Architecture",
+        "HPC",
+        "Photonic Systems",
+        "Data Center Infrastructure",
+        "System Hardware Bring-up",
+        "Prototype Construction",
+        "Thermal & Power Validation",
+        "Field Application Engineering (FAE)",
+        "Hardware Deployment & Integration",
+        "Rack / Board Level Design"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.372Z",
+      "fetchedAt": "2026-08-24T03:29:23.372Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.820Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsocialmediamanagerhamburg231537",
+      "title": "(Senior) Social Media Manager (d/f/m)",
+      "company": "Jung von Matt",
+      "location": "Hamburg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/jung-von-matt/senior-social-media-manager-hamburg-231537",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-24T02:09:22.000Z",
+      "description": "Position Jung von Matt HAMBURG is looking for a (Senior) Social Media Manager (d/f/m). Your Tasks Development and management of social media, communication and campaign strategies for national and international clients. Planning, coordinati… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.372Z",
+      "fetchedAt": "2026-08-24T03:29:23.372Z",
+      "score": {
+        "total": 19,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.821Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorconceptcreativesocialmediahamburg3",
+      "title": "(Senior) Concept Creative Social Media (d/f/m)",
+      "company": "Jung von Matt",
+      "location": "Hamburg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/jung-von-matt/senior-concept-creative-social-media-hamburg-300493",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-24T02:09:22.000Z",
+      "description": "Position Jung von Matt HAMBURG is looking for a (Senior) Concept Creative Social Media (d/f/m). Your Tasks Development of social-first campaign ideas, creative platforms and innovative content concepts for different brands and audiences. Cr… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.372Z",
+      "fetchedAt": "2026-08-24T03:29:23.372Z",
+      "score": {
+        "total": 19,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.821Z"
+      }
+    },
+    {
+      "id": "arbeitnow-remoteworkingstudentmarketintelligenceal",
+      "title": "Working Student Market Intelligence (all genders)",
+      "company": "Envelio",
+      "location": "Cologne / Remote from Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/envelio/remote-working-student-market-intelligence-all-genders-120631",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:30:18.000Z",
+      "description": "About Working at envelio Too easy is boring! Together, we are on a mission to drive forward the energy transition. We love what we do, and we are unafraid to dive in. We believe in taking ownership of our work and in continuously growing an… [pruned]",
+      "tags": [
+        "market intelligence",
+        "market research"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.372Z",
+      "fetchedAt": "2026-08-24T03:29:23.372Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.822Z"
+      }
+    },
+    {
+      "id": "arbeitnow-remoteainativesoftwareentwickler108394",
+      "title": "AI-Native Software Entwickler (m/w/d)",
+      "company": "JUNE GmbH",
+      "location": "München + Remote",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/june-gmbh/remote-ai-native-software-entwickler-108394",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:30:14.000Z",
+      "description": "HERAUSFORDERUNG UND PERSPEKTIVE Bei uns lernst du Agentic Coding dort, wo es bereits täglich eingesetzt wird! Du hast die ersten eigenen Projekte gebaut. Nicht perfekt, aber echt. Du hast mit Claude Code, Codex oder anderen AI-Tools experim… [pruned]",
+      "tags": [
+        "ai",
+        "ki",
+        "agentic",
+        "claude",
+        "codex",
+        "backend",
+        ".net",
+        "python",
+        "agent"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.372Z",
+      "fetchedAt": "2026-08-24T03:29:23.372Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.822Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorinfrastructurearchitecttechnicalle",
+      "title": "Senior Infrastructure Architect / Technical Lead (m/w/d)",
+      "company": "proLogistik Group",
+      "location": "Dortmund",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/prologistik-group/senior-infrastructure-architect-technical-lead-dortmund-18351",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:29:55.000Z",
+      "description": "Es freut uns, dass du da bist! Du möchtest Infrastruktur nicht nur betreiben, sondern strategisch weiterdenken, technische Standards setzen und moderne Hybrid- und Cloud-Architekturen aktiv gestalten? Als zentrale technische Instanz im Infr… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.373Z",
+      "fetchedAt": "2026-08-24T03:29:23.373Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.823Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniortaxaccountingspecialistallgendersm",
+      "title": "(Senior) Tax & Accounting Specialist (all genders)",
+      "company": "HolidayCheck Group AG",
+      "location": "München",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/holidaycheck-group-ag/senior-tax-accounting-specialist-all-genders-munchen-125694",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:29:22.000Z",
+      "description": "Starte deine ganz persönliche Reise – mit HolidayCheck! Bei HolidayCheck dreht sich alles darum, gemeinsam Urlaub besser zu machen. Wir ermöglichen nicht nur unseren Reisenden die schönste Zeit des Jahres, sondern schaffen auch für unser Te… [pruned]",
+      "tags": [
+        "Steuern",
+        "Steuerberater",
+        "Steuerfachangestellter",
+        "Steuerfachwirt",
+        "Buchhalter",
+        "Bilanzbuchhalter"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.373Z",
+      "fetchedAt": "2026-08-24T03:29:23.373Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.824Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorcrmautomationlifecyclemanagerallge",
+      "title": "(Senior) CRM Automation & Lifecycle Manager (all genders)",
+      "company": "HolidayCheck Group AG",
+      "location": "München",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/holidaycheck-group-ag/senior-crm-automation-lifecycle-manager-all-genders-munchen-194692",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:29:18.000Z",
+      "description": "Start your very own journey – with HolidayCheck! At HolidayCheck, everything revolves around making vacations better – together. We’re not only enabling the best time of the year for our travelers, but also creating an inspiring work enviro… [pruned]",
+      "tags": [
+        "CRM",
+        "Automatisierung",
+        "Automatisation",
+        "CRM Marketing",
+        "Directmarketing",
+        "Direktmarketing",
+        "Marketing Manager",
+        "Marketing Manager B2C",
+        "B2C",
+        "B2B"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.373Z",
+      "fetchedAt": "2026-08-24T03:29:23.373Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.824Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorvtcengineerwiesbadenge232085",
+      "title": "Senior VTC Engineer",
+      "company": "Redhorsecorp",
+      "location": "Wiesbaden, GE",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/redhorsecorp/senior-vtc-engineer-wiesbaden-ge-232085",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:24:32.000Z",
+      "description": "About the Organization Now is a great time to join Redhorse Corporation. We are a solution-driven company delivering data insights and technology solutions to customers with missions critical to U.S. national interests. We’re looking for th… [pruned]",
+      "tags": [
+        "National Security"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.373Z",
+      "fetchedAt": "2026-08-24T03:29:23.373Z",
+      "score": {
+        "total": 19,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.825Z"
+      }
+    },
+    {
+      "id": "arbeitnow-workingstudentproductmanagementenergypro",
+      "title": "Working Student Product Management Energy Products & Tariffs (m/f/d)",
+      "company": "1Komma5Grad",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/1komma5grad/working-student-product-management-energy-products-tariffs-berlin-113160",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:10:33.000Z",
+      "description": "1KOMMA5° At 1KOMMA5°, we pursue a clear vision: Living on wind and sunlight forever for free. To make this a reality, we are building the energy system of the future with Heartbeat AI. Want to be part of it? We bring together regional craft… [pruned]",
+      "tags": [
+        "join"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.373Z",
+      "fetchedAt": "2026-08-24T03:29:23.373Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.826Z"
+      }
+    },
+    {
+      "id": "arbeitnow-werkstudentinsalesoperationsberlin315610",
+      "title": "Werkstudent:in Sales Operations (m/w/d)",
+      "company": "1Komma5Grad",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/1komma5grad/werkstudentin-sales-operations-berlin-315610",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:10:33.000Z",
+      "description": "1KOMMA5° Bei 1KOMMA5° verfolgen wir eine Vision: Living on wind and sunlight forever for free . Dafür bauen wir mit Heartbeat AI das Energiesystem der Zukunft. Bist du dabei? Wir bringen regionales Handwerk und skalierbare Software zusammen… [pruned]",
+      "tags": [
+        "Werkstudent:in",
+        "Sales Operations",
+        "1KOMMA5",
+        "1KOMMA5°",
+        "Sales",
+        "Operations",
+        "Analytics",
+        "Berlin",
+        "Heartbeat",
+        "Prozessmanagement",
+        "Prozessoptimierung",
+        "Business Analytics",
+        "Revenue Operations",
+        "Consulting"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.374Z",
+      "fetchedAt": "2026-08-24T03:29:23.374Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.826Z"
+      }
+    },
+    {
+      "id": "arbeitnow-senioritoperationsspecialisthamburg29210",
+      "title": "Senior IT Operations Specialist (m/f/d)",
+      "company": "1Komma5Grad",
+      "location": "Hamburg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/1komma5grad/senior-it-operations-specialist-hamburg-292103",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:10:32.000Z",
+      "description": "1KOMMA5° At 1KOMMA5° , we pursue a clear vision: Living on wind and sunlight forever for free . To make this a reality, we are building the energy system of the future with Heartbeat AI. Want to be part of it? We bring together regional cra… [pruned]",
+      "tags": [
+        "join"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.374Z",
+      "fetchedAt": "2026-08-24T03:29:23.374Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.827Z"
+      }
+    },
+    {
+      "id": "arbeitnow-principalsoftwareengineerberlin36496",
+      "title": "Principal Software Engineer (m/f/d)",
+      "company": "1Komma5Grad",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/1komma5grad/principal-software-engineer-berlin-36496",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:10:32.000Z",
+      "description": "1KOMMA5° At 1KOMMA5° , we pursue a clear vision: Living on wind and sunlight forever for free . To make this a reality, we are building the energy system of the future with Heartbeat AI. Want to be part of it? We bring together regional cra… [pruned]",
+      "tags": [
+        "join"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.374Z",
+      "fetchedAt": "2026-08-24T03:29:23.374Z",
+      "score": {
+        "total": 49,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.827Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorstaffitoperationsspecialistberlin2",
+      "title": "(Senior / Staff) IT Operations Specialist (m/f/d)",
+      "company": "1Komma5Grad",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/1komma5grad/senior-staff-it-operations-specialist-berlin-225595",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:10:32.000Z",
+      "description": "1KOMMA5° At 1KOMMA5° , we pursue a clear vision: Living on wind and sunlight forever for free . To make this a reality, we are building the energy system of the future with Heartbeat AI. Want to be part of it? We bring together regional cra… [pruned]",
+      "tags": [
+        "join"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.375Z",
+      "fetchedAt": "2026-08-24T03:29:23.375Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.828Z"
+      }
+    },
+    {
+      "id": "arbeitnow-productownermanagerdexiossaasplattformmu",
+      "title": "Product Owner / Manager – DEXIOS SaaS-Plattform (m/w/d)",
+      "company": "PCS Systemtechnik GmbH",
+      "location": "München",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/pcs-systemtechnik-gmbh/product-owner-manager-dexios-saas-plattform-munchen-247858",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:10:25.000Z",
+      "description": "___________________________________________________________________________ DEXIOS ist unsere Cloud-Plattform für Zutrittskontrolle, Zutrittsmanagement und Zeiterfassung. Die Software ist live, sie ist noch jung, und sie steht jetzt an dem … [pruned]",
+      "tags": [
+        "produktmanager",
+        "productmanager",
+        "ux",
+        "projektmanager",
+        "projekte",
+        "software",
+        "cloud"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.375Z",
+      "fetchedAt": "2026-08-24T03:29:23.375Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.829Z"
+      }
+    },
+    {
+      "id": "arbeitnow-productmanagerplatformdresden256291",
+      "title": "Product Manager Platform (m/w/d)",
+      "company": "Kiwigrid",
+      "location": "Dresden",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/kiwigrid/product-manager-platform-dresden-256291",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:10:22.000Z",
+      "description": "Deine Aufgaben Als Product Manager Platform (m/w/d) gestaltest du das Herzstück unserer IoT- und Cloud-Plattform KiwiOS. Du verbindest strategische Marktanforderungen mit technischer Exzellenz, steuerst das Plattform-Ökosystem über den gesa… [pruned]",
+      "tags": [
+        "Dresden",
+        "IT",
+        "IoT",
+        "Product Management",
+        "API",
+        "Platform",
+        "Business Case",
+        "Pricing",
+        "PaaS",
+        "Cloud",
+        "Edge",
+        "Smart Grid",
+        "Energiemanagement",
+        "Erneuerbare",
+        "Software",
+        "API Integration",
+        "Product Development",
+        "Produktmanagement"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.375Z",
+      "fetchedAt": "2026-08-24T03:29:23.375Z",
+      "score": {
+        "total": 39,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.829Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsaphcmconsultanttimemanagementptep",
+      "title": "Senior SAP HCM Consultant - Time Management (PT) (m/w/d)",
+      "company": "Epi Use",
+      "location": "EPI-USE GmbH, Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/epi-use/senior-sap-hcm-consultant-time-management-pt-epi-use-gmbh-berlin-262854",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:09:55.000Z",
+      "description": "Deine Aufgaben Ganzheitliche Beratung unserer Kunden im Bereich SAP HCM Zeitwirtschaft (PT, On-Premise) sowie SuccessFactors Time Tracking Analyse, Konzeption und Umsetzung komplexer Anforderungen in hybriden Systemlandschaften (SAP HCM & S… [pruned]",
+      "tags": [
+        "SAP HCM",
+        "Time Management",
+        "Zeitwirtschaft",
+        "PT"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.375Z",
+      "fetchedAt": "2026-08-24T03:29:23.375Z",
+      "score": {
+        "total": 29,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.830Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsoftwareengineerteilprojektleitung",
+      "title": "Senior Software Engineer (m/w/d) – Teilprojektleitung",
+      "company": "Steadforce",
+      "location": "München",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/steadforce/senior-software-engineer-teilprojektleitung-munchen-219996",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:09:54.000Z",
+      "description": "Deine Aufgaben Du übernimmst die fachliche und technische Verantwortung für mehrere Teilprojekte, damit diese pünktlich und den Qualitätsvorgaben entsprechend geliefert werden. Du stimmst dich über diese Teilprojekte mit dem Team Lead, Proj… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.375Z",
+      "fetchedAt": "2026-08-24T03:29:23.375Z",
+      "score": {
+        "total": 39,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.830Z"
+      }
+    },
+    {
+      "id": "arbeitnow-werkstudentpartnermanagementawsstuttgart",
+      "title": "Werkstudent Partnermanagement AWS (m/w/d)",
+      "company": "Skaylink",
+      "location": "Stuttgart, Baden-Württemberg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/skaylink/werkstudent-partnermanagement-aws-stuttgart-baden-wurttemberg-166779",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:04:59.000Z",
+      "description": "Du möchtest neben deinem Studium echte Einblicke in die Welt von Cloud Partnerschaften gewinnen, Verantwortung übernehmen und dabei lernen, wie ein internationales Cloud Consulting Unternehmen mit AWS auf Augenhöhe zusammenarbeitet. Bei Ska… [pruned]",
+      "tags": [
+        "Sales & Business Development"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.375Z",
+      "fetchedAt": "2026-08-24T03:29:23.375Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.831Z"
+      }
+    },
+    {
+      "id": "arbeitnow-ausbildungfachinformatikerfursysteminteg",
+      "title": "Ausbildung Fachinformatiker für Systemintegration (m/w/d) in Essen für 2027",
+      "company": "Skaylink",
+      "location": "Essen, Nordrhein-Westfalen",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/skaylink/ausbildung-fachinformatiker-fur-systemintegration-in-essen-fur-2027-essen-nordrhein-westfalen-436037",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:04:58.000Z",
+      "description": "Starte deine IT-Karriere als Auszubildende*r Fachinformatiker für Systemintegration (m/w/d) in Essen! Du möchtest nicht nur Technik verstehen, sondern auch die IT-Welt aktiv mitgestalten? Bei uns wirst du nicht nur zum IT-Profi ausgebildet,… [pruned]",
+      "tags": [
+        "Apprentices"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.375Z",
+      "fetchedAt": "2026-08-24T03:29:23.375Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.831Z"
+      }
+    },
+    {
+      "id": "arbeitnow-ausbildungfachinformatikerfursysteminteg",
+      "title": "Ausbildung Fachinformatiker für Systemintegration (m/w/d) für 2027",
+      "company": "Skaylink",
+      "location": "Regensburg, Bayern",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/skaylink/ausbildung-fachinformatiker-fur-systemintegration-fur-2027-regensburg-bayern-439371",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:04:58.000Z",
+      "description": "Starte deine IT-Karriere als Auszubildende*r Fachinformatiker für Systemintegration (m/w/d)! Du bist ein*e Problemlöser*in mit Begeisterung für Technik? Dann bist du bei uns genau richtig! In deiner Ausbildung übernimmst du früh Verantwortu… [pruned]",
+      "tags": [
+        "Cyber Defense"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.376Z",
+      "fetchedAt": "2026-08-24T03:29:23.376Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.832Z"
+      }
+    },
+    {
+      "id": "arbeitnow-aifoundingengineerrfmachinelearningsigin",
+      "title": "AI Founding Engineer: RF Machine Learning (SIGINT) (f/m/d)",
+      "company": "Datacept",
+      "location": "Hamburg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/datacept/ai-founding-engineer-rf-machine-learning-sigint-hamburg-8016",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T22:00:27.000Z",
+      "description": "Modern conflict runs on the electromagnetic spectrum. Every drone, every radio, every radar leaves a trace in it. Datacept builds cognitive electronic warfare systems that listen to that spectrum, understand what is in it, and act on it. At… [pruned]",
+      "tags": [
+        "Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.376Z",
+      "fetchedAt": "2026-08-24T03:29:23.376Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.832Z"
+      }
+    },
+    {
+      "id": "arbeitnow-osintanalystdataeffectscelldectacticalmi",
+      "title": "OSINT Analyst/ Data Effects Cell (DEC)/Tactical Mission Networks (TMN)",
+      "company": "Smxtech",
+      "location": "Stuttgart",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/smxtech/osint-analyst-data-effects-cell-dec-tactical-mission-networks-tmn-stuttgart-342492",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:55:14.000Z",
+      "description": "<p>We are seeking an experienced Open Source Intelligence (OSINT) Analyst to support the Data Effects Cell (DEC) in delivering timely, accurate, and operationally relevant intelligence products to U.S. Army Special Operations Command (USASO… [pruned]",
+      "tags": [
+        "PACIFIC and INDOPACOM"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.376Z",
+      "fetchedAt": "2026-08-24T03:29:23.376Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.833Z"
+      }
+    },
+    {
+      "id": "arbeitnow-datastrategistanalyticsspecialiststuttga",
+      "title": "Data Strategist & Analytics Specialist",
+      "company": "Smxtech",
+      "location": "Stuttgart",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/smxtech/data-strategist-analytics-specialist-stuttgart-398292",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:55:14.000Z",
+      "description": "<p>SMX is seeking an experienced Data Strategist &amp; Analytics Specialist to serve as the primary data authority for our organization s Theater/Tactical Mission Network (TMN) operations. This individual will be responsible for the full da… [pruned]",
+      "tags": [
+        "PACIFIC and INDOPACOM"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.376Z",
+      "fetchedAt": "2026-08-24T03:29:23.376Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.834Z"
+      }
+    },
+    {
+      "id": "arbeitnow-securityengineerproductberlin216370",
+      "title": "Security Engineer - Product",
+      "company": "wizinc",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/wizinc/security-engineer-product-berlin-216370",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:55:06.000Z",
+      "description": "<div class=&quot;content-intro&quot;><p>Come join the organization that is redefining security for the AI era. As one of the<a href=&quot;https://www.wiz.io/blog/100m-arr-in-18-months-wiz-becomes-the-fastest-growing-software-company-ever&qu… [pruned]",
+      "tags": [
+        "Product Security"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.379Z",
+      "fetchedAt": "2026-08-24T03:29:23.379Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.834Z"
+      }
+    },
+    {
+      "id": "arbeitnow-workingstudentitnurnberg412516",
+      "title": "Working Student (m/f/x) - IT",
+      "company": "ITONICS",
+      "location": "Nürnberg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/itonics/working-student-it-nurnberg-412516",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:30:41.000Z",
+      "description": "Your Contribution As a working student you help keep ITONICS' internal IT environment reliable, secure, and easy to work with. Every laptop you set up, every access request you handle, and every process you document means a colleague can ge… [pruned]",
+      "tags": [
+        "IT",
+        "IT Support",
+        "Working Student",
+        "IT Operations",
+        "Helpdesk",
+        "Student Job",
+        "SaaS",
+        "Tech"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.379Z",
+      "fetchedAt": "2026-08-24T03:29:23.379Z",
+      "score": {
+        "total": 19,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.835Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsalesstrategyoperationsmanagerinmu",
+      "title": "Senior Sales Strategy & Operations Manager*in (w/m/d)",
+      "company": "FTAPI GmbH",
+      "location": "München",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/ftapi-gmbh/senior-sales-strategy-operations-managerin-munchen-7192",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:30:25.000Z",
+      "description": "Deine Aufgaben Du bist das Gesicht von RevOps im Go-to-Market. Gemeinsam mit den Verantwortlichen aus unseren Neu- und Bestandskunden-Segmenten führst du FTAPI auf die nächste Wachstumsstufe. Die gesamte Journey liegt bewusst in einer Hand,… [pruned]",
+      "tags": [
+        "RevOps",
+        "Revenue Operations",
+        "Field Operations",
+        "Sales Operations",
+        "Internal Consulting",
+        "Sales Strategy",
+        "Strategy Operations",
+        "Strategieberatung",
+        "B2B",
+        "SaaS",
+        "GTM"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.379Z",
+      "fetchedAt": "2026-08-24T03:29:23.379Z",
+      "score": {
+        "total": 36,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.835Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorfieldoperationsmanagerinmunchen264",
+      "title": "Senior Field Operations Manager*in (w/m/d)",
+      "company": "FTAPI GmbH",
+      "location": "München",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/ftapi-gmbh/senior-field-operations-managerin-munchen-264980",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:30:25.000Z",
+      "description": "Deine Aufgaben Du bist das Gesicht von RevOps im Go-to-Market. Gemeinsam mit den Verantwortlichen aus unseren Neu- und Bestandskunden-Segmenten führst du FTAPI auf die nächste Wachstumsstufe. Die gesamte Journey liegt bewusst in einer Hand,… [pruned]",
+      "tags": [
+        "RevOps",
+        "Revenue Operations",
+        "Field Operations",
+        "Sales Operations",
+        "Internal Consulting",
+        "Sales Strategy",
+        "Strategy Operations",
+        "Strategieberatung",
+        "B2B",
+        "SaaS",
+        "GTM"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.379Z",
+      "fetchedAt": "2026-08-24T03:29:23.379Z",
+      "score": {
+        "total": 36,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.836Z"
+      }
+    },
+    {
+      "id": "arbeitnow-workingstudentpoolyourstartatquantumsyst",
+      "title": "Working Student Pool - Your start at Quantum-Systems",
+      "company": "Quantum-Systems GmbH",
+      "location": "Gilching, Bayern, Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/quantum-systems-gmbh/working-student-pool-your-start-at-quantum-systems-gilching-479867",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:30:16.000Z",
+      "description": "You would like to gain valuable practical experience during your studies and gain exciting insights into the drone industry? You want to be part of a team that challenges you, supports your growth, and where you can really make a difference… [pruned]",
+      "tags": [
+        "Student & Early Professionals"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.379Z",
+      "fetchedAt": "2026-08-24T03:29:23.379Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.837Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorroboticsmachinelearningengineermun",
+      "title": "Senior Robotics & Machine Learning Engineer (m/f/d)",
+      "company": "Quantum-Systems GmbH",
+      "location": "München, Bayern, Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/quantum-systems-gmbh/senior-robotics-machine-learning-engineer-munchen-401688",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:30:16.000Z",
+      "description": "As a Senior Robotics & Machine Learning Engineer, you will shape the next generation of autonomous ground systems. You will design and implement core components of our end‑to‑end autonomy stack — from perception and prediction to path plann… [pruned]",
+      "tags": [
+        "Software"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.380Z",
+      "fetchedAt": "2026-08-24T03:29:23.380Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.837Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorembeddedsoftwareengineerreliantgil",
+      "title": "(Senior) Embedded Software Engineer - Reliant",
+      "company": "Quantum-Systems GmbH",
+      "location": "Gilching, Bayern, Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/quantum-systems-gmbh/senior-embedded-software-engineer-reliant-gilching-225376",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:30:16.000Z",
+      "description": "As an Embedded Software Engineer , you are a key member of our Architecture team, developing and implementing the core embedded software that enables our autonomous long-range VTOL platforms to operate safely, reliably, and intelligently in… [pruned]",
+      "tags": [
+        "Software"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.380Z",
+      "fetchedAt": "2026-08-24T03:29:23.380Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.838Z"
+      }
+    },
+    {
+      "id": "arbeitnow-remoteworkingstudentcrmdataberlin178515",
+      "title": "Working Student (m/w/d) CRM & Data",
+      "company": "Recare Deutschland GmbH",
+      "location": "Remote job",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://www.arbeitnow.com/jobs/companies/recare-deutschland-gmbh/remote-working-student-crm-data-berlin-178515",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:30:11.000Z",
+      "description": "Über Recare Als eines der führenden deutschen HealthTech-Unternehmen gestalten wir das Entlassmanagement neu – technologiegetrieben, patientenzentriert und frei von Bürokratie. Neben unserer marktführenden SaaS-Plattform entwickeln wir KI-L… [pruned]",
+      "tags": [
+        "Growth",
+        "Remote"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.380Z",
+      "fetchedAt": "2026-08-24T03:29:23.380Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.838Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorgenaiengineerberlin144358",
+      "title": "(Senior) GenAI Engineer (f/m/d)",
+      "company": "Trusted Shops SE (DE)",
+      "location": "Berlin, Berlin, Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/trusted-shops-se-de/senior-genai-engineer-berlin-144358",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:30:10.000Z",
+      "description": "At Trusted Shops, we’re shaping Europe’s Community of Trust – a space where Businesses and Consumers connect with confidence, transparency, and security. Every day, millions of Users and thousands of Companies across Europe trust us to deli… [pruned]",
+      "tags": [
+        "Tech"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.380Z",
+      "fetchedAt": "2026-08-24T03:29:23.380Z",
+      "score": {
+        "total": 48,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.839Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorproductmanagermobilewebberlinmitte",
+      "title": "(Senior) Product Manager (Mobile & Web) (m/w/d)",
+      "company": "Instaff",
+      "location": "Berlin (Mitte)",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/instaff/senior-product-manager-mobile-web-berlin-mitte-132328",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:29:04.000Z",
+      "description": "Das sind deine Aufgaben Als (Senior) Product Manager (Mobile & Web) (m/w/d) verantwortest du die strategische und operative Weiterentwicklung der InStaff-Apps für Android und iOS. Dein Ziel ist es, digitale Produkterlebnisse zu schaffen, di… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.380Z",
+      "fetchedAt": "2026-08-24T03:29:23.380Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.839Z"
+      }
+    },
+    {
+      "id": "arbeitnow-dataprotectionofficerdeputyfrankfurtamma",
+      "title": "Data Protection Officer (Deputy) (F/M/D)",
+      "company": "360T",
+      "location": "Frankfurt am Main",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/360t/data-protection-officer-deputy-frankfurt-am-main-265379",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:10:33.000Z",
+      "description": "Your Role The Deputy Data Protection Officer (Deputy DPO) supports and, where required, deputizes for the Data Protection Officer (DPO) of the 360T Group in carrying out the DPO’s advisory and monitoring responsibilities. The role acts as a… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.380Z",
+      "fetchedAt": "2026-08-24T03:29:23.380Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.840Z"
+      }
+    },
+    {
+      "id": "arbeitnow-directorsupplychainplanningberlin386455",
+      "title": "Director Supply Chain Planning (f/m/d)",
+      "company": "KoRo Handels GmbH",
+      "location": "Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/koro-handels-gmbh/director-supply-chain-planning-berlin-386455",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T20:09:06.000Z",
+      "description": "What You Will Do Full product availability. Zero food waste. Build the supply chain that delivers both. KoRo is a better-for-you food brand on a fast track from a D2C-born challenger to a European omnichannel love brand – and increasingly a… [pruned]",
+      "tags": [
+        "SCM",
+        "Supply Chain Planning",
+        "Inventory Planning",
+        "KoRo",
+        "Zero food waste",
+        "Product availability",
+        "Supply Chain",
+        "AI",
+        "KI",
+        "Director"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.380Z",
+      "fetchedAt": "2026-08-24T03:29:23.380Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.841Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorsolutionengineermunich87038",
+      "title": "Senior Solution Engineer",
+      "company": "onetrust",
+      "location": "Munich",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/onetrust/senior-solution-engineer-munich-87038",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:55:16.000Z",
+      "description": "<div class=&quot;content-intro&quot;><h3>Strength in Trust&nbsp;</h3> <p><span data-contrast=&quot;auto&quot;>OneTrust’s mission is to enable innovation through the responsible use of data and AI. We believe that ensuring data is trusted sh… [pruned]",
+      "tags": [
+        "Sales"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.380Z",
+      "fetchedAt": "2026-08-24T03:29:23.380Z",
+      "score": {
+        "total": 28,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.841Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorfullstackdeveloper478553",
+      "title": "Senior Full Stack Developer (f/m/d)",
+      "company": "Think Cell",
+      "location": "Unspecified",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/think-cell/senior-full-stack-developer-478553",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:55:11.000Z",
+      "description": "<p><strong><span data-contrast=&quot;auto&quot;>About The Role</span></strong><span data-ccp-props=&quot;{&quot;134233117&quot;:false,&quot;134233118&quot;:false,&quot;335559738&quot;:240,&quot;335559739&quot;:240}&quot;>&nbsp;</span></p> <… [pruned]",
+      "tags": [
+        "Product Development"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.381Z",
+      "fetchedAt": "2026-08-24T03:29:23.381Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.842Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorfinancialaccountant248547",
+      "title": "Senior Financial Accountant (f/m/d)",
+      "company": "Think Cell",
+      "location": "Unspecified",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/think-cell/senior-financial-accountant-248547",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:55:11.000Z",
+      "description": "<p><strong><span data-contrast=&quot;auto&quot;>Sr. Financial Accountant - Join Our Innovative Team at think-cell Software</span></strong><span data-ccp-props=&quot;{}&quot;>&nbsp;</span></p> <p><strong><span data-contrast=&quot;auto&quot;>… [pruned]",
+      "tags": [
+        "Finance"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.381Z",
+      "fetchedAt": "2026-08-24T03:29:23.381Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.843Z"
+      }
+    },
+    {
+      "id": "arbeitnow-peoplebusinesspartnerberlin447509",
+      "title": "People Business Partner",
+      "company": "Superhuman",
+      "location": "Hub - Berlin",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/superhuman/people-business-partner-berlin-447509",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:40:13.000Z",
+      "description": "Superhuman offers a dynamic hybrid working model for this role. This flexible approach gives team members the best of both worlds: plenty of focus time along with in-person collaboration that helps foster trust, innovation, and a strong tea… [pruned]",
+      "tags": [
+        "G&A"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.382Z",
+      "fetchedAt": "2026-08-24T03:29:23.382Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.843Z"
+      }
+    },
+    {
+      "id": "arbeitnow-salesdevelopmentrepresentativesdrgermany",
+      "title": "Sales Development Representative / SDR (w/m/d)",
+      "company": "Public Cloud Group",
+      "location": "Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/public-cloud-group/sales-development-representative-sdr-germany-219078",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:40:11.000Z",
+      "description": "Cloud ist deine Welt – egal ob AWS, Microsoft, Google oder SAP? Dann passt du zu uns! Bei Public Cloud Group (PCG) begleiten wir Unternehmen dabei, ihre IT-Landschaften in der Cloud modern, sicher und zukunftsfähig zu gestalten. Fast 500 Cl… [pruned]",
+      "tags": [
+        "PCG"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.382Z",
+      "fetchedAt": "2026-08-24T03:29:23.382Z",
+      "score": {
+        "total": 36,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.844Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorpythondeveloperremote110978",
+      "title": "Senior Python Developer (w/m/d) - Remote",
+      "company": "node.energy",
+      "location": "Frankfurt a. M., Freiburg oder remote",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/nodeenergy/senior-python-developer-remote-110978",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:30:34.000Z",
+      "description": "Was Dich erwartet Als Senior Python Developer (w/m/d) bist du Teil unseres hochqualifizierten Inhouse-Entwicklungsteams. Du setzt Tickets eigenverantwortlich um und unterstützt andere Teammitglieder insbesondere bei Fragen zur Code-Struktur… [pruned]",
+      "tags": [
+        "Python",
+        "Django",
+        "Litestar",
+        "Redis",
+        "Postgresql",
+        "Software Entwicklung",
+        "Software Development",
+        "Developer"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.382Z",
+      "fetchedAt": "2026-08-24T03:29:23.382Z",
+      "score": {
+        "total": 35,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.844Z"
+      }
+    },
+    {
+      "id": "arbeitnow-ausbildungzumfachinformatikeranwendungse",
+      "title": "Ausbildung zum Fachinformatiker Anwendungsentwicklung (m/w/d) - Start 2027",
+      "company": "Wortmann KG Internationale Schuhproduktionen",
+      "location": "Detmold, Nordrhein-Westfalen, Deutschland",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/wortmann-kg-internationale-schuhproduktionen/ausbildung-zum-fachinformatiker-anwendungsentwicklung-start-2027-detmold-5970",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:30:21.000Z",
+      "description": "Du möchtest Theorie und Praxis verbinden? Dann starte zum 01. August 2027 Deine Ausbildung zum Fachinformatiker Anwendungsentwicklung (m/w/d) bei uns. Ausbildungsverlauf: Die Ausbildungsdauer beträgt 3 Jahre (Verkürzung möglich). Der Berufs… [pruned]",
+      "tags": [
+        "Ausbildung & Studium"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.382Z",
+      "fetchedAt": "2026-08-24T03:29:23.382Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.845Z"
+      }
+    },
+    {
+      "id": "arbeitnow-ausbildungzumfachinformatikersysteminteg",
+      "title": "Ausbildung zum Fachinformatiker Systemintegration (m/w/d) - Start 2027",
+      "company": "Wortmann KG Internationale Schuhproduktionen",
+      "location": "Detmold, Nordrhein-Westfalen, Deutschland",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/wortmann-kg-internationale-schuhproduktionen/ausbildung-zum-fachinformatiker-systemintegration-start-2027-detmold-111465",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:30:21.000Z",
+      "description": "Du möchtest Theorie und Praxis verbinden? Dann starte zum 01. August 2027 Deine Ausbildung zum Fachinformatiker Systemintegration (m/w/d) bei uns. Ausbildungsverlauf: Die Ausbildungsdauer beträgt 3 Jahre (Verkürzung möglich). Der Berufsschu… [pruned]",
+      "tags": [
+        "Ausbildung & Studium"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.382Z",
+      "fetchedAt": "2026-08-24T03:29:23.382Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.845Z"
+      }
+    },
+    {
+      "id": "arbeitnow-unsolicitedapplicationworkingstudentsoft",
+      "title": "Unsolicited Application: Working Student - Software Engineering (m/f/d)",
+      "company": "TYTAN Technologies GmbH",
+      "location": "Munich, Bayern, Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/tytan-technologies-gmbh/unsolicited-application-working-student-software-engineering-munich-98564",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:30:19.000Z",
+      "description": "TYTAN Technologies At TYTAN , we aim to set a global standard in autonomous air defense with AI-driven, cost-efficient systems that counter unmanned aerial threats at scale. We protect people. We protect critical infrastructure. We protect … [pruned]",
+      "tags": [
+        "Others"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.382Z",
+      "fetchedAt": "2026-08-24T03:29:23.382Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.846Z"
+      }
+    },
+    {
+      "id": "arbeitnow-workingstudentpeopleoperationsmunich3819",
+      "title": "Working Student - People Operations (f/m/d)",
+      "company": "TYTAN Technologies GmbH",
+      "location": "Munich, Bayern, Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/tytan-technologies-gmbh/working-student-people-operations-munich-38193",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:30:19.000Z",
+      "description": "At TYTAN , we aim to set a global standard in autonomous air defense with AI-driven, cost-efficient systems that counter unmanned aerial threats at scale. We protect people. We protect critical infrastructure. We protect Europe’s sovereignt… [pruned]",
+      "tags": [
+        "People and Culture"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.382Z",
+      "fetchedAt": "2026-08-24T03:29:23.382Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.846Z"
+      }
+    },
+    {
+      "id": "arbeitnow-fieldsolutionsengineermunich465864",
+      "title": "Field Solutions Engineer (f/m/d)",
+      "company": "TYTAN Technologies GmbH",
+      "location": "Munich, Bayern, Germany",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/tytan-technologies-gmbh/field-solutions-engineer-munich-465864",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:30:19.000Z",
+      "description": "TYTAN Technologies At TYTAN , we aim to set a global standard in autonomous air defense with AI-driven, cost-efficient systems that counter unmanned aerial threats at scale. We protect people. We protect critical infrastructure. We protect … [pruned]",
+      "tags": [
+        "Commercial and Sales"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.382Z",
+      "fetchedAt": "2026-08-24T03:29:23.382Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.847Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorprogrammanageronboardingmunichhead",
+      "title": "Senior Program Manager, Onboarding (m/w/d)",
+      "company": "Maltego Technologies GmbH",
+      "location": "Munich Headquarters",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/maltego/senior-program-manager-onboarding-munich-headquarters-437206",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:10:29.000Z",
+      "description": "Why we need you Maltego is a tool used globally by industry experts, analysts, and law enforcement agencies to help protect and watch over their own infrastructure but also to keep guard on internet safety, reduce crime and catch bad guys. … [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.383Z",
+      "fetchedAt": "2026-08-24T03:29:23.383Z",
+      "score": {
+        "total": 26,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.848Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorainativefullstackengineerdemunchen",
+      "title": "Senior AI-Native Fullstack Engineer (m/w/d)",
+      "company": "Zvoove",
+      "location": "DE | München",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/zvoove/senior-ai-native-fullstack-engineer-de-munchen-283285",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:09:50.000Z",
+      "description": "Job description We are building modern, customer-facing software for the temp-staffing industry, integrating capabilities from multiple ERP systems and countries into reliable applications, workflows, services, and reusable platform components. We are looking for a product-minded senior fullstack engineer who can turn ambiguous business requirements and complex existing systems into production-grade backend services, APIs, integrations, internal tools, and intuitive user interfaces. TypeScript is central to our technology landscape. Experience with .NET and C# is strongly valued, while engineers with a background in strongly typed languages such as Java are also welcome. Comfort working across different stacks and languages is essential. AI and LLM tooling are central to how we work. You should use AI-native workflows to explore faster, build in parallel, validate assumptions, and ship high-quality production solutions. You should care about correctness and maintainability, understand integration and business edge cases, choose simple and robust solutions, and own outcomes from exploration to production. Your tasks Fullstack Product Engineering: Build customer-facing applications, backend services, APIs, internal tools, admin interfaces, automation, job runners, and configurable workflows Backend & Domain Logic: Design maintainable services, APIs, business logic, asynchronous processes, validation rules, and reusable components Frontend Engineering: Build intuitive and maintainable user interfaces using TypeScript and modern frontend frameworks Integrations: Connect applications with ERP systems, internal platforms, external APIs, databases, queues, files, and third-party services Cloud & Production Ownership: Deploy and operate reliable cloud solutions, preferably AWS, owning monitoring, alerts, failure handling, security, performance, cost, and operational reliability Your profile Hands-on with Claude Code, Codex, and agent-based workflows; GitHub Copilot-style autocomplete alone is not enough Familiar with worktrees, subagents, MCP, structured prompts, harness engineering, parallelization, and validating AI-generated code and analysis to production quality Strong fullstack/backend experience, ideally with .NET and TypeScript Able to build production-grade services, APIs, scripts, tools, automation, and clean interfaces; comfortable with version control, review, debugging, testing, and existing systems Strong understanding of application architecture, API design, domain modeling, integration patterns, asynchronous processing, and maintainable software boundaries Comfortable with SQL, relational databases, schema design, transactions, migrations, indexing, and application-level data access Hands-on with AWS or similar cloud environments, including storage, databases, queues, containers, serverless/scheduled processing, SDKs, and APIs Understands deployment, secrets, networking, permissions, runtime configuration, scalability, performance, cost, and operational trade-offs You may be a good fit if you are driven to improve how software is built, use AI and agent-based workflows to move faster, experiment with better approaches, and turn ambiguous problems into reliable production solutions. You should enjoy working across the stack, taking ownership beyond predefined tickets, improving existing systems, and rigorously validating AI-generated output rather than accepting it at face value. This role is less suitable for someone who prefers narrow responsibilities, fixed processes, or working within a single technical area without contributing to broader product and engineering outcomes. Your benefits Work across AI-powered SaaS and cloud-native products, use modern AI tooling daily, and shape pragmatic infrastructure that helps teams ship faster and more safely Collaboration in an empathetic, appreciative team with room to contribute ideas and take ownership Individual development opportunities, structured onboarding, and interdisciplinary collaboration Flexible working models including hybrid work, home office, and mobile working A modern tech environment and agile ways of working Additional benefits such as pension plans, health offers, and employee discounts I look forward to receiving your application Svenja Krüßel D-49835 Wietmarschen-Lohne Tel.: 0170-7888740 E-Mail: Find more English Speaking Jobs in Germany on Arbeitnow",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.383Z",
+      "fetchedAt": "2026-08-24T03:29:23.383Z",
+      "score": {
+        "total": 52,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 32,
+            "max": 45,
+            "detail": "10 skill terms across 5/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 8,
+            "max": 25,
+            "detail": "Band unclear from title"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 0,
+            "max": 15,
+            "detail": "No market signal"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 7,
+            "max": 10,
+            "detail": "erp, saas"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 0d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "aws",
+          "typescript",
+          "sql",
+          "java",
+          "erp",
+          "api design",
+          "scalability",
+          "monitoring",
+          "security",
+          "claude code"
+        ],
+        "missingKeywords": [
+          "c#",
+          ".net",
+          "llm"
+        ],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.848Z"
+      }
+    },
+    {
+      "id": "arbeitnow-workingstudentallgendersrobustfeedforwar",
+      "title": "Working Student (all genders) – Robust Feed-Forward 3D Reconstruction for Dynamic Scene",
+      "company": "Xitaso",
+      "location": "Augsburg",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/xitaso/working-student-all-genders-robust-feed-forward-3d-reconstruction-for-dynamic-scene-augsburg-38126",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:09:42.000Z",
+      "description": "Abstract Feed-forward 3D reconstruction models can recover scene geometry directly from images or videos without costly scene-specific optimization. By combining large-scale pre-training, multi-view reasoning, and strong geometric priors, t… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.383Z",
+      "fetchedAt": "2026-08-24T03:29:23.383Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.849Z"
+      }
+    },
+    {
+      "id": "arbeitnow-headofengineeringatemobilitystartupmunch",
+      "title": "Head of Engineering (m/f/x) @ E-Mobility Startup",
+      "company": "Aampere",
+      "location": "München",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.com/jobs/companies/aampere/head-of-engineering-at-e-mobility-startup-munchen-436987",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T17:09:05.000Z",
+      "description": "About Aampere You'll be our first Head of Engineering - the most senior technical hire at Aampere and the person who turns our product vision into a shipped, scalable reality. You report directly to our CPO & Co-Founder, Max: he sets the lo… [pruned]",
+      "tags": [
+        "Head of",
+        "Engineering",
+        "Software",
+        "Founding Engineer",
+        "Startup",
+        "Scaleup",
+        "Mobility",
+        "Typescript",
+        "Nest.js",
+        "Node.js"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.383Z",
+      "fetchedAt": "2026-08-24T03:29:23.383Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.849Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorenterprisearchitectassociatecontra",
+      "title": "Senior Enterprise Architect (Associate, Contract)",
+      "company": "Intelance",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/intelance/senior-enterprise-architect-associate-contract-london-383297",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T23:00:26.000Z",
+      "description": "Intelance works with UK organisations that need clear, practical decisions about technology. We are building a trusted group of senior associates to lead short enterprise architecture engagements. This project based contract role is for som… [pruned]",
+      "tags": [
+        "Remote",
+        "Consulting",
+        "Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.383Z",
+      "fetchedAt": "2026-08-24T03:29:23.383Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.850Z"
+      }
+    },
+    {
+      "id": "arbeitnow-aideploymentstrategistcriticalandsoverei",
+      "title": "AI Deployment Strategist, Critical and Sovereign Institutions - UK",
+      "company": "Mistral.ai",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/mistralai/ai-deployment-strategist-critical-and-sovereign-institutions-uk-london-118751",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T21:40:07.000Z",
+      "description": "About Mistral Mistral provides full-stack AI solutions: from frontier models to developer tools, applications, and compute. We partner with enterprises tackling the hardest problems—across high-stakes industries like finance, manufacturing,… [pruned]",
+      "tags": [
+        "Solutions"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.384Z",
+      "fetchedAt": "2026-08-24T03:29:23.384Z",
+      "score": {
+        "total": 29,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.850Z"
+      }
+    },
+    {
+      "id": "arbeitnow-fieldmarketingmanagernortherneuropelondo",
+      "title": "Field Marketing Manager, Northern Europe",
+      "company": "Mistral.ai",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/mistralai/field-marketing-manager-northern-europe-london-253443",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T21:40:07.000Z",
+      "description": "About Mistral Mistral provides full-stack AI solutions: from frontier models to developer tools, applications, and compute. We partner with enterprises tackling the hardest problems—across high-stakes industries like finance, manufacturing,… [pruned]",
+      "tags": [
+        "Marketing"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.384Z",
+      "fetchedAt": "2026-08-24T03:29:23.384Z",
+      "score": {
+        "total": 28,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.851Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorconsultantsenioraccountmanagerpubl",
+      "title": "Senior Consultant (Senior Account Manager) | Public Affairs | London",
+      "company": "Hanover",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/hanover/senior-consultant-senior-account-manager-public-affairs-london-313266",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T18:55:30.000Z",
+      "description": "<div class=&quot;content-intro&quot;><p><strong>About us</strong></p> <p>&nbsp;</p> <p>Hanover is an award-winning communications consultancy that advises enterprises, institutions, and individuals on building recognition and enhancing repu… [pruned]",
+      "tags": [
+        "Hanover"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.384Z",
+      "fetchedAt": "2026-08-24T03:29:23.384Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.852Z"
+      }
+    },
+    {
+      "id": "arbeitnow-senioraccountdirectorpublicaffairslondon",
+      "title": "Senior Account Director | Public Affairs | London",
+      "company": "Hanover",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/hanover/senior-account-director-public-affairs-london-213385",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T18:55:30.000Z",
+      "description": "<div class=&quot;content-intro&quot;><p><strong>About us</strong></p> <p>&nbsp;</p> <p>Hanover is an award-winning communications consultancy that advises enterprises, institutions, and individuals on building recognition and enhancing repu… [pruned]",
+      "tags": [
+        "Hanover"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.384Z",
+      "fetchedAt": "2026-08-24T03:29:23.384Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.852Z"
+      }
+    },
+    {
+      "id": "arbeitnow-engineeringleadlondon428181",
+      "title": "Engineering Lead",
+      "company": "Flock",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/flock/engineering-lead-london-428181",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T18:40:11.000Z",
+      "description": "ABOUT FLOCK Road accidents kill and injure people, damage vehicles, and cost businesses fortunes. But traditional insurance does nothing to prevent them - it just pays out claims when they happen. At Flock, we’re changing that. Using telema… [pruned]",
+      "tags": [
+        "Technology"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.386Z",
+      "fetchedAt": "2026-08-24T03:29:23.386Z",
+      "score": {
+        "total": 39,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.853Z"
+      }
+    },
+    {
+      "id": "arbeitnow-peopleoperationsleadlondon241565",
+      "title": "People Operations Lead",
+      "company": "Flock",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/flock/people-operations-lead-london-241565",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T18:40:11.000Z",
+      "description": "About Flock Road accidents kill and injure people, damage vehicles, and cost businesses fortunes. But traditional insurance does nothing to prevent them - it just pays out claims when they happen. At Flock, we're changing that. Using telema… [pruned]",
+      "tags": [
+        "People"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.387Z",
+      "fetchedAt": "2026-08-24T03:29:23.387Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.854Z"
+      }
+    },
+    {
+      "id": "arbeitnow-accountexecutiveaffiliatemarketinglondon",
+      "title": "Account Executive, Affiliate Marketing",
+      "company": "Accelerationpartners",
+      "location": "London; Manchester; Newcastle upon Tyne",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/accelerationpartners/account-executive-affiliate-marketing-london-manchester-newcastle-upon-tyne-353058",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T15:55:21.000Z",
+      "description": "<p><strong><span data-contrast=&quot;auto&quot;>Position: Account Specialist, Affiliate Marketing </span></strong><span data-ccp-props=&quot;{}&quot;>&nbsp;</span></p> <p><strong><span data-contrast=&quot;auto&quot;>Location:</span></strong… [pruned]",
+      "tags": [
+        "EMEA Client Services Early Career"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.387Z",
+      "fetchedAt": "2026-08-24T03:29:23.387Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.854Z"
+      }
+    },
+    {
+      "id": "arbeitnow-securityarchitectlondon496869",
+      "title": "Security Architect",
+      "company": "Intelance",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/intelance/security-architect-london-496869",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T15:00:45.000Z",
+      "description": "Intelance is appointing a Security Architect as a contract associate for the definition phase of a major UK enterprise technology programme. You will provide a focused security review of the proposed integration approach and work with Intel… [pruned]",
+      "tags": [
+        "Remote",
+        "IT Security"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.387Z",
+      "fetchedAt": "2026-08-24T03:29:23.387Z",
+      "score": {
+        "total": 47,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.855Z"
+      }
+    },
+    {
+      "id": "arbeitnow-oracletechnicalarchitectlondon179390",
+      "title": "Oracle Technical Architect",
+      "company": "Intelance",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/intelance/oracle-technical-architect-london-179390",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T15:00:44.000Z",
+      "description": "Intelance is appointing an Oracle Technical Architect as a contract associate for the definition phase of a major UK enterprise technology programme. You will work with Intelance's Chief Enterprise Architect and Lead Integration Architect t… [pruned]",
+      "tags": [
+        "Remote",
+        "SAP/ERP Consulting",
+        "Development"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.387Z",
+      "fetchedAt": "2026-08-24T03:29:23.387Z",
+      "score": {
+        "total": 39,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.855Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorgrowthmanagercontract207657",
+      "title": "Senior Growth Manager (Contract)",
+      "company": "reddit",
+      "location": "Unspecified",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/reddit/senior-growth-manager-contract-207657",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T12:55:30.000Z",
+      "description": "<div class=&quot;content-intro&quot;><div class=&quot;c-message_kit__blocks c-message_kit__blocks--rich_text&quot;> <div class=&quot;c-message__message_blocks c-message__message_blocks--rich_text&quot; data-qa=&quot;message-text&quot;> <div… [pruned]",
+      "tags": [
+        "Community"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.388Z",
+      "fetchedAt": "2026-08-24T03:29:23.388Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.856Z"
+      }
+    },
+    {
+      "id": "arbeitnow-softwareengineerdigitalassetslondon10414",
+      "title": "Software Engineer - Digital Assets",
+      "company": "Optiverus",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/optiverus/software-engineer-digital-assets-london-104142",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T12:55:18.000Z",
+      "description": "<p>Optiver is looking for a Senior Digital Assets Software Engineer to join our Digital Assets Tech Team in London. In this role, you’ll build and evolve trading systems for cryptocurrency markets, working closely with traders and researche… [pruned]",
+      "tags": [
+        "Technology"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.388Z",
+      "fetchedAt": "2026-08-24T03:29:23.388Z",
+      "score": {
+        "total": 29,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.856Z"
+      }
+    },
+    {
+      "id": "arbeitnow-softwareengineerbuildplatformlondon31328",
+      "title": "Software Engineer - Build Platform",
+      "company": "Optiverus",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/optiverus/software-engineer-build-platform-london-313285",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T12:55:18.000Z",
+      "description": "<p>At Optiver, the velocity of our software development is a critical part of our competitive advantage. Our ability to compete depends on how quickly new ideas can move from insight to production. The Developer Experience team is a strateg… [pruned]",
+      "tags": [
+        "Software"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.388Z",
+      "fetchedAt": "2026-08-24T03:29:23.388Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.857Z"
+      }
+    },
+    {
+      "id": "arbeitnow-researchscientist3dreconstructionsfmslam",
+      "title": "Research Scientist - 3D Reconstruction (SfM & SLAM)",
+      "company": "Spaitial",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/spaitial/research-scientist-3d-reconstruction-sfm-slam-london-210402",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T12:40:12.000Z",
+      "description": "SpAItial is pioneering the next generation of World Models, pushing the boundaries of generative AI, computer vision, and the simulation of reality. We are moving beyond 2D pixels to build models that natively understand the physics and geo… [pruned]",
+      "tags": [
+        "Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.388Z",
+      "fetchedAt": "2026-08-24T03:29:23.388Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.857Z"
+      }
+    },
+    {
+      "id": "arbeitnow-researchscientistrobotlearningvlawamlond",
+      "title": "Research Scientist - Robot Learning (VLA / WAM)",
+      "company": "Spaitial",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/spaitial/research-scientist-robot-learning-vla-wam-london-287210",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T12:40:12.000Z",
+      "description": "SpAItial is pioneering the next generation of World Models, pushing the boundaries of generative AI, computer vision, and the simulation of reality. We are moving beyond 2D pixels to build models that natively understand the physics and geo… [pruned]",
+      "tags": [
+        "Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.388Z",
+      "fetchedAt": "2026-08-24T03:29:23.388Z",
+      "score": {
+        "total": 26,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.858Z"
+      }
+    },
+    {
+      "id": "arbeitnow-revenueoperationsexecutivedalston84245",
+      "title": "Revenue Operations Executive",
+      "company": "Pmmalliance",
+      "location": "Hybrid  or Fully Remote",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/pmmalliance/revenue-operations-executive-dalston-84245",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T12:40:10.000Z",
+      "description": "The Company When it comes to digital communities, The Alliance is leading the way. Product marketing, sales enablement, product-led growth, AI, customer success, CMOs, you name it, we’re home to thriving communities for them all. With 70,00… [pruned]",
+      "tags": [
+        "*Marketing"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.388Z",
+      "fetchedAt": "2026-08-24T03:29:23.388Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.858Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorleadgovernmentinnovationandeconomi",
+      "title": "Senior Lead, Government Innovation and Economic Growth",
+      "company": "Plexal",
+      "location": "Manchester",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/plexal/senior-lead-government-innovation-and-economic-growth-manchester-351752",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T12:09:46.000Z",
+      "description": "The Role's Purpose Plexal operates at the intersection of government, industry and emerging technology, helping organisations turn innovation ambition into practical capability, adoption and measurable impact. The Senior Lead, Government In… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.388Z",
+      "fetchedAt": "2026-08-24T03:29:23.388Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.859Z"
+      }
+    },
+    {
+      "id": "arbeitnow-cybersecurityexpertunitedkingdomlondon12",
+      "title": "Cybersecurity Expert (United Kingdom)",
+      "company": "Authority.inc",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/authorityinc/cybersecurity-expert-united-kingdom-london-123844",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T10:30:32.000Z",
+      "description": "Role description The Cybersecurity Expert Commentary role is a remote contract position open to experts located anywhere in the United Kingdom. You will provide clear, accurate commentary on security operations, cyber risk, identity, cloud … [pruned]",
+      "tags": [
+        "Remote",
+        "IT Security"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.389Z",
+      "fetchedAt": "2026-08-24T03:29:23.389Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.860Z"
+      }
+    },
+    {
+      "id": "arbeitnow-sohoriverhousedirectorwindsor2430",
+      "title": "Soho River House Director",
+      "company": "Sohohousecaterer",
+      "location": "Windsor",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/sohohousecaterer/soho-river-house-director-windsor-2430",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T09:55:15.000Z",
+      "description": "<p>&nbsp;</p> <p><strong>The Role…&nbsp;</strong></p> <p>As Director of Soho River House, you will be the most senior leader on site, responsible for the successful opening and ongoing operation of one of Soho House’s most significant UK Ho… [pruned]",
+      "tags": [
+        "General Manager"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.389Z",
+      "fetchedAt": "2026-08-24T03:29:23.389Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.860Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorchefdepartiesohohousemanchester338",
+      "title": "Senior Chef de Partie - Soho House Manchester",
+      "company": "Sohohousecaterer",
+      "location": "Manchester",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/sohohousecaterer/senior-chef-de-partie-soho-house-manchester-338692",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T09:55:15.000Z",
+      "description": "<p>&nbsp;</p> <p><strong>The Role…&nbsp;</strong></p> <p>At Soho House, a <strong>Senior</strong> <strong>Chef de Partie </strong><span class=&quot;TextRun SCXW51313497 BCX0&quot; lang=&quot;EN-GB&quot; data-contrast=&quot;auto&quot;><span … [pruned]",
+      "tags": [
+        "Senior Chef de Partie"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.389Z",
+      "fetchedAt": "2026-08-24T03:29:23.389Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.861Z"
+      }
+    },
+    {
+      "id": "arbeitnow-sitereliabilityengineerkonstanzberlinode",
+      "title": "Site Reliability Engineer (m/w/d) – Konstanz, Berlin oder remote",
+      "company": "Seitenbau Gmbh",
+      "location": "Remote",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/seitenbau-gmbh/site-reliability-engineer-konstanz-berlin-oder-remote-75299",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T09:29:40.000Z",
+      "description": "Deine Aufgaben Wir suchen dich – einen motivierten und leidenschaftlichen Site Reliability Engineer. Unsere Kund*innen sind vielfältig. Unsere Software-Projekte ebenso. Wir lassen die großen Visionen unserer Kund*innen Wirklichkeit werden u… [pruned]",
+      "tags": [
+        "Infrastruktur",
+        "Site Reliability",
+        "Cloudnativ",
+        "Kubernetes",
+        "Infrastructure-as-Code",
+        "Pulumi"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.389Z",
+      "fetchedAt": "2026-08-24T03:29:23.389Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.861Z"
+      }
+    },
+    {
+      "id": "arbeitnow-devopscloudengineerkonstanzberlinoderrem",
+      "title": "DevOps & Cloud Engineer (m/w/d) - Konstanz, Berlin oder remote",
+      "company": "Seitenbau Gmbh",
+      "location": "Remote",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/seitenbau-gmbh/devops-cloud-engineer-konstanz-berlin-oder-remote-464804",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T09:29:40.000Z",
+      "description": "Deine Aufgaben Wir suchen dich – einen motivierten und leidenschaftlichen DevOps & Cloud Engineer. Unsere Kund*innen sind vielfältig. Unsere Software-Projekte ebenso. Wir lassen die großen Visionen unserer Kund*innen Wirklichkeit werden und… [pruned]",
+      "tags": [
+        "DevOps",
+        "Cloud",
+        "Engineer",
+        "Docker",
+        "Kubernetes",
+        "CI/CD"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.389Z",
+      "fetchedAt": "2026-08-24T03:29:23.389Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.862Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorendpointengineerlondon169650",
+      "title": "Senior Endpoint Engineer",
+      "company": "Wave",
+      "location": "London, England, United Kingdom",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/wave/senior-endpoint-engineer-london-169650",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T07:45:28.000Z",
+      "description": "Our mission We're making Africa the first cashless continent. In 2017, over half the population in Sub-Saharan Africa had no bank account. That's for good reason—the fees are too high, the closest branch can be miles away, and nobody takes … [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.389Z",
+      "fetchedAt": "2026-08-24T03:29:23.389Z",
+      "score": {
+        "total": 35,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.863Z"
+      }
+    },
+    {
+      "id": "arbeitnow-directorstrategicpartnersales196971",
+      "title": "Director, Strategic Partner Sales",
+      "company": "remotecom",
+      "location": "Unspecified",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/remotecom/director-strategic-partner-sales-196971",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T06:55:26.000Z",
+      "description": "<div class=&quot;content-intro&quot;><h2><strong>About Remote</strong></h2> <div><span style=&quot;font-size: 12pt; font-family: helvetica, arial, sans-serif;&quot;>Remote is solving modern organizations’ biggest challenge – navigating glob… [pruned]",
+      "tags": [
+        "Partnerships"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.389Z",
+      "fetchedAt": "2026-08-24T03:29:23.389Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.863Z"
+      }
+    },
+    {
+      "id": "arbeitnow-directorofdatalondon3168",
+      "title": "Director of Data (m/f/d)",
+      "company": "Moonfare",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/moonfare/director-of-data-london-3168",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T06:55:13.000Z",
+      "description": "<p><strong>Director of Data (m/f/d)</strong></p> <p>Reporting to the CTO, you will own the data strategy and execution for Moonfare at a pivotal moment in our growth. We are building the infrastructure and intelligence layer that will power… [pruned]",
+      "tags": [
+        "Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 19,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.864Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniordataengineerbettycalondon169535",
+      "title": "Senior Data Engineer | Betty CA",
+      "company": "Bettyjobboard",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/bettyjobboard/senior-data-engineer-betty-ca-london-169535",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T06:55:05.000Z",
+      "description": "<p><strong>About us:</strong></p> <p>Betty is an innovative entertainment company pioneering at the intersection of real money online casino and casual mobile gaming. Accredited by the Alcohol and Gaming Commission of Ontario (AGCO) as a B2… [pruned]",
+      "tags": [
+        "Engineering"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 39,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.864Z"
+      }
+    },
+    {
+      "id": "arbeitnow-softwareintegrationtestengineermaritimea",
+      "title": "Software Integration & Test Engineer (Maritime Autonomy) (all genders)",
+      "company": "Stark",
+      "location": "Plymouth",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/stark/software-integration-test-engineer-maritime-autonomy-all-genders-plymouth-127968",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T06:10:29.000Z",
+      "description": "About Us STARK is a new kind of defence technology company revolutionizing the way autonomous systems are deployed across multiple domains. We design, develop, and manufacture high-performance unmanned systems that are software-defined, mas… [pruned]",
+      "tags": [
+        "Maritime",
+        "Integration",
+        "Software",
+        "TestEngineer"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 29,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.865Z"
+      }
+    },
+    {
+      "id": "arbeitnow-principalproductservicesengineeradvanced",
+      "title": "Principal Product Services Engineer, Advanced Services - UK",
+      "company": "Purestorage",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/purestorage/principal-product-services-engineer-advanced-services-uk-london-221151",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T03:55:24.000Z",
+      "description": "<div class=&quot;content-intro&quot;><p>We’re in an unbelievably exciting area of tech and are fundamentally reshaping the data storage industry. Here, you lead with innovative thinking, grow along with us, and join the smartest team in the… [pruned]",
+      "tags": [
+        "Services & Support"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 35,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.866Z"
+      }
+    },
+    {
+      "id": "arbeitnow-principaluiengineer6monthftcremoteoronsi",
+      "title": "Principal UI Engineer [6 Month FTC - Remote OR Onsite]",
+      "company": "Rocketsciencegg",
+      "location": "London, UK",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/rocketsciencegg/principal-ui-engineer-6-month-ftc-remote-or-onsite-london-uk-232033",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T03:40:24.000Z",
+      "description": "The Space Rangers team are recruiting a 6 Month Fixed Term Contract (FTC) Principal UI Engineer to join a London based Game Studio! Location: UK Remote OR London, Bromley (on-site) The Role Space Rangers is partnering with a AAA game develo… [pruned]",
+      "tags": [
+        "Space Rangers"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 27,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.866Z"
+      }
+    },
+    {
+      "id": "arbeitnow-associatesalesengineermanchester449075",
+      "title": "Associate Sales Engineer",
+      "company": "Influxdata",
+      "location": "Remote UK",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/influxdata/associate-sales-engineer-manchester-449075",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T03:40:16.000Z",
+      "description": "InfluxData is the creator of InfluxDB, the leading time series platform used to collect, store, and analyze all time series data at any scale. Developers can query and analyze their time-stamped data in real-time to discover, interpret, and… [pruned]",
+      "tags": [
+        "Sales"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 40,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.867Z"
+      }
+    },
+    {
+      "id": "arbeitnow-managerpeopleoperationsgloballondon45888",
+      "title": "Manager, People Operations - global",
+      "company": "Checkout.com",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/checkoutcom/manager-people-operations-global-london-458887",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T03:40:14.000Z",
+      "description": "Company Description We’re Checkout.com . You might not know our name, but companies like eBay, Spotify, Klarna, Uber, and Sony do, because we’re behind many of the digital experiences you use every day. We are where the world checks out, en… [pruned]",
+      "tags": [
+        "All Departments"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.868Z"
+      }
+    },
+    {
+      "id": "arbeitnow-seniorassociatefinancetransformationlond",
+      "title": "Senior Associate, Finance Transformation",
+      "company": "Checkout.com",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/checkoutcom/senior-associate-finance-transformation-london-54903",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T03:40:14.000Z",
+      "description": "Company Description We’re Checkout.com . You might not know our name, but companies like eBay, Spotify, Klarna, Uber, and Sony do, because we’re behind many of the digital experiences you use every day. We are where the world checks out, en… [pruned]",
+      "tags": [
+        "All Departments"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.868Z"
+      }
+    },
+    {
+      "id": "arbeitnow-managermarketingaitransformationlondon29",
+      "title": "Manager, Marketing AI Transformation",
+      "company": "Checkout.com",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/checkoutcom/manager-marketing-ai-transformation-london-292808",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T03:40:14.000Z",
+      "description": "Company Description We’re Checkout.com . You might not know our name, but companies like eBay, Spotify, Klarna, Uber, and Sony do, because we’re behind many of the digital experiences you use every day. We are where the world checks out, en… [pruned]",
+      "tags": [
+        "All Departments"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.390Z",
+      "fetchedAt": "2026-08-24T03:29:23.390Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.869Z"
+      }
+    },
+    {
+      "id": "arbeitnow-knowledgemanagementspecialistlondon19858",
+      "title": "Knowledge Management Specialist",
+      "company": "Checkout.com",
+      "location": "London",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.arbeitnow.co.uk/jobs/companies/checkoutcom/knowledge-management-specialist-london-198584",
+      "source": "Arbeitnow",
+      "postedAt": "2026-08-23T03:40:13.000Z",
+      "description": "Company Description We’re Checkout.com . You might not know our name, but companies like eBay, Spotify, Klarna, Uber, and Sony do, because we’re behind many of the digital experiences you use every day. We are where the world checks out, en… [pruned]",
+      "tags": [
+        "All Departments"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.391Z",
+      "fetchedAt": "2026-08-24T03:29:23.391Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.870Z"
+      }
+    },
+    {
+      "id": "jobicy-151436",
+      "title": "Pre-Sales Solutions Engineer (EST or PST)",
+      "company": "Deepgram",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151436-pre-sales-solutions-engineer-est-or-pst",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T19:32:56+00:00",
+      "description": "Company Overview Deepgram is the leading platform underpinning the emerging trillion-dollar Voice AI economy, providing real-time APIs for speech-to-text (STT), text-to-speech (TTS), and building production-grade voice agents at scale. More… [pruned]",
+      "tags": [
+        "Sales",
+        "Full-Time",
+        "Senior"
+      ],
+      "salary": "197k–246k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:25.662Z",
+      "fetchedAt": "2026-08-24T03:29:25.662Z",
+      "score": {
+        "total": 40,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.871Z"
+      }
+    },
+    {
+      "id": "jobicy-148108",
+      "title": "Senior Site Reliability Engineer",
+      "company": "Remote",
+      "location": "EMEA",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/148108-senior-site-reliability-engineer",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T17:14:36+00:00",
+      "description": "About Remote Remote is solving modern organizations’ biggest challenge – navigating global employment compliantly with ease. We make it possible for businesses of all sizes to recruit, pay, and manage international teams. With our core valu… [pruned]",
+      "tags": [
+        "DevOps &amp; Infrastructure",
+        "Full-Time",
+        "Senior"
+      ],
+      "salary": "53k–120k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.855Z",
+      "fetchedAt": "2026-08-24T03:29:24.855Z",
+      "score": {
+        "total": 40,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.871Z"
+      }
+    },
+    {
+      "id": "jobicy-149584",
+      "title": "Group Director, Client Strategy (Group Media Director)",
+      "company": "Wpromote",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149584-group-director-client-strategy-group-media-director",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T05:10:07+00:00",
+      "description": "The Role As a Group Director, Client Strategy, you are a senior business and strategic leader responsible for a portfolio of enterprise and high-growth client relationships. You lead multiple Directors and their books of business, ensuring … [pruned]",
+      "tags": [
+        "Marketing &amp; Sales",
+        "Full-Time",
+        "Director"
+      ],
+      "salary": "157k–180k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.856Z",
+      "fetchedAt": "2026-08-24T03:29:24.856Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.872Z"
+      }
+    },
+    {
+      "id": "jobicy-144336",
+      "title": "Staff Security Architect",
+      "company": "Kraken",
+      "location": "EMEA,  LATAM,  Canada,  Europe",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/144336-staff-security-architect",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T05:10:05+00:00",
+      "description": "Building the Future of Crypto Our Krakenites are a world-class team with crypto conviction, united by our desire to discover and unlock the potential of crypto and blockchain technology. What makes us different? Kraken is a mission-focused … [pruned]",
+      "tags": [
+        "Software Engineering",
+        "Full-Time",
+        "Senior"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.856Z",
+      "fetchedAt": "2026-08-24T03:29:24.856Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.873Z"
+      }
+    },
+    {
+      "id": "jobicy-149595",
+      "title": "Senior Workday Platform Engineer",
+      "company": "Natera",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149595-senior-workday-platform-engineer",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T05:05:08+00:00",
+      "description": "We are seeking a hands-on Senior Workday Platform Engineer within the G&A IT Applications team to serve as the primary technical owner of the Workday platform across HCM, Payroll, Recruiting, Prism Analytics, Illuminate (AI/ML), integration… [pruned]",
+      "tags": [
+        "Software Engineering",
+        "Full-Time",
+        "Senior"
+      ],
+      "salary": "129k–161k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.856Z",
+      "fetchedAt": "2026-08-24T03:29:24.856Z",
+      "score": {
+        "total": 40,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.874Z"
+      }
+    },
+    {
+      "id": "jobicy-149598",
+      "title": "Bioinformatics Manager (Oncology Product Development)",
+      "company": "Natera",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149598-bioinformatics-manager-oncology-product-development",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T05:05:07+00:00",
+      "description": "Natera is currently seeking a Bioinformatics Manager to join the Bioinformatics team focused on Oncology Product Development. In this role, the individual will manage a team of Bioinformaticians and Data Scientists and provide technical lea… [pruned]",
+      "tags": [
+        "Data Science &amp; Analytics",
+        "Full-Time",
+        "Midweight"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.856Z",
+      "fetchedAt": "2026-08-24T03:29:24.856Z",
+      "score": {
+        "total": 34,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.874Z"
+      }
+    },
+    {
+      "id": "jobicy-151420",
+      "title": "Staff Frontend Engineer - Design Systems",
+      "company": "Pleo",
+      "location": "Denmark,  Portugal,  UK",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151420-staff-frontend-engineer-design-systems",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T03:56:06+00:00",
+      "description": "About Pleo Messy spend management is tricky business. And tedious processes are a lose-lose situation for all involved, not just finance. At Pleo, we're changing that. We build spend solutions that make managing money seamless, empowering, … [pruned]",
+      "tags": [
+        "Software Engineering",
+        "Full-Time",
+        "Senior"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:25.662Z",
+      "fetchedAt": "2026-08-24T03:29:25.662Z",
+      "score": {
+        "total": 34,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.875Z"
+      }
+    },
+    {
+      "id": "jobicy-151433",
+      "title": "Account Executive III",
+      "company": "Teachable",
+      "location": "Brazil",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151433-account-executive-iii",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T19:32:09+00:00",
+      "description": "What is Teachable? Teachable is the platform for experts and businesses who take education seriously. In a world where anyone can ask AI for information, we're the home for those who educate with purpose, modernity, and humanity. We help experts and businesses scale their impact and operations through courses, coaching, and digital downloads that students actually love. From a finance expert teaching Python for investment analysis to a multilingual coach offering business Spanish for executives, Teachable powers human-led learning that drives student trust, connection, and results. With a sleek, intuitive interface and AI as a time-saving partner, the platform enables transformative education rooted in real-world experience. Teachable experts have lived it—that's why they teach it.Are you ready to join a dynamic, cross-cultural team at an exciting turning point in our company’s journey? Part of the global Hotmart Company portfolio, whose platforms have helped creators, experts, and businesses earn more than $10 billion, Teachable continues to cement itself as a true industry leader. Together, Teachable and Hotmart are delivering market-leading products that prioritize student outcomes, business growth, and flexibility. If you have big ideas, relish the chance to challenge convention, and deeply believe in the power of real-world learning to shape the future, we want you on our team! What is the role? As an Account Executive (US / LATAM Region) at Teachable, you will drive business growth by identifying, negotiating, and closing high-value opportunities, with a focus on Portuguese-speaking prospects and clients. You will manage full-cycle sales processes from prospect qualification to deal execution, serving as a strategic advisor to digital content creators and business leaders. Your mastery of complex B2B SaaS sales and deep understanding of market needs will directly accelerate company expansion. In this role, you'll: Manage full-cycle sales opportunities for Mid-Market and Enterprise prospective clients across North America and Portuguese-speaking markets. Build, qualify, and maintain a high-volume sales pipeline through strategic prospecting, inbound lead follow-up, and account mapping. Conduct consultative discovery calls and product presentations in both Portuguese and English to align platform capabilities with client business goals. Partner with Solutions Engineering, Customer Success, and Product teams to address technical requirements, ensure smooth handoffs, and deliver tailored solutions. Consistently meet or exceed quarterly and annual ARR quotas and sales key performance indicators (KPIs). Lead multi-stakeholder contract negotiations, legal and security reviews, and pricing discussions with C-level decision-makers. Gather and relay regional market feedback and customer insights to internal product teams to help shape international strategy. What Success Looks Like: Exceed quota targets while maintaining strong deal velocity and a healthy, predictable sales pipeline. Act as a trusted advisor, delivering tailored sales engagements that demonstrate clear ROI for complex client needs. Communicate with authority, empathy, and cultural fluency across all interactions in English and Portuguese. Navigate complex procurement, legal, and executive sign-off workflows efficiently. Mentor junior team members, share deal strategies, and elevate the overall performance of the sales organization. What You’ll Bring: 4+ years of B2B SaaS full-cycle Account Executive experience, preferably closing Mid-Market or Enterprise accounts. Native or professional fluency in Portuguese and English (spoken and written) required. Expertise in structured sales methodologies (e.g., MEDDPICC, SPIN Selling, or Challenger). Strong negotiation, contract management, and CRM hygiene skills (Salesforce, Salesloft/Outreach, Hubspot). While Teachable maintains our NY office for local employees to use, we operate as a remote-first culture in order to give our employees added flexibility. In order to maintain connection and create a community beyond the screen, Teachable holds in-person events throughout the year, where employees and teams can come together for bonding, strategic alignment, goal-setting, and celebrations! Teachable encourages individuals from a broad diversity of backgrounds to apply for positions. We are an equal opportunity employer, meaning we're committed to a fair and consistent interview process. Please tell us in your application if you require an accommodation to apply for a job or to perform your job.",
+      "tags": [
+        "Sales",
+        "Full-Time",
+        "Director"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.416Z",
+      "fetchedAt": "2026-08-24T03:29:26.416Z",
+      "score": {
+        "total": 50,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 19,
+            "max": 45,
+            "detail": "3 skill terms across 3/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 8,
+            "max": 25,
+            "detail": "Band unclear from title"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 8,
+            "max": 15,
+            "detail": "remote"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 10,
+            "max": 10,
+            "detail": "saas, b2b, enterprise"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 0d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "python",
+          "salesforce",
+          "security"
+        ],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.876Z"
+      }
+    },
+    {
+      "id": "jobicy-149608",
+      "title": "Sr. Manager, New Products Strategy",
+      "company": "Samsara",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149608-sr-manager-new-products-strategy",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T05:00:05+00:00",
+      "description": "Who we are Samsara (NYSE: IOT) is the pioneer of the Connected Operations™ Cloud, which is a platform that enables organizations that depend on physical operations to harness Internet of Things (IoT) data to develop actionable insights and … [pruned]",
+      "tags": [
+        "Product &amp; Operations",
+        "Full-Time",
+        "Senior"
+      ],
+      "salary": "126k–225k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.416Z",
+      "fetchedAt": "2026-08-24T03:29:26.416Z",
+      "score": {
+        "total": 34,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.877Z"
+      }
+    },
+    {
+      "id": "jobicy-149611",
+      "title": "Director, Customer Success (Enterprise)",
+      "company": "1Password",
+      "location": "Canada,  USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149611-director-customer-success-enterprise",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T05:00:02+00:00",
+      "description": "1Password is growing. We’ve surpassed $400M in ARR and we’re continuing to accelerate, earning a spot on the Forbes Cloud 100 for four years in a row and teaming up with iconic partners like Oracle Red Bull Racing. About 1Password At 1Passw… [pruned]",
+      "tags": [
+        "Customer Support &amp; Success",
+        "Full-Time",
+        "Director"
+      ],
+      "salary": "168k–252k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.417Z",
+      "fetchedAt": "2026-08-24T03:29:26.417Z",
+      "score": {
+        "total": 44,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.877Z"
+      }
+    },
+    {
+      "id": "jobicy-149623",
+      "title": "Customer Success Manager",
+      "company": "AssetWatch",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/149623-customer-success-manager-3",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T04:55:03+00:00",
+      "description": "AssetWatch serves global manufacturers by powering manufacturing uptime through the delivery of an unparalleled condition monitoring experience, with a passion to care about the assets our customers care for every day. We are a devoted and … [pruned]",
+      "tags": [
+        "Customer Support &amp; Success",
+        "Full-Time",
+        "Midweight"
+      ],
+      "salary": "95k–112k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.417Z",
+      "fetchedAt": "2026-08-24T03:29:26.417Z",
+      "score": {
+        "total": 45,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.878Z"
+      }
+    },
+    {
+      "id": "jobicy-151417",
+      "title": "Sr. Enterprise Architect",
+      "company": "Ironclad",
+      "location": "USA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobicy.com/jobs/151417-sr-enterprise-architect",
+      "source": "Jobicy",
+      "postedAt": "2026-08-23T03:55:24+00:00",
+      "description": "Ironclad is the leading AI contracting platform that transforms agreements into assets. Contracts move faster, insights surface instantly, and agents push work forward, all with you in control. Whether you’re buying or selling, Ironclad uni… [pruned]",
+      "tags": [
+        "Software Engineering",
+        "Full-Time",
+        "Director"
+      ],
+      "salary": "175k–200k USD",
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.417Z",
+      "fetchedAt": "2026-08-24T03:29:26.417Z",
+      "score": {
+        "total": 47,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.879Z"
+      }
+    },
+    {
+      "id": "muse-21825761",
+      "title": "Sr. Embedded Software Engineer, OS/Platform (Starlink)",
+      "company": "SpaceX",
+      "location": "Lockhart, TX",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.themuse.com/jobs/spacex/sr-embedded-software-engineer-osplatform-starlink",
+      "source": "TheMuse",
+      "postedAt": "2026-06-26T18:34:36Z",
+      "description": "SpaceX was founded under the belief that a future where humanity is out exploring the stars is fundamentally more exciting than one where we are not. Today SpaceX is actively developing the technologies to make this possible, with the ultim… [pruned]",
+      "tags": [
+        "Software Engineering",
+        "Senior Level"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:23.481Z",
+      "fetchedAt": "2026-08-24T03:29:23.481Z",
+      "score": {
+        "total": 19,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.879Z"
+      }
+    },
+    {
+      "id": "ghdatabricks-8736500002",
+      "title": "Emerging Enterprise Hunter Account Executive",
+      "company": "Databricks",
+      "location": "Sydney, Australia",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://databricks.com/company/careers/open-positions/job?gh_jid=8736500002",
+      "source": "Greenhouse:databricks",
+      "postedAt": "2026-08-23T22:28:56-04:00",
+      "description": "<p data-pm-slice=&quot;1 1 []&quot;>SLSQ427R421</p> <p>As we continue to increase our presence in the world of Unified Data Analytics and AI, we re looking for a creative, driven, and execution-oriented Emerging Enterprise Account Executive… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.731Z",
+      "fetchedAt": "2026-08-24T03:29:24.731Z",
+      "score": {
+        "total": 23,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.881Z"
+      }
+    },
+    {
+      "id": "ghmongodb-7493634",
+      "title": "Staff Technical Program Manager, GTM Tech",
+      "company": "Mongodb",
+      "location": "Gurugram",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://www.mongodb.com/careers/job/?gh_jid=7493634",
+      "source": "Greenhouse:mongodb",
+      "postedAt": "2026-08-23T23:03:34-04:00",
+      "description": "<p>MongoDB is growing and gaining adoption rapidly across the globe with the most demanding and innovative companies and development teams in enterprise software.</p> <p>The IT Go-to-Market organization is looking for a seasoned Staff Techn… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.140Z",
+      "fetchedAt": "2026-08-24T03:29:24.140Z",
+      "score": {
+        "total": 36,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.885Z"
+      }
+    },
+    {
+      "id": "ghdatadog-7790048",
+      "title": "Customer Success Manager",
+      "company": "Datadog",
+      "location": "Seoul, South Korea",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://careers.datadoghq.com/detail/7790048/?gh_jid=7790048",
+      "source": "Greenhouse:datadog",
+      "postedAt": "2026-08-23T22:20:54-04:00",
+      "description": "<p><em>As a Customer Success Manager, you will proactively drive new product attachment and effective strong relationships across our existing customer base through on-boarding, up-selling and cross selling. You’ll advocate for the customer… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.419Z",
+      "fetchedAt": "2026-08-24T03:29:24.419Z",
+      "score": {
+        "total": 16,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.888Z"
+      }
+    },
+    {
+      "id": "ghdatadog-8090275",
+      "title": "Sales Engineer - Enterprise",
+      "company": "Datadog",
+      "location": "Tokyo, Japan",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://careers.datadoghq.com/detail/8090275/?gh_jid=8090275",
+      "source": "Greenhouse:datadog",
+      "postedAt": "2026-08-23T22:52:00-04:00",
+      "description": "<p>エンタープライズ企業向けのセールス・エンジニアとして、プレゼンテーション、製品デモンストレーション、および技術評価（POV）において技術的な専門知識を提供します。セールスエンジニアは、お客様やパートナーとの商談におけるソリューションのfeasibilityを判断し、商談を成功に導く役割を担うとともに、お客様、競合他社、パートナーからの意見に基づいて製品チームに機能の優先順位を提案する役割も果たします。</p> <p><em>Datadogでは、人間関係やコラボレーション… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.446Z",
+      "fetchedAt": "2026-08-24T03:29:24.446Z",
+      "score": {
+        "total": 40,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.889Z"
+      }
+    },
+    {
+      "id": "ghcloudflare-8147148",
+      "title": "Senior Customer Engineer, East China",
+      "company": "Cloudflare",
+      "location": "Distributed",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8147148?gh_jid=8147148",
+      "source": "Greenhouse:cloudflare",
+      "postedAt": "2026-08-23T10:33:30-04:00",
+      "description": "<div class=&quot;content-intro&quot;><div><strong>About Us</strong></div> <div> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that powers millions of websit… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.571Z",
+      "fetchedAt": "2026-08-24T03:29:24.571Z",
+      "score": {
+        "total": 34,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.892Z"
+      }
+    },
+    {
+      "id": "ghcloudflare-8147213",
+      "title": "Senior Customer Engineer, iGaming ",
+      "company": "Cloudflare",
+      "location": "Hybrid",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://boards.greenhouse.io/cloudflare/jobs/8147213?gh_jid=8147213",
+      "source": "Greenhouse:cloudflare",
+      "postedAt": "2026-08-23T10:39:14-04:00",
+      "description": "<div class=&quot;content-intro&quot;><div><strong>About Us</strong></div> <div> <p>At Cloudflare, we are on a mission to help build a better Internet. Today the company runs one of the world’s largest networks that powers millions of websit… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.572Z",
+      "fetchedAt": "2026-08-24T03:29:24.572Z",
+      "score": {
+        "total": 34,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.893Z"
+      }
+    },
+    {
+      "id": "ghokta-8146815",
+      "title": "Senior Software Engineer, Identity Administration",
+      "company": "Okta",
+      "location": "Bengaluru, India",
+      "market": [
+        "india"
+      ],
+      "remote": false,
+      "url": "https://www.okta.com/company/careers/opportunity/8146815?gh_jid=8146815",
+      "source": "Greenhouse:okta",
+      "postedAt": "2026-08-23T03:15:04-04:00",
+      "description": "<div class=&quot;content-intro&quot;><p><strong>Secure Every Identity, from AI to Human<br><br></strong>Identity is the key to unlocking the potential of AI. Okta secures AI by building the trusted, neutral infrastructure that enables organizations to safely embrace this new era. This work requires a relentless drive to solve complex challenges with real-world stakes. We are looking for builders and owners who operate with speed and urgency and execute with excellence.<br><br>This is an opportunity to do career-defining work. We re all in on this mission. If you are too, let s talk.</p></div><p>I</p> <p>Identity is the key to unlocking the potential of AI. Okta secures AI by building the trusted, neutral infrastructure that enables organizations to safely embrace this new era. This work requires a relentless drive to solve complex challenges with real-world stakes. We are looking for builders and owners who operate with speed and urgency and execute with excellence.</p> <p>&nbsp;</p> <p>This is an opportunity to do career-defining work. We re all in on this mission. If you are too, let s talk.</p> <p>&nbsp;</p> <p>Okta s Identity Governance (OIG) organization is looking for a <strong>Senior Engineer</strong> to join our Identity Administration team — a team that is directly responsible for one of the most critical and visible workflows in enterprise identity: how employees request, approve, and gain access to the resources they need.&nbsp;</p> <p>&nbsp;</p> <p><strong>Opportunity</strong></p> <p>As a Senior Engineer on the OIG Identity Administration team, you will be involved in development, design, and maintenance of our product to serve enterprise customers at scale. You will involve the development and evolution of our product features — spanning the across different identity entities and personas — and work collaboratively across engineering, product, and design to deliver features that are secure, scalable, and delightful to use.</p> <p>This is a role for someone who thinks in systems, leads with craft, and is energized by the challenge of building enterprise-grade software that millions of users depend on.</p> <p>This is a rare opportunity to join a team where your technical decisions will directly shape how thousands of enterprises manage access governance at scale, where the technical challenges are genuinely hard, and where the work you ship will be seen and felt by real users every day.</p> <p>&nbsp;</p> <p><strong>Job Duties And Responsibilities</strong></p> <p>&nbsp;</p> <ul> <li>Take end-to-end ownership of feature areas — from technical design through implementation, testing, deployment, and post-launch monitoring</li> <li>Design, build, and ship high-quality, production-ready features across the OIG system, with a focus on correctness, reliability, and performance</li> <li>Quickly deliver high-quality bug fixes and handle customer-reported issues</li> <li>Write clean, well-tested, maintainable code and hold yourself and teammates to a high bar for engineering quality</li> <li>Partner with our Product Development, QA, and Site Reliability Engineering teams for scoping the development and deployment work</li> </ul> <p>&nbsp;</p> <p><strong>Required knowledge, skills, and abilities:</strong></p> <ul> <li>5+ years of experience with Java (Spring/Dropwizard) and/or Golang, with a deep understanding of multi-threading and asynchronous processing.</li> <li>Experience building high-performance RESTful APIs and/or gRPC services.</li> <li>Solid experience with relational databases (MySQL/PostgreSQL) and caching layers (Redis) at scale.</li> <li>Hands-on experience with AWS (Fargate, EC2, Lambda) and Infrastructure-as-Code (Terraform). You should be comfortable managing your own cloud resources.</li> <li>Strong proficiency with containerization (Docker/Kubernetes) and CI/CD automation tools (Jenkins, ArgoCD, or GitHub Actions).</li> </ul> <p><strong>Nice to haves:</strong></p> <ul> <li>Understanding of OAuth 2.0, OIDC, and JWT tokens, specifically for service-to-service communication.</li> <li>Experience with Splunk, SignalFX, or Datadog for monitoring and troubleshooting production issues.</li> <li>Familiarity with Kafka or SQS for handling cross-org asynchronous events.</li> <li>Basic familiarity with React/JavaScript to help integrate backend services.</li> <li>Understanding of how to build and deploy services across isolated infrastructure units</li> </ul> <p>&nbsp;<strong>Education and Training:</strong></p> <ul> <li>B.S. Computer Science or related field</li> </ul> <p>#P25127_3525494</p> <p>#Hybrid</p><div class=&quot;content-conclusion&quot;><p><strong>The Okta Experience</strong></p> <ul> <li><a href=&quot;http://rewards.okta.com&quot;>Supporting Your Well-Being</a>&nbsp;</li> <li><a href=&quot;https://www.okta.com/company/okta-for-good/&quot;>Driving Social Impact&nbsp;</a></li> <li><a href=&quot;https://www.okta.com/company/talent-connection-community/&quot;>Developing Talent and Fostering Connection + Community</a></li> </ul> <p>We are intentional about connection. Our global community, spanning over 20 offices worldwide, is united by a drive to innovate. Your journey begins with an immersive, in-person onboarding experience designed to accelerate your impact and connect you to our mission and team from day one.<br><br>Okta is an Equal Opportunity Employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, ancestry, marital status, age, physical or mental disability, or status as a protected veteran. We also consider for employment qualified applicants with arrest and convictions records, consistent with applicable laws.<br><br>If reasonable accommodation is needed to complete any part of the job application, interview process, or onboarding please&nbsp;<a href=&quot;https://docs.google.com/forms/d/1EfiEYZrIyhA2X4Fijk0R3RKYOzNoS3wtvyM4nhbZnXE/edit&quot;>use",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.900Z",
+      "fetchedAt": "2026-08-24T03:29:24.900Z",
+      "score": {
+        "total": 70,
+        "factors": [
+          {
+            "key": "skills",
+            "label": "Skill overlap",
+            "earned": 40,
+            "max": 45,
+            "detail": "13 skill terms across 6/7 groups"
+          },
+          {
+            "key": "seniority",
+            "label": "Seniority fit",
+            "earned": 15,
+            "max": 25,
+            "detail": "Senior band — a step below target"
+          },
+          {
+            "key": "location",
+            "label": "Market fit",
+            "earned": 7,
+            "max": 15,
+            "detail": "India"
+          },
+          {
+            "key": "domain",
+            "label": "Domain overlap",
+            "earned": 3,
+            "max": 10,
+            "detail": "enterprise"
+          },
+          {
+            "key": "freshness",
+            "label": "Freshness",
+            "earned": 5,
+            "max": 5,
+            "detail": "Posted 1d ago"
+          }
+        ],
+        "matchedKeywords": [
+          "kafka",
+          "aws",
+          "kubernetes",
+          "lambda",
+          "terraform",
+          "javascript",
+          "java",
+          "oauth",
+          "react",
+          "ci/cd",
+          "monitoring",
+          "postgresql",
+          "redis"
+        ],
+        "missingKeywords": [
+          "grpc"
+        ],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.896Z"
+      },
+      "tailoredResume": "%-------------------------\n% Resume in Latex\n% Author : Jake Gutierrez\n% Based off of: https://github.com/sb2nov/resume\n% License : MIT\n%------------------------\n\\documentclass[letterpaper,10.5pt]{extarticle}\n\\setlength{\\footskip}{4.08003pt}\n\n\\usepackage{latexsym}\n\\usepackage[empty]{fullpage}\n\\usepackage{titlesec}\n\\usepackage{marvosym}\n\\usepackage[usenames,dvipsnames]{color}\n\\usepackage{verbatim}\n\\usepackage{enumitem}\n\\usepackage[hidelinks]{hyperref}\n\\usepackage{fancyhdr}\n\\usepackage[english]{babel}\n\\usepackage{tabularx}\n\\input{glyphtounicode}\n\n\\pagestyle{fancy}\n\\fancyhf{}\n\\fancyfoot{}\n\\renewcommand{\\headrulewidth}{0pt}\n\\renewcommand{\\footrulewidth}{0pt}\n\n\\addtolength{\\oddsidemargin}{-0.5in}\n\\addtolength{\\evensidemargin}{-0.5in}\n\\addtolength{\\textwidth}{1in}\n\\addtolength{\\topmargin}{-0.78in}\n\\addtolength{\\textheight}{1.7in}\n\n\\urlstyle{same}\n\\raggedbottom\n\\raggedright\n\\setlength{\\tabcolsep}{0in}\n\n\\titleformat{\\section}{\n  \\vspace{-6pt}\\scshape\\raggedright\\large\n}{}{0em}{}[\\color{black}\\titlerule \\vspace{-6pt}]\n\n\\pdfgentounicode=1\n\n\\newcommand{\\resumeItem}[1]{\n  \\item\\small{\n    {#1 \\vspace{-2pt}}\n  }\n}\n\n\\newcommand{\\resumeWorkExpHeading}[4]{\n  \\vspace{-2pt}\\item\n    \\begin{tabular*}{0.98\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}\n      \\textbf{#1} & \\textnormal{\\small#2} \\\\\n      \\textit{\\small#3} & \\textnormal{\\small #4} \\\\\n    \\end{tabular*}\\vspace{-6pt}\n}\n\n\\newcommand{\\resumeSubheading}[4]{\n  \\vspace{-2pt}\\item\n    \\begin{tabular*}{0.97\\textwidth}[t]{l@{\\extracolsep{\\fill}}r}\n      \\textbf{#1} & #2 \\\\\n      \\textit{\\small#3} & \\textit{\\small #4} \\\\\n    \\end{tabular*}\\vspace{-7pt}\n}\n\n\\newcommand{\\resumeProjectHeading}[2]{\n    \\item\n    \\begin{tabular*}{0.97\\textwidth}{l@{\\extracolsep{\\fill}}r}\n      \\small#1 & #2 \\\\\n    \\end{tabular*}\\vspace{-7pt}\n}\n\n\\newcommand{\\resumeSubItem}[1]{\\resumeItem{#1}\\vspace{-4pt}}\n\n\\renewcommand\\labelitemii{$\\vcenter{\\hbox{\\tiny$\\bullet$}}$}\n\n\\newcommand{\\resumeSubHeadingListStart}{\\begin{itemize}[leftmargin=0.15in, label={}]}\n\\newcommand{\\resumeSubHeadingListEnd}{\\end{itemize}}\n\\newcommand{\\resumeItemListStart}{\\begin{itemize}[itemsep=2pt, parsep=0pt, topsep=2pt]}\n\\newcommand{\\resumeItemListEnd}{\\end{itemize}\\vspace{-4pt}}\n\n\n% Tailored for: Senior Software Engineer, Identity Administration at Okta\n% Match score: 70/100\n% Keywords surfaced: kafka, aws, kubernetes, lambda, terraform, javascript, java, oauth, react, ci/cd, monitoring, postgresql\n% Gaps to prepare for: grpc\n\n\\begin{document}\n\\fontsize{11pt}{14.5pt}\\selectfont\n\n\\begin{center}\n    \\textbf{\\Huge \\scshape Ankith D Rai} \\\\ \\vspace{6pt}\n    \\small +91 9449549160 $|$ \\href{mailto:raiankith1@gmail.com}{\\underline{raiankith1@gmail.com}} $|$\n    \\href{https://www.linkedin.com/in/ankithrai97}{\\underline{linkedin.com/in/ankithrai97}} $|$\n    \\href{https://leetcode.com/ankith-rai}{\\underline{leetcode.com/ankith-rai}} $|$\n    \\href{https://github.com/ankith-rai}{\\underline{github.com/ankith-rai}}\n\\end{center}\n\n\\section{Professional Summary}\n \\begin{itemize}[leftmargin=0.15in, label={}]\n    \\small{\\item{\n     {Principal Software Engineer with 7+ years architecting and scaling enterprise cloud integration platforms across US and EU regions. Owns a multi-tenant Apache Airflow platform serving 14+ enterprise customers; strongest in orchestration \\& data pipelines, cloud \\& infrastructure, languages. Looking to bring multi-region Airflow and AWS platform depth to Okta.}\n    \\vspace{-6pt}\n    }}\n \\end{itemize}\n\n\\section{Skills Summary}\n \\begin{itemize}[leftmargin=0.15in, label={}]\n    \\small{\\item{\n     \\textbf{Frameworks}{: Apache Airflow, Next.js, Node.js, React, OAuth 2.0, GraphQL, SAP Cloud Integration, SAP UI5/Fiori} \\\\\n     \\textbf{AWS Cloud}{: EKS, Aurora Serverless PostgreSQL, RDS, EC2, S3, ECR, Route 53, CloudWatch, WAF, CodePipeline} \\\\\n     \\textbf{DevOps}{: Docker, Kubernetes, Helm, AWS CodeBuild, Jenkins, GitHub Workflows, Circle-CI, Prometheus, Grafana} \\\\\n     \\textbf{Programming Languages}{: Python, Javascript (ES6), Typescript, SQL, Terraform, YAML, Salesforce Apex} \\\\\n     \\textbf{Libraries and APIs}{: Pandas, Numpy, Boto3, SQLAlchemy, Paramiko, Atlassian Connect Express, Salesforce-DX} \\\\\n     \\textbf{Database and Storage}{: DynamoDB, Redis, Kafka, SFTP} \\\\\n     \\textbf{AI-Assisted Development}{: Claude Code, Agentic Skills, LLM-Driven Code Generation and Automated Code Review} \\\\\n     \\textbf{Design Patterns}{: Abstract Factory, Builder, Singleton, Template, Adapter, Iterator, State, Observer, SOLID Principles} \\\\\n    }}\n \\end{itemize}\n \\vspace{-6pt}\n\\section{Work Experience}\n  \\resumeSubHeadingListStart\n    \\resumeWorkExpHeading\n      {Deltek}\n      {Principal Software Engineer (Jan 2025 - Present)}\n      {Bengaluru, India}\n      {Sr. Software Engineer (Nov 2023 - Dec 2024)}\n      \\\\\n      \\resumeItemListStart\n        \\resumeItem{Built and scaled Python data pipelines on Apache Airflow processing 53K+ records/day, reducing processing time by 37\\% via custom batch operators, and authored a company-wide library of reusable hooks and operators (SQLAlchemy, AWS S3/Boto3, SFTP/Paramiko, REST APIs).}\n        \\resumeItem{Led multi-region Airflow platform upgrades and a zero-downtime EKS cluster migration (1.31 to 1.32) with Helm-based CI/CD changes across three AWS regions, and established Prometheus/Grafana observability for AWS Aurora Serverless and Kubernetes workloads.}\n        \\resumeItem{Own the architecture and reliability of a multi-tenant Apache Airflow integration platform serving 14+ enterprise customers (PwC, DXC, Capgemini, Dominos, Technicolor, Frontdoor) across US and EU regions.}\n        \\resumeItem{Spearheaded an OAuth2 React, Node.js, and TypeScript web application on the core platform, integrating Apache Airflow for event-driven ETL with ERP systems including Salesforce and QuickBooks.}\n        \\resumeItem{Drove a platform-wide FIPS 140-2 compliance initiative, delivering a hardened FIPS Docker image, TLS-encrypted webhook transport, FIPS-compliant ALB/ELB endpoints, and vulnerability remediation across the Airflow fleet.}\n        \\resumeItem{Architected integration-platform-api, a WAF-secured Next.js and PostgreSQL service (40+ endpoints) enabling Deltek product teams to autonomously deploy and manage ERP integrations via Apache Airflow.}\n        \\resumeItem{Authored AIDLC (AI-Driven Development Lifecycle), a Claude Code skill enforcing a structured workflow from requirements and design through code generation, build, and test; adopted across multiple engineering teams, and complemented by an automated Claude Code review bot posting inline pull-request comments.}\n      \\resumeItemListEnd\n    \\resumeWorkExpHeading\n      {Replicon}\n      {Sr. Software Engineer (Jan 2023 - Oct 2023)}\n      {Bengaluru, India}\n      {Software Engineer (Aug 2019 - Dec 2022)}\n      \\\\\n      \\resumeItemListStart\n        \\resumeItem{Piloted a company-wide Integration Platform using Apache Airflow and Kafka hosted on AWS, achieving a 60\\% cost reduction (averaging USD 2,500 per client) by eliminating third-party iPaaS dependencies.}\n        \\resumeItem{Pioneered the Integration Platform team, developing a Salesforce Connected App with Salesforce DX and Node.js for OAuth2 user interaction, leveraging platform events for webhooks published on the Salesforce Marketplace.}\n        \\resumeItem{Owned the SAP SuccessFactors integration suite over \\textasciitilde{}2 years, delivering payroll data transfer, time-off synchronization, and schedule import, and earning SAP Endorsed App premium certification.}\n      \\resumeItemListEnd\n  \\resumeSubHeadingListEnd\n\\section{Education}\n  \\resumeSubHeadingListStart\n    \\resumeSubheading{NMAM Institute of Technology}{June 2015 -- July 2019}{Information Science and Engineering --- CGPA: 8.22}{Karnataka, IN}\n  \\resumeSubHeadingListEnd\n\\section{Certifications}\n    \\resumeSubHeadingListStart\n        \\resumeProjectHeading{\\textbf{\\href{https://www.credly.com/badges/7b47849c-988a-42f0-9525-5e235a65595b}{DAG Authoring for Apache Airflow 3}} $|$ \\emph{Astronomer}}{Oct 2025}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.linkedin.com/learning/certificates/0b0ea6f8ef3c25fb899f1b278ec5763b7ca6d2b02745492aecce0df7a2e6b770}{Docker Fundamentals}} $|$ \\emph{Docker and LinkedIn}}{May 2025}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.credly.com/badges/abb3eb34-207c-4b1e-af14-39ad3eb03d28}{Apache Airflow Fundamentals}} $|$ \\emph{Astronomer}}{Oct 2024}\n        \\resumeProjectHeading{\\textbf{\\href{https://www.linkedin.com/learning/certificates/654e22e124fcb0767d36cad9274ab4ddf9c7f34ab469deced37064d7c4e44838}{Career Essentials in Generative AI}} $|$ \\emph{Microsoft and LinkedIn}}{Oct 2024}\n    \\resumeSubHeadingListEnd\n\\section{Awards}\n    \\resumeSubHeadingListStart\n        \\resumeProjectHeading{\\textbf{Spot Award} $|$ \\emph{Onboarding of Enterprise customers in Airflow}}{2023 | 2022}\n        \\resumeProjectHeading{\\textbf{Trailblazer and MVP Awards} $|$ \\emph{Awarded twice for the best developers in R\\&D}}{2021 | 2020}\n    \\resumeSubHeadingListEnd\n\\section{Projects}\n    \\resumeSubHeadingListStart\n      \\resumeProjectHeading{\\textbf{Apply Pilot} $|$ \\emph{TypeScript, Next.js}}{}\n          \\resumeItemListStart\n            \\resumeItem{Next.js + TypeScript dashboard that aggregates job postings, scores them against a skill profile, and auto-tailors an ATS-optimized LaTeX resume per role.}\n          \\resumeItemListEnd\n    \\resumeSubHeadingListEnd\n\\end{document}"
+    },
+    {
+      "id": "ghstripe-8146053",
+      "title": "Global Partnerships Lead — Greater China, Hong Kong & Singapore",
+      "company": "Stripe",
+      "location": "Singapore",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://stripe.com/jobs/search?gh_jid=8146053",
+      "source": "Greenhouse:stripe",
+      "postedAt": "2026-08-23T21:56:05-04:00",
+      "description": "<h2><strong>About Stripe</strong></h2> <p>Stripe is a financial infrastructure platform for businesses. Millions of companies—from the world’s largest enterprises to the most ambitious startups—use Stripe to accept payments, grow revenue, a… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:25.004Z",
+      "fetchedAt": "2026-08-24T03:29:25.004Z",
+      "score": {
+        "total": 24,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.898Z"
+      }
+    },
+    {
+      "id": "ghstripe-8152145",
+      "title": "Solutions Architect, Platforms (Presales)",
+      "company": "Stripe",
+      "location": "NYC or Remote",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://stripe.com/jobs/search?gh_jid=8152145",
+      "source": "Greenhouse:stripe",
+      "postedAt": "2026-08-23T15:36:21-04:00",
+      "description": "<h2><strong>Who We Are</strong></h2> <h3><strong>About Stripe</strong></h3> <p>At Stripe, you have an unprecedented opportunity to put the global economy within everyone’s reach. Stripe is a financial infrastructure platform for businesses.… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:25.034Z",
+      "fetchedAt": "2026-08-24T03:29:25.034Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.900Z"
+      }
+    },
+    {
+      "id": "ghgusto-8121732",
+      "title": "Staff Software Engineer- Retirement",
+      "company": "Gusto",
+      "location": "United States",
+      "market": [
+        "us"
+      ],
+      "remote": false,
+      "url": "https://job-boards.greenhouse.io/gusto/jobs/8121732",
+      "source": "Greenhouse:gusto",
+      "postedAt": "2026-08-23T19:20:04-04:00",
+      "description": "<div class=&quot;content-intro&quot;><p style=&quot;line-height: 1.2;&quot;>&nbsp;</p> <hr> <p><strong>About Gusto</strong></p> <p>At Gusto, we re on a mission to grow the small business economy. We handle the hard stuff — payroll, health i… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:24.843Z",
+      "fetchedAt": "2026-08-24T03:29:24.843Z",
+      "score": {
+        "total": 43,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.903Z"
+      }
+    },
+    {
+      "id": "ghfigma-6150074004",
+      "title": "Executive Communications Manager",
+      "company": "Figma",
+      "location": "San Francisco, CA • New York, NY",
+      "market": [
+        "us"
+      ],
+      "remote": false,
+      "url": "https://boards.greenhouse.io/figma/jobs/6150074004?gh_jid=6150074004",
+      "source": "Greenhouse:figma",
+      "postedAt": "2026-08-23T19:41:58-04:00",
+      "description": "<div class=&quot;content-intro&quot;><p>Figma is growing our team of passionate creatives and builders on a mission to make design accessible to all. Figma’s platform helps teams bring ideas to life—whether you re brainstorming, creating a … [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:25.056Z",
+      "fetchedAt": "2026-08-24T03:29:25.056Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.904Z"
+      }
+    },
+    {
+      "id": "ghanthropic-5199633008",
+      "title": "Revenue Strategy & Operations",
+      "company": "Anthropic",
+      "location": "Seoul, South Korea",
+      "market": [
+        "remote"
+      ],
+      "remote": false,
+      "url": "https://job-boards.greenhouse.io/anthropic/jobs/5199633008",
+      "source": "Greenhouse:anthropic",
+      "postedAt": "2026-08-23T00:16:55-04:00",
+      "description": "<div class=&quot;content-intro&quot;><h2><strong>About Anthropic</strong></h2> <p>Anthropic’s mission is to create reliable, interpretable, and steerable AI systems. We want AI to be safe and beneficial for our users and for society as a wh… [pruned]",
+      "tags": [],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:25.571Z",
+      "fetchedAt": "2026-08-24T03:29:25.571Z",
+      "score": {
+        "total": 39,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.907Z"
+      }
+    },
+    {
+      "id": "ashbysupabase-f8fc6aaed2b4456a97db012a1970c398",
+      "title": "Field Marketing Manager, Startups",
+      "company": "Supabase",
+      "location": "Remote, San Francisco, CA",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobs.ashbyhq.com/supabase/f8fc6aae-d2b4-456a-97db-012a1970c398",
+      "source": "Ashby:supabase",
+      "postedAt": "2026-08-17T16:59:19.741+00:00",
+      "description": "ABOUT SUPABASE\n\nSupabase is the open-source backend platform trusted by millions of developers to build web apps, SaaS products, and AI-native applications. Our Partnerships team works across the ecosystem - technology partners, cloud platf… [pruned]",
+      "tags": [
+        "Partnerships",
+        "Partnerships",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.243Z",
+      "fetchedAt": "2026-08-24T03:29:26.243Z",
+      "score": {
+        "total": 31,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.911Z"
+      }
+    },
+    {
+      "id": "ashbyopenai-e855828069dc438ab905623f75ae6d62",
+      "title": "GPT Infra Technical Program Manager",
+      "company": "Openai",
+      "location": "San Francisco",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobs.ashbyhq.com/openai/e8558280-69dc-438a-b905-623f75ae6d62",
+      "source": "Ashby:openai",
+      "postedAt": "2026-04-21T23:53:04.827+00:00",
+      "description": "About the Team\n\nOpenAI’s Industrial Compute team is responsible for building and scaling the external infrastructure ecosystem that powers advanced AI systems. We work across hyperscalers, colocation providers, cloud partners, and strategic… [pruned]",
+      "tags": [
+        "Hardware",
+        "Scaling",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.669Z",
+      "fetchedAt": "2026-08-24T03:29:26.669Z",
+      "score": {
+        "total": 26,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.915Z"
+      }
+    },
+    {
+      "id": "ashbyopenai-ad6b55f9fa634860b852d90592e49d1c",
+      "title": "BIM Designer & Coordinator",
+      "company": "Openai",
+      "location": "San Francisco",
+      "market": [
+        "us",
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobs.ashbyhq.com/openai/ad6b55f9-fa63-4860-b852-d90592e49d1c",
+      "source": "Ashby:openai",
+      "postedAt": "2026-08-23T21:53:27.920+00:00",
+      "description": "About the Team\n\nIndustrial Compute is building the world's most advanced AI infrastructure. Working alongside our capital partners, engineering teams, and construction organizations, we design and deliver large-scale, mission-critical compu… [pruned]",
+      "tags": [
+        "Datacenter Design",
+        "Scaling",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.669Z",
+      "fetchedAt": "2026-08-24T03:29:26.669Z",
+      "score": {
+        "total": 29,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.916Z"
+      }
+    },
+    {
+      "id": "ashbyopenai-831e2f91c21342089eb34ce2cc6b9acf",
+      "title": "Strategic Sourcing Manager, Data Center Infrastructure, Owner Furnished Equipment",
+      "company": "Openai",
+      "location": "San Francisco",
+      "market": [
+        "us"
+      ],
+      "remote": false,
+      "url": "https://jobs.ashbyhq.com/openai/831e2f91-c213-4208-9eb3-4ce2cc6b9acf",
+      "source": "Ashby:openai",
+      "postedAt": "2026-08-23T20:19:09.799+00:00",
+      "description": "About the Team\n\nOpenAI's Industrial Compute organization is building the world's most advanced AI infrastructure ecosystem. Working alongside leading cloud providers, engineering firms, construction partners, utilities, and equipment manufa… [pruned]",
+      "tags": [
+        "Datacenter Design",
+        "Scaling",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.669Z",
+      "fetchedAt": "2026-08-24T03:29:26.669Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.917Z"
+      }
+    },
+    {
+      "id": "ashbyopenai-ece054eaac754b8abdbf5cdf19368312",
+      "title": "Manufacturing Quality Engineer – Datacenter Infrastructure",
+      "company": "Openai",
+      "location": "San Francisco",
+      "market": [
+        "us"
+      ],
+      "remote": false,
+      "url": "https://jobs.ashbyhq.com/openai/ece054ea-ac75-4b8a-bdbf-5cdf19368312",
+      "source": "Ashby:openai",
+      "postedAt": "2026-08-23T22:31:59.970+00:00",
+      "description": "About the Team\n\nOpenAI, in partnership with our capital and technology partners, is building a global network of advanced datacenters to support the most demanding AI workloads. The Infrastructure Quality team ensures that all datacenter sy… [pruned]",
+      "tags": [
+        "Datacenter Design",
+        "Scaling",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.669Z",
+      "fetchedAt": "2026-08-24T03:29:26.669Z",
+      "score": {
+        "total": 21,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [
+          "US role with no sponsorship or relocation language — verify eligibility"
+        ],
+        "scoredAt": "2026-08-24T03:29:32.918Z"
+      }
+    },
+    {
+      "id": "ashbyopenai-5f3a639747ac4ef09ca9cd358851a6b9",
+      "title": "Strategic Delivery Lead, Intelligence Community",
+      "company": "Openai",
+      "location": "Washington, DC",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobs.ashbyhq.com/openai/5f3a6397-47ac-4ef0-9ca9-cd358851a6b9",
+      "source": "Ashby:openai",
+      "postedAt": "2026-08-23T04:26:49.729+00:00",
+      "description": "About the team\n\nThe OpenAI for Government team is a mission-driven group bringing frontier AI to the U.S. Intelligence Community (IC) and broader national security enterprise. We partner with intelligence professionals to deploy secure, com… [pruned]",
+      "tags": [
+        "OpenAI for Gov",
+        "OpenAI for Gov",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.670Z",
+      "fetchedAt": "2026-08-24T03:29:26.670Z",
+      "score": {
+        "total": 35,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.919Z"
+      }
+    },
+    {
+      "id": "ashbycohere-a0f174cf44074334b81245a767092fca",
+      "title": "Forward Deployed Engineer, Infrastructure Specialist (UK Public Sector)",
+      "company": "Cohere",
+      "location": "United Kingdom",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobs.ashbyhq.com/cohere/a0f174cf-4407-4334-b812-45a767092fca",
+      "source": "Ashby:cohere",
+      "postedAt": "2026-08-24T02:08:44.515+00:00",
+      "description": "Who are we?\n\nCohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.\n\nWe’re training and deploying frontier mod… [pruned]",
+      "tags": [
+        "Infrastructure",
+        "Product",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.545Z",
+      "fetchedAt": "2026-08-24T03:29:26.545Z",
+      "score": {
+        "total": 45,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.920Z"
+      }
+    },
+    {
+      "id": "ashbycohere-691982e3935742e4b4c3a65cae906935",
+      "title": "Forward Deployed Engineer, Agentic Platform (UK Public Sector)",
+      "company": "Cohere",
+      "location": "United Kingdom",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobs.ashbyhq.com/cohere/691982e3-9357-42e4-b4c3-a65cae906935",
+      "source": "Ashby:cohere",
+      "postedAt": "2026-08-24T02:15:28.558+00:00",
+      "description": "Who are we?\n\nCohere is the leading security-first enterprise AI company.  We build cutting-edge foundation AI models and end-to-end products that are designed to solve real-world business problems.\n\nWe’re training and deploying frontier mod… [pruned]",
+      "tags": [
+        "Agentic Platform",
+        "Agentic Platform",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.545Z",
+      "fetchedAt": "2026-08-24T03:29:26.545Z",
+      "score": {
+        "total": 40,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.920Z"
+      }
+    },
+    {
+      "id": "ashbyharvey-f3708fe6d2f447dbbffd9063d6bb06ec",
+      "title": "Innovation Product Manager, Australia",
+      "company": "Harvey",
+      "location": "Sydney",
+      "market": [
+        "remote"
+      ],
+      "remote": true,
+      "url": "https://jobs.ashbyhq.com/harvey/f3708fe6-d2f4-47db-bffd-9063d6bb06ec",
+      "source": "Ashby:harvey",
+      "postedAt": "2026-08-23T23:39:55.907+00:00",
+      "description": "WHY HARVEY\n\nAt Harvey, we’re transforming how legal and professional services operate. By combining frontier agentic AI, an enterprise-grade platform, and deep domain expertise, we’re reshaping how critical knowledge work gets done for deca… [pruned]",
+      "tags": [
+        "Product",
+        "Product",
+        "FullTime"
+      ],
+      "stage": "matched",
+      "stageUpdatedAt": "2026-08-24T03:29:26.524Z",
+      "fetchedAt": "2026-08-24T03:29:26.524Z",
+      "score": {
+        "total": 32,
+        "factors": [],
+        "matchedKeywords": [],
+        "missingKeywords": [],
+        "flags": [],
+        "scoredAt": "2026-08-24T03:29:32.921Z"
+      }
     }
   ],
   "runs": [
+    {
+      "id": "run-1787542173871",
+      "startedAt": "2026-08-24T03:29:23.152Z",
+      "finishedAt": "2026-08-24T03:29:33.871Z",
+      "stages": [
+        {
+          "key": "collect",
+          "label": "Collect postings",
+          "status": "warn",
+          "count": 13389,
+          "detail": "116/118 sources responded · quiet: Adzuna:IN, Adzuna:US",
+          "ms": 3811
+        },
+        {
+          "key": "filter",
+          "label": "Gate against your resume",
+          "status": "ok",
+          "count": 2026,
+          "detail": "2026 of 13389 dropped — off-band titles and postings matching none of your skills · Greenhouse:stripe 146, Greenhouse:samsara 96, Greenhouse:anthropic 95, Greenhouse:celonis 87 · not stored, so they are re-checked every run",
+          "ms": 5741
+        },
+        {
+          "key": "dedupe",
+          "label": "Drop duplicates",
+          "status": "ok",
+          "count": 11240,
+          "detail": "123 new, 11240 already tracked",
+          "ms": 388
+        },
+        {
+          "key": "score",
+          "label": "Score against profile",
+          "status": "ok",
+          "count": 123,
+          "detail": "Scored 123 new postings on skills, seniority, market, domain, freshness",
+          "ms": 0
+        },
+        {
+          "key": "tailor",
+          "label": "Tailor resumes",
+          "status": "ok",
+          "count": 1,
+          "detail": "1 resumes generated for matches scoring 60+",
+          "ms": 270
+        },
+        {
+          "key": "prune",
+          "label": "Prune the store",
+          "status": "ok",
+          "count": 120,
+          "detail": "0 stale postings dropped, 120 closed ones slimmed · 20.3MB → 19.7MB · 10023 tracked",
+          "ms": 508
+        },
+        {
+          "key": "review",
+          "label": "Queue for your review",
+          "status": "ok",
+          "count": 288,
+          "detail": "288 waiting on your approval — nothing was submitted",
+          "ms": 1
+        }
+      ],
+      "fetched": 13389,
+      "added": 123,
+      "duplicates": 11240,
+      "scored": 123,
+      "tailored": 1,
+      "offline": false,
+      "filtered": 2026
+    },
     {
       "id": "run-1787455671586",
       "startedAt": "2026-08-23T03:27:40.032Z",
